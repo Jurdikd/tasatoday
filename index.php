@@ -19,7 +19,11 @@
                         <h3 class="card-tittle text-center">Elije una tasa para convertir</h3>
                     </div>
                     <div class="card-body">
-                        aQUÍ VAN LOS BOTONES
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn btn-danger">EnPARALELO</button>
+                            <button type="button" class="btn btn-warning">DOLARTODAY</button>
+                            <button type="button" class="btn btn-success">PERSONALIZADA</button>
+                        </div>
 
                     </div>
                 </div>
