@@ -35,7 +35,7 @@
                         <button class="btn btn-warning">EUR a BsD</button>
                     </div>
                     <div class="card-footer">
-                        <p class="text-danger">Puedes escribir el valor de la tasa a la que deseas realiar el cambio.
+                        <p class="text-danger">Puedes escribir el valor de la tasa a la que deseas realizar el cambio.
                         </p>
                         <div class="form-group">
                             <label for="tasaOption" class="text-primary labelTasaOption text-left">Tasa
