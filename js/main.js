@@ -30,6 +30,7 @@ amount.addEventListener("keyup", () => {
 		convert_BS_to_EUR(verify);
 	}
 });
+
 // Convert divisa with a click on change
 changeDivisa.addEventListener("click", (e) => {
 	// Cambio de moneda
@@ -67,7 +68,7 @@ const fetchDivisa = async (verify) => {
 		console.log(error);
 	}
 };
-/*========================== Calculates =================================================*/
+/*========================== Calculations =================================================*/
 // Convert Bs to USD
 const convert_BS_to_USD = async (verify) => {
 	const datos = await fetchDivisa(verify);
