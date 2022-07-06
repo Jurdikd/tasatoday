@@ -4,9 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Api DolarToday</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>TasaToday</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -41,8 +40,7 @@
                         <div class="form-group">
                             <label for="tasaOption" class="text-primary labelTasaOption text-left">Tasa
                                 opcional:</label>
-                            <input id="tasaOption" class="form-control form-control-sm text-sm" type="number"
-                                placeholder="Tasa optional a convertir" aria-label="tasaOption">
+                            <input id="tasaOption" class="form-control form-control-sm text-sm" type="number" placeholder="Tasa optional a convertir" aria-label="tasaOption">
                         </div>
                     </div>
                 </div>
@@ -62,8 +60,7 @@
                         <div class="form-group">
                             <label for="tasaOption" class="text-primary labelTasaOption text-left">Tasa
                                 opcional:</label>
-                            <input id="tasaOption" class="form-control form-control-sm text-sm" type="number"
-                                placeholder="Tasa optional a convertir" aria-label="tasaOption">
+                            <input id="tasaOption" class="form-control form-control-sm text-sm" type="number" placeholder="Tasa optional a convertir" aria-label="tasaOption">
                         </div>
                     </div>
                 </div>
@@ -78,15 +75,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="amount" class="text-success labelAmount">Cantidad:</label>
-                                <input id="amount" class="form-control form-control-sm text-sm" type="number"
-                                    placeholder="Monto a convertir" aria-label="amount">
+                                <input id="amount" class="form-control form-control-sm text-sm" type="number" placeholder="Monto a convertir" aria-label="amount">
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="result" class="text-success labelResult">Resultado:</label>
-                                <input id="result" class="form-control form-control-sm text-sm" type="number"
-                                    aria-label="result" readonly>
+                                <input id="result" class="form-control form-control-sm text-sm" type="number" aria-label="result" readonly>
                             </div>
                         </div>
                         <div class="card-footer text-center">
@@ -100,9 +95,8 @@
 
             </div>
         </div>
-        <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-            </script>
+        <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+        </script>
         <script src="js/main.js" type="module"></script>
 </body>
 
