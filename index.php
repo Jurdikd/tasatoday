@@ -16,7 +16,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-hedaer">
-                        <h3 class="card-tittle text-center">Elije una tasa</h3>
+                        <h3 class="card-tittle text-center">Elije una tasa para convertir</h3>
                     </div>
                     <div class="card-body">
 
