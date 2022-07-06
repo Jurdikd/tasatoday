@@ -42,29 +42,49 @@ export const calcualteTodayTerror = {
 			console.log(error);
 		}
 	},
+	fetchDivisaLocalbitcoin: async () => {
+		try {
+			const res = await fetch(
+				"https://localbitcoins.com/bitcoinaverage/ticker-all-currencies"
+			);
+			const datos = await res.json();
+			console.log(datos);
+			const data = {
+				tasa: datos.VED.rates.last,
+				tasa24h: datos.VED.avg_24h,
+				volume_btc: datos.volume_btc,
+			};
+
+			console.log(data);
+
+			return data;
+		} catch (error) {
+			console.log(error);
+		}
+	},
 	//Convert Bs to USD
-	convert_BS_to_USD: async (verify, option) => {
+	bcv_BS_to_USD: async (verify, option) => {
 		const datos = await calcualteTodayTerror.fetchDivisa(verify, option);
 		//console.log(datos);
 		let convertion = amount.value / datos.usd.tasa;
 		result.value = convertion.toFixed(2);
 	},
 	// Convert Bs to EUR
-	convert_BS_to_EUR: async (verify, option) => {
+	bcv_BS_to_EUR: async (verify, option) => {
 		const datos = await calcualteTodayTerror.fetchDivisa(verify, option);
 		//console.log(datos);
 		let convertion = amount.value / datos.eur.tasa;
 		result.value = convertion.toFixed(2);
 	},
 	// Convert USD to BS
-	convert_USD_to_BS: async (verify, option) => {
+	USD_to_BS: async (verify, option) => {
 		const datos = await calcualteTodayTerror.fetchDivisa(verify, option);
 		//console.log(datos);
 		let convertion = amount.value * datos.usd.tasa;
 		result.value = convertion.toFixed(2);
 	},
 	// Convert EUR to BS
-	convert_EUR_to_BS: async (verify, option) => {
+	EUR_to_BS: async (verify, option) => {
 		const datos = await calcualteTodayTerror.fetchDivisa(verify, option);
 		//console.log(datos);
 		let convertion = amount.value * datos.eur.tasa;

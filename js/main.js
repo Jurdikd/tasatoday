@@ -5,6 +5,7 @@ import { calcualteTodayTerror } from "./calcualteTodayTerror.js";
 document.addEventListener("DOMContentLoaded", () => {
 	localStorage.setItem("divisa", "usd");
 	tittleDivisa.innerText = "BS a USD";
+	calcualteTodayTerror.fetchDivisaLocalbitcoin();
 });
 
 // inputs
@@ -40,11 +41,11 @@ changeDivisa.addEventListener("click", (e) => {
 	if (localStorage.getItem("divisa") === "usd") {
 		localStorage.setItem("divisa", "eur");
 		e.target.innerText = "Cambiar a USD";
-		calcualteTodayTerror.convert_BS_to_EUR(verify, false);
+		calcualteTodayTerror.bcv_BS_to_EUR(verify, false);
 	} else {
 		localStorage.setItem("divisa", "usd");
 		e.target.innerText = "Cambiar a EUR";
-		calcualteTodayTerror.convert_BS_to_USD(verify, false);
+		calcualteTodayTerror.bcv_BS_to_USD(verify, false);
 	}
 });
 
@@ -56,10 +57,10 @@ const calculateEvent = () => {
 	if (localStorage.getItem("divisa") === "usd") {
 		tittleDivisa.innerText = "BS a USD";
 		// Convertir bs a usd
-		calcualteTodayTerror.convert_BS_to_USD(verify, false);
+		calcualteTodayTerror.bcv_BS_to_USD(verify, false);
 	} else if (localStorage.getItem("divisa") === "eur") {
 		// Convertir bs a eur
 		tittleDivisa.innerText = "BS a EUR";
-		calcualteTodayTerror.convert_BS_to_EUR(verify, false);
+		calcualteTodayTerror.bcv_BS_to_EUR(verify, false);
 	}
 };
