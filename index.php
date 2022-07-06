@@ -51,8 +51,8 @@
                         <h4 class="card-tittle tittleDivisa text-center">Caculadora de ganancias o gastos</h3>
                     </div>
                     <div class="card-body text-center">
-                        <button class="btn btn-success" disabled>USD a BS</button>
-                        <button class="btn btn-warning">EUR a BS</button>
+                        <button class="btn btn-success" disabled>USD a BsD</button>
+                        <button class="btn btn-warning">EUR a BsD</button>
                     </div>
                     <div class="card-footer">
                         <p class="text-danger">Puedes escribir el valor de la tasa a la que deseas realiar el cambio.
