@@ -5,10 +5,6 @@ import { calcualteTodayTerror } from "./calcualteTodayTerror.js";
 document.addEventListener("DOMContentLoaded", () => {
 	localStorage.setItem("divisa", "usd");
 	tittleDivisa.innerText = "BS a USD";
-	const verify = {
-		verify: 1,
-	};
-	calcualteTodayTerror.fetchDivisa(verify, false);
 });
 
 // inputs
@@ -22,12 +18,18 @@ const changeDivisa = document.getElementById("changeDivisa");
 const tittleDivisa = document.getElementsByClassName("tittleDivisa");
 
 // Automatic convert
-amount.addEventListener("keyup", () => {
+amount.addEventListener("keyup", (e) => {
 	//console.log(e.target.value);
+	if (e.target.value < 0) {
+		e.target.value = 0;
+	}
 	calculateEvent();
 });
-amount.addEventListener("change", () => {
+amount.addEventListener("change", (e) => {
 	//console.log(e.target.value);
+	if (e.target.value < 0) {
+		e.target.value = 0;
+	}
 	calculateEvent();
 });
 // Convert divisa with a click on change
