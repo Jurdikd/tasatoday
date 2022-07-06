@@ -3,10 +3,12 @@ import { calcualteTodayTerror } from "./calcualteTodayTerror.js";
 
 // Load
 document.addEventListener("DOMContentLoaded", () => {
+	console.log(precio.innerText);
 	localStorage.setItem("divisa", "usd");
 	tittleDivisa.innerText = "BS a USD";
-	calcualteTodayTerror.fetchDivisaLocalbitcoin();
+
 });
+const precio = document.getElementsByClassName("exchangemonitor-widget-box-price");
 
 // inputs
 const amount = document.getElementById("amount"); // cantidad
@@ -35,6 +37,7 @@ amount.addEventListener("change", (e) => {
 });
 // Convert divisa with a click on change
 changeDivisa.addEventListener("click", (e) => {
+	calcualteTodayTerror.fetchDivisaLocalbitcoin();
 	const verify = {
 		verify: 2,
 	};

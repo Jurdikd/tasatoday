@@ -35,7 +35,6 @@ export const calcualteTodayTerror = {
 					},
 				};
 				//console.log(data);
-
 				return data;
 			}
 		} catch (error) {
@@ -44,19 +43,15 @@ export const calcualteTodayTerror = {
 	},
 	fetchDivisaLocalbitcoin: async () => {
 		try {
-			const res = await fetch(
-				"https://localbitcoins.com/bitcoinaverage/ticker-all-currencies"
-			);
+			const res = await fetch("backend/api_local.php");
+
 			const datos = await res.json();
-			console.log(datos);
 			const data = {
 				tasa: datos.VED.rates.last,
 				tasa24h: datos.VED.avg_24h,
 				volume_btc: datos.volume_btc,
 			};
-
-			console.log(data);
-
+			//console.log(data);
 			return data;
 		} catch (error) {
 			console.log(error);

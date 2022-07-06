@@ -43,4 +43,14 @@ class CurlTerror
             }
         }
     }
+    public static function get_page($url)
+    {
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $respuesta = curl_exec($curl);
+        curl_close($curl);
+        return $respuesta;
+    }
 }
