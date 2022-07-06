@@ -24,15 +24,15 @@
                     </div>
                 </div>
             </div>
-            <h4 class="h4 mx-auto p-5 text-white">Convertir a UDS O EURO</h4>
+            <h4 class="h4 mx-auto p-5 text-white">Convertir a USD O EURO</h4>
             <div class="col-md-6">
                 <div class="card m-5">
                     <div class="card-header">
                         <h3 class="card-tittle tittleDivisa text-center">Caculadora</h3>
                     </div>
                     <div class="card-body text-center">
-                        <button class="btn btn-success" disabled>USD a BS</button>
-                        <button class="btn btn-warning">EUR a BS</button>
+                        <button class="btn btn-success" disabled>USD a BsD</button>
+                        <button class="btn btn-warning">EUR a BsD</button>
                     </div>
                     <div class="card-footer">
                         <p class="text-danger">Puedes escribir el valor de la tasa a la que deseas realiar el cambio.
