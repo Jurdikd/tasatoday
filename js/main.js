@@ -51,7 +51,7 @@ changeDivisa.addEventListener("click", (e) => {
 
 const calculateEvent = () => {
 	const verify = {
-		verify: 2,
+		verify: "enparalelovzla",
 	};
 
 	if (localStorage.getItem("divisa") === "usd") {
