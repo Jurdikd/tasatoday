@@ -34,33 +34,33 @@ amount.addEventListener("change", (e) => {
 });
 // Convert divisa with a click on change
 changeDivisa.addEventListener("click", (e) => {
-	const verify = {
-		verify: 2,
+	const rates = {
+		rates: 2,
 	};
 	if (localStorage.getItem("divisa") === "usd") {
 		localStorage.setItem("divisa", "eur");
 		e.target.text = "Cambiar a BsD";
-		calcualteTodayTerror.bcv_BS_to_USD(verify);
+		calcualteTodayTerror.bcv_BS_to_USD(rates);
 	} else {
 		localStorage.setItem("divisa", "usd");
 		e.target.text = "Cambiar a USD";
-		calcualteTodayTerror.bcv_BS_to_USD(verify);
+		calcualteTodayTerror.bcv_BS_to_USD(rates);
 	}
 	console.log(e.target.text);
 });
 
 const calculateEvent = () => {
-	const verify = {
-		verify: "enparalelovzla",
+	const rates = {
+		rates: "enparalelovzla",
 	};
 
 	if (localStorage.getItem("divisa") === "usd") {
 		tittleDivisa.innerText = "BsD a USD";
 		// Convertir bs a usd
-		calcualteTodayTerror.enparalelo_to_usd(verify);
+		calcualteTodayTerror.enparalelovzla_to_usd(rates);
 	} else if (localStorage.getItem("divisa") === "eur") {
 		// Convertir bs a eur
 		tittleDivisa.innerText = "USD a BsD";
-		calcualteTodayTerror.usd_to_enparalelo(verify);
+		calcualteTodayTerror.usd_to_enparalelovzla(rates);
 	}
 };

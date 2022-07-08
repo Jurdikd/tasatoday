@@ -172,7 +172,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'es' =>
                     "Error: La verificación no esta correcta"
                 ),
-            )
+            ),
         ));
     }
 } else {
