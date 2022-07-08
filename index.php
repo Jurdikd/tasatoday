@@ -14,7 +14,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6  mx-auto m-4">
-                <div class="h-100 p-5 text-white bg-dark rounded-3">
+                <div class="h-100 p-5 text-white bg-dark rounded-3 m-4">
                     <h1>En construcción... TasaToday</h1>
                     <p>Nuestra misión no es hacer una simple calculadora o ver las tasas al momento...</p>
                     <p>Para nosotros lo importante es que puedas analizar cuanto ganas o pierdes por tasas ¡incluso hasta personalizadas por tí!
