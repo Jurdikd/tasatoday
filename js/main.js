@@ -3,6 +3,7 @@ import { calcualteTodayTerror } from "./calcualteTodayTerror.js";
 
 // Load
 document.addEventListener("DOMContentLoaded", () => {
+	showRates();
 	localStorage.setItem("divisa", "usd");
 	tittleDivisa.innerText = "BS a USD";
 });
@@ -63,4 +64,18 @@ const calculateEvent = () => {
 		tittleDivisa.innerText = "USD a BsD";
 		calcualteTodayTerror.usd_to_enparalelovzla(rates);
 	}
+};
+const showRates = async () => {
+	const rates = {
+		rates: "rates",
+	};
+	const allRates = await calcualteTodayTerror.fetchDivisa(rates);
+	//console.log(allRates);
+	console.log(allRates.tasatoday.rate);
+	console.log(allRates.bcv.rate);
+	console.log(allRates.enparalelovzla.rate);
+	console.log(allRates.airtm.rate);
+	console.log(allRates.dolartoday.rate);
+	console.log(allRates.reserve.rate);
+	console.log(allRates.zelle.rate);
 };

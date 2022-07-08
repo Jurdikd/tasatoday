@@ -13,16 +13,22 @@
 <body>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-6  mx-auto m-4">
-                <div class="h-100 p-5 text-white bg-dark rounded-3 m-4">
+            <div class="col-md-10  mx-auto m-4">
+                <div class="h-100 p-5 text-white bg-dark rounded-3">
                     <h1>En construcción... TasaToday</h1>
-                    <p>Nuestra misión no es hacer una simple calculadora o ver las tasas al momento...</p>
-                    <p>Para nosotros lo importante es que puedas analizar cuanto ganas o pierdes por tasas ¡incluso hasta personalizadas por tí!
+                    <p class="lead">Nuestra misión no es hacer una simple calculadora o ver las tasas al momento...</p>
+                    <br>
+                    <p class="lead">Para nosotros lo importante es que puedas analizar cuanto ganas o pierdes por tasas ¡incluso hasta personalizadas por tí!
                         para ello estamos construyendo este sitio y puedas compartir tu tasa por whatsapp o agregarlo a tu negocio y saber cuanto cotizas al instante solo espera y te sorprenderemos
                     </p>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-12">
+                <div class="h-100 p-5 text-white bg-dark rounded-3">
+                    EnparaleloVzla <span><strong class="enparalelo-rate"></strong></span>
+                </div>
+            </div>
+            <div class="col-md-8 mt-2">
                 <div class="card">
                     <div class="card-hedaer">
                         <h3 class="card-tittle text-center">Elije una tasa para convertir</h3>
@@ -87,13 +93,13 @@
                                 Para convertir coloca la cantidad a converitir
                             </div>
                             <div class="form-group">
-                                <label for="amount" class="text-success labelAmount">Cantidad:</label>
+                                <label for="amount" class="text-success labelAmount ">Cantidad: <small class="amountRate text-muted">BsD</small></label>
                                 <input id="amount" class="form-control form-control-sm text-sm" type="number" placeholder="Monto a convertir" aria-label="amount">
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="result" class="text-success labelResult">Resultado:</label>
+                                <label for="result" class="text-success labelResult">Resultado: <small class="resultRate text-muted">USD</small></label>
                                 <input id="result" class="form-control form-control-sm text-sm" type="number" aria-label="result" readonly>
                             </div>
                         </div>

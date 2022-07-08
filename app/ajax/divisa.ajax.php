@@ -34,7 +34,7 @@ if (!empty($get) && !empty($get['rates'])) {
             is_array($reserve)
         ) {
             $tasatoday  = array(
-                'Tasatoday' => array(
+                'tasatoday' => array(
                     'name' => 'TasaToday',
                     'rate' => FunctionTerror::cambiarComas_puntos($promedio['price']),
                     'percent' => $promedio['percent'],
