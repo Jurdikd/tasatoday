@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	localStorage.setItem("divisa", "usd");
 	tittleDivisa.innerText = "BS a USD";
 });
-const precio = document.getElementsByClassName("exchangemonitor-widget-box-price");
 
 // inputs
 const amount = document.getElementById("amount"); // cantidad
@@ -40,11 +39,11 @@ changeDivisa.addEventListener("click", (e) => {
 	};
 	if (localStorage.getItem("divisa") === "usd") {
 		localStorage.setItem("divisa", "eur");
-		e.target.text = "Cambiar a USD";
+		e.target.text = "Cambiar a BsD";
 		calcualteTodayTerror.bcv_BS_to_USD(verify);
 	} else {
 		localStorage.setItem("divisa", "usd");
-		e.target.text = "Cambiar a EUR";
+		e.target.text = "Cambiar a USD";
 		calcualteTodayTerror.bcv_BS_to_USD(verify);
 	}
 	console.log(e.target.text);
@@ -56,12 +55,12 @@ const calculateEvent = () => {
 	};
 
 	if (localStorage.getItem("divisa") === "usd") {
-		tittleDivisa.innerText = "BS a USD";
+		tittleDivisa.innerText = "BsD a USD";
 		// Convertir bs a usd
-		calcualteTodayTerror.enparalelo_BS_to_USD(verify);
+		calcualteTodayTerror.enparalelo_to_usd(verify);
 	} else if (localStorage.getItem("divisa") === "eur") {
 		// Convertir bs a eur
-		tittleDivisa.innerText = "BS a EUR";
-		calcualteTodayTerror.bcv_BS_to_EUR(verify);
+		tittleDivisa.innerText = "USD a BsD";
+		calcualteTodayTerror.usd_to_enparalelo(verify);
 	}
 };
