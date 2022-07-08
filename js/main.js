@@ -3,10 +3,8 @@ import { calcualteTodayTerror } from "./calcualteTodayTerror.js";
 
 // Load
 document.addEventListener("DOMContentLoaded", () => {
-	console.log(precio.innerText);
 	localStorage.setItem("divisa", "usd");
 	tittleDivisa.innerText = "BS a USD";
-
 });
 const precio = document.getElementsByClassName("exchangemonitor-widget-box-price");
 
@@ -37,19 +35,19 @@ amount.addEventListener("change", (e) => {
 });
 // Convert divisa with a click on change
 changeDivisa.addEventListener("click", (e) => {
-	calcualteTodayTerror.fetchDivisaLocalbitcoin();
 	const verify = {
 		verify: 2,
 	};
 	if (localStorage.getItem("divisa") === "usd") {
 		localStorage.setItem("divisa", "eur");
-		e.target.innerText = "Cambiar a USD";
-		calcualteTodayTerror.bcv_BS_to_EUR(verify, false);
+		e.target.text = "Cambiar a USD";
+		calcualteTodayTerror.bcv_BS_to_USD(verify);
 	} else {
 		localStorage.setItem("divisa", "usd");
-		e.target.innerText = "Cambiar a EUR";
-		calcualteTodayTerror.bcv_BS_to_USD(verify, false);
+		e.target.text = "Cambiar a EUR";
+		calcualteTodayTerror.bcv_BS_to_USD(verify);
 	}
+	console.log(e.target.text);
 });
 
 const calculateEvent = () => {
@@ -60,10 +58,10 @@ const calculateEvent = () => {
 	if (localStorage.getItem("divisa") === "usd") {
 		tittleDivisa.innerText = "BS a USD";
 		// Convertir bs a usd
-		calcualteTodayTerror.bcv_BS_to_USD(verify, false);
+		calcualteTodayTerror.enparalelo_BS_to_USD(verify);
 	} else if (localStorage.getItem("divisa") === "eur") {
 		// Convertir bs a eur
 		tittleDivisa.innerText = "BS a EUR";
-		calcualteTodayTerror.bcv_BS_to_EUR(verify, false);
+		calcualteTodayTerror.bcv_BS_to_EUR(verify);
 	}
 };
