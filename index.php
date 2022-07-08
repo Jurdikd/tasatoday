@@ -13,12 +13,14 @@
 <body>
     <div class="container mt-5">
         <div class="row">
-            <div class="mt-4 p-5 bg-primary text-white rounded">
-                <h1>En construcción... TasaToday</h1>
-                <p>Nuestra misión no es hacer una simple calculadora o ver las tasas al momento...</p>
-                <p>Para nosotros lo importante es que puedas analizar cuanto ganas o pierdes por tasas ¡incluso hasta personalizadas por tí!
-                    para ello estamos construyendo este sitio y puedas compartir tu tasa por whatsapp o agregarlo a tu negocio y saber cuanto cotizas al instante solo espera y te sorprenderemos
-                </p>
+            <div class="col-md-6">
+                <div class="h-100 p-5 text-white bg-dark rounded-3">
+                    <h1>En construcción... TasaToday</h1>
+                    <p>Nuestra misión no es hacer una simple calculadora o ver las tasas al momento...</p>
+                    <p>Para nosotros lo importante es que puedas analizar cuanto ganas o pierdes por tasas ¡incluso hasta personalizadas por tí!
+                        para ello estamos construyendo este sitio y puedas compartir tu tasa por whatsapp o agregarlo a tu negocio y saber cuanto cotizas al instante solo espera y te sorprenderemos
+                    </p>
+                </div>
             </div>
             <div class="col-md-8">
                 <div class="card">
