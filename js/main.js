@@ -65,17 +65,24 @@ const calculateEvent = () => {
 		calcualteTodayTerror.usd_to_enparalelovzla(rates);
 	}
 };
+const tasatodayRate = document.querySelector(".tasatoday-rate");
+const enparaleloRate = document.querySelector(".enparalelo-rate");
+const airtmRate = document.querySelector(".airtm-rate");
+const bcvRate = document.querySelector(".bcv-rate");
+const zelleRate = document.querySelector(".zelle-rate");
+const dolartodayRate = document.querySelector(".dolartoday-rate");
+const reserveRate = document.querySelector(".reserve-rate");
 const showRates = async () => {
 	const rates = {
 		rates: "rates",
 	};
 	const allRates = await calcualteTodayTerror.fetchDivisa(rates);
-	//console.log(allRates);
-	console.log(allRates.tasatoday.rate);
-	console.log(allRates.bcv.rate);
-	console.log(allRates.enparalelovzla.rate);
-	console.log(allRates.airtm.rate);
-	console.log(allRates.dolartoday.rate);
-	console.log(allRates.reserve.rate);
-	console.log(allRates.zelle.rate);
+
+	tasatodayRate.innerText = allRates.tasatoday.rate;
+	bcvRate.innerText = allRates.bcv.rate;
+	enparaleloRate.innerText = allRates.enparalelovzla.rate;
+	airtmRate.innerText = allRates.airtm.rate;
+	zelleRate.innerText = allRates.zelle.rate;
+	dolartodayRate.innerText = allRates.dolartoday.rate;
+	reserveRate.innerText = allRates.reserve.rate;
 };

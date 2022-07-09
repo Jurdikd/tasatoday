@@ -23,12 +23,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="h-100 p-5 text-white bg-dark rounded-3">
-                    EnparaleloVzla <span><strong class="enparalelo-rate"></strong></span>
-                </div>
-            </div>
-            <div class="col-md-8 mt-2">
+            <div class="col-md-12 mx-auto m-4">
                 <div class="card">
                     <div class="card-hedaer">
                         <h3 class="card-tittle text-center">Elije una tasa para convertir</h3>
@@ -43,80 +38,159 @@
                     </div>
                 </div>
             </div>
-            <h4 class="h4 mx-auto p-5 text-white">Convertir a USD O EURO</h4>
-            <div class="col-md-6">
-                <div class="card m-5">
-                    <div class="card-header">
-                        <h3 class="card-tittle tittleDivisa text-center">Caculadora</h3>
+            <div class="col-md-3">
+                <div class="card m-2">
+                    <div class="card-header text-center">
+                        <h3 class="card-tittle">TasaToday</h3>
                     </div>
                     <div class="card-body text-center">
-                        <button class="btn btn-success" disabled>USD a BsD</button>
-                        <button class="btn btn-warning">EUR a BsD</button>
-                    </div>
-                    <div class="card-footer">
-                        <p class="text-danger">Puedes escribir el valor de la tasa a la que deseas realizar el cambio.
-                        </p>
-                        <div class="form-group">
-                            <label for="tasaOption" class="text-primary labelTasaOption text-left">Tasa
-                                opcional:</label>
-                            <input id="tasaOption" class="form-control form-control-sm text-sm" type="number" placeholder="Tasa optional a convertir" aria-label="tasaOption">
-                        </div>
+                        <span class="tasatoday-rate">Cargando...</span>
+                        <button class="btn btn-sm btn-success">Elegir</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card m-5">
-                    <div class="card-header">
-                        <h4 class="card-tittle tittleDivisa text-center">Caculadora de ganancias o gastos</h3>
+            <div class="col-md-3">
+                <div class="card m-2">
+                    <div class="card-header text-center">
+                        <h3 class="card-tittle">BCV</h3>
                     </div>
                     <div class="card-body text-center">
-                        <button class="btn btn-success" disabled>USD a BsD</button>
-                        <button class="btn btn-warning">EUR a BsD</button>
-                    </div>
-                    <div class="card-footer">
-                        <p class="text-danger">Puedes escribir el valor de la tasa a la que deseas realizar el cambio.
-                        </p>
-                        <div class="form-group">
-                            <label for="tasaOption" class="text-primary labelTasaOption text-left">Tasa
-                                opcional:</label>
-                            <input id="tasaOption" class="form-control form-control-sm text-sm" type="number" placeholder="Tasa optional a convertir" aria-label="tasaOption">
-                        </div>
+                        <span class="bcv-rate">Cargando...</span>
+                        <button class="btn btn-sm btn-success">Elegir</button>
                     </div>
                 </div>
             </div>
-            <div class="row">
-
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class=" card-tittle text-dark">
-                                Para convertir coloca la cantidad a converitir
-                            </div>
-                            <div class="form-group">
-                                <label for="amount" class="text-success labelAmount ">Cantidad: <small class="amountRate text-muted">BsD</small></label>
-                                <input id="amount" class="form-control form-control-sm text-sm" type="number" placeholder="Monto a convertir" aria-label="amount">
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="result" class="text-success labelResult">Resultado: <small class="resultRate text-muted">USD</small></label>
-                                <input id="result" class="form-control form-control-sm text-sm" type="number" aria-label="result" readonly>
-                            </div>
-                        </div>
-                        <div class="card-footer text-center">
-                            <div class="text-danger text-xs">
-
-                            </div>
-                            <button class="btn btn-primary btn-md" id="changeDivisa">Cambiar a EUR</button>
-                        </div>
+            <div class="col-md-3">
+                <div class="card m-2">
+                    <div class="card-header text-center">
+                        <h3 class="card-tittle">EnparaleloVzla</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <span class="enparalelo-rate">Cargando...</span>
+                        <button class="btn btn-sm btn-success">Elegir</button>
                     </div>
                 </div>
-
+            </div>
+            <div class="col-md-3">
+                <div class="card m-2">
+                    <div class="card-header text-center">
+                        <h3 class="card-tittle">Airtm</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <span class="airtm-rate">Cargando...</span>
+                        <button class="btn btn-sm btn-success">Elegir</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card m-2">
+                    <div class="card-header text-center">
+                        <h3 class="card-tittle">DolarToday</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <span class="dolartoday-rate">Cargando...</span>
+                        <button class="btn btn-sm btn-success">Elegir</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card m-2">
+                    <div class="card-header text-center">
+                        <h3 class="card-tittle">ZELLE</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <span class="zelle-rate">Cargando...</span>
+                        <button class="btn btn-sm btn-success">Elegir</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card m-2">
+                    <div class="card-header text-center">
+                        <h3 class="card-tittle">Reserve</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <span class="reserve-rate">Cargando...</span>
+                        <button class="btn btn-sm btn-success">Elegir</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-        </script>
-        <script src="js/main.js" type="module"></script>
+
+        <h4 class="h4 mx-auto p-5 text-white">Calculadoras de tasas</h4>
+        <div class="col-md-6">
+            <div class="card m-5">
+                <div class="card-header">
+                    <h3 class="card-tittle tittleDivisa text-center">Caculadora</h3>
+                </div>
+                <div class="card-body text-center">
+                    <button class="btn btn-success" disabled>USD a BsD</button>
+                    <button class="btn btn-warning">EUR a BsD</button>
+                </div>
+                <div class="card-footer">
+                    <p class="text-danger">Puedes escribir el valor de la tasa a la que deseas realizar el cambio.
+                    </p>
+                    <div class="form-group">
+                        <label for="tasaOption" class="text-primary labelTasaOption text-left">Tasa
+                            opcional:</label>
+                        <input id="tasaOption" class="form-control form-control-sm text-sm" type="number" placeholder="Tasa optional a convertir" aria-label="tasaOption">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card m-5">
+                <div class="card-header">
+                    <h4 class="card-tittle tittleDivisa text-center">Caculadora de ganancias o gastos</h3>
+                </div>
+                <div class="card-body text-center">
+                    <button class="btn btn-success" disabled>USD a BsD</button>
+                    <button class="btn btn-warning">EUR a BsD</button>
+                </div>
+                <div class="card-footer">
+                    <p class="text-danger">Puedes escribir el valor de la tasa a la que deseas realizar el cambio.
+                    </p>
+                    <div class="form-group">
+                        <label for="tasaOption" class="text-primary labelTasaOption text-left">Tasa
+                            opcional:</label>
+                        <input id="tasaOption" class="form-control form-control-sm text-sm" type="number" placeholder="Tasa optional a convertir" aria-label="tasaOption">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div class=" card-tittle text-dark">
+                            Para convertir coloca la cantidad a converitir
+                        </div>
+                        <div class="form-group">
+                            <label for="amount" class="text-success labelAmount ">Cantidad: <small class="amountRate text-muted">BsD</small></label>
+                            <input id="amount" class="form-control form-control-sm text-sm" type="number" placeholder="Monto a convertir" aria-label="amount">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="result" class="text-success labelResult">Resultado: <small class="resultRate text-muted">USD</small></label>
+                            <input id="result" class="form-control form-control-sm text-sm" type="number" aria-label="result" readonly>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <div class="text-danger text-xs">
+
+                        </div>
+                        <button class="btn btn-primary btn-md" id="changeDivisa">Cambiar a EUR</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+    <script src="js/main.js" type="module"></script>
 </body>
 
 </html>
