@@ -5,7 +5,7 @@ include_once "../../libs/UrlGetTerror.libs.php";
 
 #Definir variable para url de curl
 define("URL_CURL", "https://exchangemonitor.net/ajax/widget-unique?country=ve&type=");
-
+define("URL_CURL_BCV", "http://www.bcv.org.ve");
 //Recibimos los datos por json
 $get = UrlGetTerror::Getjson();
 
@@ -23,6 +23,7 @@ if (!empty($get) && !empty($get['rates'])) {
         $dolartoday = CurlTerror::get_simple(URL_CURL . 'dolartoday');
         $bcv = CurlTerror::get_simple(URL_CURL . 'bcv');
         $reserve = CurlTerror::get_simple(URL_CURL . 'reserve');
+        $bcvTasa = CurlTerror::get_bcv(URL_CURL_BCV);
 
         if (
             //verificar tasas
@@ -31,7 +32,8 @@ if (!empty($get) && !empty($get['rates'])) {
             is_array($airtm) &&
             is_array($dolartoday) &&
             is_array($bcv) &&
-            is_array($reserve)
+            is_array($reserve) &&
+            is_array($bcvTasa)
         ) {
             $tasatoday  = array(
                 'tasatoday' => array(
@@ -89,13 +91,63 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $enparalelo['change'],
                     'color' => $enparalelo['color'],
                     'symbol' => $enparalelo['symbol'],
+                ),
+                'reserve' => array(
+                    'name' => $reserve['name'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($reserve['price']),
+                    'percent' => $reserve['percent'],
+                    'change' => $reserve['change'],
+                    'color' => $reserve['color'],
+                    'symbol' => $reserve['symbol'],
+                ),
+                'euro' => array(
+                    'name' => $bcvTasa['euro']['name'],
+                    'rate' => $bcvTasa['euro']['rate'],
+                    'percent' => $bcv['percent'],
+                    'change' => $bcv['change'],
+                    'color' => $bcv['color'],
+                    'symbol' => $bcv['symbol'],
+                ),
+                'yuan' => array(
+                    'name' => $bcvTasa['yuan']['name'],
+                    'rate' => $bcvTasa['yuan']['rate'],
+                    'percent' => $bcv['percent'],
+                    'change' => $bcv['change'],
+                    'color' => $bcv['color'],
+                    'symbol' => $bcv['symbol'],
+                ),
+                'lira' => array(
+                    'name' => $bcvTasa['lira']['name'],
+                    'rate' => $bcvTasa['lira']['rate'],
+                    'percent' => $bcv['percent'],
+                    'change' => $bcv['change'],
+                    'color' => $bcv['color'],
+                    'symbol' => $bcv['symbol'],
+                ),
+                'rublo' => array(
+                    'name' => $bcvTasa['rublo']['name'],
+                    'rate' => $bcvTasa['rublo']['rate'],
+                    'percent' => $bcv['percent'],
+                    'change' => $bcv['change'],
+                    'color' => $bcv['color'],
+                    'symbol' => $bcv['symbol'],
                 )
+
             );
             $respuesta = $tasatoday; #Devolvemos datos en formato json
         } else {
-            header($_SERVER['SERVER_PROTOCOL'] . $dolarToday . " Not Found Forbidden - Error: SERVIDOR", true, $dolarToday);
-            header("HTTP/1.0 " . $dolarToday . " Not Found Forbidden - Error: SERVIDOR");
-            $respuesta = http_response_code($dolarToday) . " Forbidden - Error: SERVIDOR";
+
+
+            $respuesta = array('error' => array(
+                'message' => array(
+                    'lang' => array(
+                        'en' =>
+                        "Error: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection with server",
+                        'es' =>
+                        "Error: : OpenSSL SSL_connect: SSL_ERROR_SYSCALL en conexión con el servidor"
+                    ),
+                ),
+            ));
         }
     } else if ($get['rates'] === "promedio") {
         //Obtener tasa enparalelovzla
@@ -115,9 +167,16 @@ if (!empty($get) && !empty($get['rates'])) {
 
             $respuesta = $tasaDivisa; #Devolvemos datos en formato json
         } else {
-            header($_SERVER['SERVER_PROTOCOL'] . $promedio . " Not Found Forbidden - Error: SERVIDOR", true, $promedio);
-            header("HTTP/1.0 " . $promedio . " Not Found Forbidden - Error: SERVIDOR");
-            $respuesta = http_response_code($promedio) . " Forbidden - Error: SERVIDOR";
+            $respuesta = array('error' => array(
+                'message' => array(
+                    'lang' => array(
+                        'en' =>
+                        "Error: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection with server",
+                        'es' =>
+                        "Error: : OpenSSL SSL_connect: SSL_ERROR_SYSCALL en conexión con el servidor"
+                    ),
+                ),
+            ));
         }
     } else if ($get['rates'] === "enparalelovzla") {
         //Obtener tasa enparalelovzla
@@ -137,9 +196,16 @@ if (!empty($get) && !empty($get['rates'])) {
 
             $respuesta = $tasaDivisa; #Devolvemos datos en formato json
         } else {
-            header($_SERVER['SERVER_PROTOCOL'] . $enparalelo . " Not Found Forbidden - Error: SERVIDOR", true, $enparalelo);
-            header("HTTP/1.0 " . $enparalelo . " Not Found Forbidden - Error: SERVIDOR");
-            $respuesta = http_response_code($enparalelo) . " Forbidden - Error: SERVIDOR";
+            $respuesta = array('error' => array(
+                'message' => array(
+                    'lang' => array(
+                        'en' =>
+                        "Error: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection with server",
+                        'es' =>
+                        "Error: : OpenSSL SSL_connect: SSL_ERROR_SYSCALL en conexión con el servidor"
+                    ),
+                ),
+            ));
         }
     } else if ($get['rates'] === "enparalelo") {
         //Obtener tasa airtm
@@ -159,18 +225,25 @@ if (!empty($get) && !empty($get['rates'])) {
 
             $respuesta = $tasaDivisa; #Devolvemos datos en formato json
         } else {
-            header($_SERVER['SERVER_PROTOCOL'] . $airtm . " Not Found Forbidden - Error: SERVIDOR", true, $airtm);
-            header("HTTP/1.0 " . $airtm . " Not Found Forbidden - Error: SERVIDOR");
-            $respuesta = http_response_code($airtm) . " Forbidden - Error: SERVIDOR";
+            $respuesta = array('error' => array(
+                'message' => array(
+                    'lang' => array(
+                        'en' =>
+                        "Error: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection with server",
+                        'es' =>
+                        "Error: : OpenSSL SSL_connect: SSL_ERROR_SYSCALL en conexión con el servidor"
+                    ),
+                ),
+            ));
         }
     } else {
         $respuesta = array('error' => array(
             'message' => array(
                 'lang' => array(
                     'en' =>
-                    "Error: Verification no correct",
+                    "Error: Rates no corrects",
                     'es' =>
-                    "Error: La verificación no esta correcta"
+                    "Error: Tasas no estan correctas"
                 ),
             ),
         ));
