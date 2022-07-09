@@ -69,7 +69,28 @@ function currency()
     echo $result;
 
     //return str_replace(' ' . $to, '', $result);
+}/*
+$urlG = "https://www.google.com/finance/quote/USD-VES";
+$sHtml = file_get_html($urlG);
+
+$ratesG = $sHtml->find('div[class=YMlKec fxKbKc]');*/
+
+
+function get_rates($currency)
+{
+    # Aqui...
+    $html = file_get_contents('https://www.google.com/finance/quote/' . $currency . '-VES');
+    //https://www.google.com/finance/quote/USD-VES
+    $doc = new DOMDocument();
+    @$doc->loadHTML($html);
+    $xpath = new DOMXpath($doc);
+    //$value = $xpath->query('//*[@class="YMlKec fxKbKc"]/div')->item(0)->nodeValue;
+    $value =  $xpath->query('//div[contains(@class,"rPF6Lc")]')->item(0)->nodeValue;
+    $num = number_format(floatval($value));
+    return $num;
 }
+
+/*
 //conversor_monedas();
 $html = file_get_contents('http://www.bcv.org.ve');
 $doc = new DOMDocument();
@@ -82,7 +103,7 @@ $lira = $xpath->query('//*[@id="lira"]/div')->item(0)->nodeValue;
 $rublo = $xpath->query('//*[@id="rublo"]/div')->item(0)->nodeValue;
 //$dolar = $xpath->query('//*[@id="dolar"]/div')->item(0)->nodeValue;
 $d = $xpath->query('//*[@id="dolar"]/div')->item(0)->nodeValue;
-echo $euro . "<br>" . $yuan . "<br>" . $lira . "<br>" . $rublo . "<br>" . $d . "<br>";
+//echo $euro . "<br>" . $yuan . "<br>" . $lira . "<br>" . $rublo . "<br>" . $d . "<br>";
 function RemoveSpecialChar($str)
 {
     $res = preg_replace('/[^0-9\.\,]+/', '', $str);
@@ -91,12 +112,16 @@ function RemoveSpecialChar($str)
 $d = preg_replace("/\s+/", " ", $d);
 $dolar = explode(' ', $d);
 $dolar[2] = number_format(str_replace(',', '.', $dolar[2]), 2);
-echo $dolar[1] . "<br>" . $dolar[2];
+//echo $dolar[1] . "<br>" . $dolar[2];
 //echo number_format($rateUsd, 2) . "<br>";
 //echo $dolar[2] . "<br>";
 //echo var_dump($dolar);
 //echo var_dump($dolar) . "<br>";
 //echo " <br>" . var_dump($d);
 //echo "<br>" . RemoveSpecialChar($euro);
+*/
 $bcvTasa = (CurlTerror::get_bcv('http://www.bcv.org.ve'));
-echo $bcvTasa['euro']['name'];
+//echo $bcvTasa['euro']['name'];
+echo "<br>";
+echo get_rates("USD");
+//echo var_dump($ratesG);
