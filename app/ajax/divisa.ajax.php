@@ -9,7 +9,7 @@ define("URL_CURL_BCV", "http://www.bcv.org.ve");
 //Recibimos los datos por json
 $get = UrlGetTerror::Getjson();
 
-// verificamos si la verificación de la acción esta inciada y no esta vacia
+// verificamos si get es correcto y esta inciada y no vacia
 if (!empty($get) && !empty($get['rates'])) {
     #guardamos la variable rates
     $rates = $get['rates'];

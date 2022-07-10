@@ -105,16 +105,28 @@ class CurlTerror
     }
     function get_ratesGoogle($currency)
 {
-    # Aqui...
-    $html = file_get_contents('https://www.google.com/finance/quote/' . $currency . '-VES');
+    # Aquí...
+    $html = file_get_contents('https://www.google.com/finance/quote/' . strtolower($currency) . '-VES');
     //https://www.google.com/finance/quote/USD-VES
     $doc = new DOMDocument();
     @$doc->loadHTML($html);
     $xpath = new DOMXpath($doc);
     //$value = $xpath->query('//*[@class="YMlKec fxKbKc"]/div')->item(0)->nodeValue;
-    $value =  $xpath->query('//div[contains(@class,"rPF6Lc")]')->item(0)->nodeValue;
-    $num = number_format(floatval($value));
-    return $num;
+    $see = $xpath->query('//div[contains(@class,"rPF6Lc")]');
+    
+    if (!empty($see["length"])) {
+        # code...["length"]
+        $value =  $see->item(0)->nodeValue;
+            $num = number_format(floatval($value),2);
+            $rate = array(
+                $currency => array(
+                    'name'=>strtolower($currency),
+                    'rate'=>$num
+                )
+            );
+            return $rate;
+    } 
+   
 }
     public static function get_page($url)
     {
