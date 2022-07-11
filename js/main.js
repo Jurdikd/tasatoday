@@ -86,7 +86,8 @@ const showRates = async () => {
 	dolartodayRate.innerText = allRates.dolartoday.rate;
 	reserveRate.innerText = allRates.reserve.rate;
 };
-console.log(navigator);
+const supported = "contacts" in navigator;
+console.log(supported);
 if (
 	"contacts" in navigator &&
 	"select" in navigator.contacts &&
