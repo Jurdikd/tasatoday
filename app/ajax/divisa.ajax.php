@@ -21,7 +21,7 @@ if (!empty($get) && !empty($get['rates'])) {
         $bcv = CurlTerror::get_simple(URL_CURL . 'bcv');
         $enparalelo = CurlTerror::get_simple(URL_CURL . 'enparalelovzla');
         $airtm = CurlTerror::get_simple(URL_CURL . 'airtm');
-        $localbitcoin = CurlTerror::get_simple(URL_CURL . 'localbitcoin');
+        $localbitcoins = CurlTerror::get_simple(URL_CURL . 'localbitcoins');
         $reserve = CurlTerror::get_simple(URL_CURL . 'reserve');
         $dolartoday = CurlTerror::get_simple(URL_CURL . 'dolartoday');
         $bcvTasa = CurlTerror::get_bcv(URL_CURL_BCV);
@@ -32,7 +32,7 @@ if (!empty($get) && !empty($get['rates'])) {
             is_array($bcv) &&
             is_array($enparalelo) &&
             is_array($airtm) &&
-            is_array($localbitcoin) &&
+            is_array($localbitcoins) &&
             is_array($dolartoday) &&
             is_array($reserve) &&
             is_array($bcvTasa)
@@ -70,13 +70,13 @@ if (!empty($get) && !empty($get['rates'])) {
                     'color' => $airtm['color'],
                     'symbol' => $airtm['symbol'],
                 ),
-                'localbitcoin' => array(
-                    'name' => $localbitcoin['name'],
-                    'rate' => FunctionTerror::cambiarComas_puntos($localbitcoin['price']),
-                    'percent' => $localbitcoin['percent'],
-                    'change' => $localbitcoin['change'],
-                    'color' => $localbitcoin['color'],
-                    'symbol' => $localbitcoin['symbol'],
+                'localbitcoins' => array(
+                    'name' => $localbitcoins['name'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($localbitcoins['price']),
+                    'percent' => $localbitcoins['percent'],
+                    'change' => $localbitcoins['change'],
+                    'color' => $localbitcoins['color'],
+                    'symbol' => $localbitcoins['symbol'],
                 ),
                 'reserve' => array(
                     'name' => $reserve['name'],
@@ -267,19 +267,19 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
             ));
         }
-    }else if ($get['rates'] === "localbitcoin") {
-        //Obtener tasa localbitcoin
-        $localbitcoin = CurlTerror::get_simple(URL_CURL . 'localbitcoin');
+    }else if ($get['rates'] === "localbitcoins") {
+        //Obtener tasa localbitcoins
+        $localbitcoins = CurlTerror::get_simple(URL_CURL . 'localbitcoins');
 
-        if (is_array($localbitcoin)) {
+        if (is_array($localbitcoins)) {
             $tasaDivisa  = array(
-                'localbitcoin' => array(
-                    'name' => $localbitcoin['name'],
-                    'rate' => FunctionTerror::cambiarComas_puntos($localbitcoin['price']),
-                    'percent' => $localbitcoin['percent'],
-                    'change' => $localbitcoin['change'],
-                    'color' => $localbitcoin['color'],
-                    'symbol' => $localbitcoin['symbol'],
+                'localbitcoins' => array(
+                    'name' => $localbitcoins['name'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($localbitcoins['price']),
+                    'percent' => $localbitcoins['percent'],
+                    'change' => $localbitcoins['change'],
+                    'color' => $localbitcoins['color'],
+                    'symbol' => $localbitcoins['symbol'],
                 ),
             );
 
