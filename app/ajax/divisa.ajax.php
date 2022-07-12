@@ -24,6 +24,12 @@ if (!empty($get) && !empty($get['rates'])) {
         $localbitcoins = CurlTerror::get_simple(URL_CURL . 'localbitcoins');
         $reserve = CurlTerror::get_simple(URL_CURL . 'reserve');
         $dolartoday = CurlTerror::get_simple(URL_CURL . 'dolartoday');
+        $skrill = CurlTerror::get_simple(URL_CURL . 'monedero-skrill');
+        $amazon = CurlTerror::get_simple(URL_CURL . 'monedero-amazon');
+        $zoom = CurlTerror::get_simple(URL_CURL . 'remesas-zoom');
+        $yadio = CurlTerror::get_simple(URL_CURL . 'yadio');
+        $citibank = CurlTerror::get_simple(URL_CURL . 'banco-citibank');
+        $petro = CurlTerror::get_simple(URL_CURL . 'petro');
         $bcvTasa = CurlTerror::get_bcv(URL_CURL_BCV);
 
         if (
@@ -33,8 +39,14 @@ if (!empty($get) && !empty($get['rates'])) {
             is_array($enparalelo) &&
             is_array($airtm) &&
             is_array($localbitcoins) &&
-            is_array($dolartoday) &&
             is_array($reserve) &&
+            is_array($dolartoday) &&
+            is_array($skrill) &&
+            is_array($amazon) &&
+            is_array($zoom) &&
+            is_array($yadio) &&
+            is_array($citibank) &&
+            is_array($petro) &&
             is_array($bcvTasa)
         ) {
             $tasatoday  = array(
@@ -94,6 +106,54 @@ if (!empty($get) && !empty($get['rates'])) {
                     'color' => $dolartoday['color'],
                     'symbol' => $dolartoday['symbol'],
                 ),
+                'skrill' => array(
+                    'name' => $skrill['name'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($skrill['price']),
+                    'percent' => $skrill['percent'],
+                    'change' => $skrill['change'],
+                    'color' => $skrill['color'],
+                    'symbol' => $skrill['symbol'],
+                ),
+                'amazon' => array(
+                    'name' => $amazon['name'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($amazon['price']),
+                    'percent' => $amazon['percent'],
+                    'change' => $amazon['change'],
+                    'color' => $amazon['color'],
+                    'symbol' => $amazon['symbol'],
+                ),
+                'zoom' => array(
+                    'name' => $zoom['name'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($zoom['price']),
+                    'percent' => $zoom['percent'],
+                    'change' => $zoom['change'],
+                    'color' => $zoom['color'],
+                    'symbol' => $zoom['symbol'],
+                ),
+                'yadio' => array(
+                    'name' => $yadio['name'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($yadio['price']),
+                    'percent' => $yadio['percent'],
+                    'change' => $yadio['change'],
+                    'color' => $yadio['color'],
+                    'symbol' => $yadio['symbol'],
+                ),
+                'citibank' => array(
+                    'name' => $citibank['name'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($citibank['price']),
+                    'percent' => $citibank['percent'],
+                    'change' => $citibank['change'],
+                    'color' => $citibank['color'],
+                    'symbol' => $citibank['symbol'],
+                ),
+                'petro' => array(
+                    'name' => $petro['name'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($petro['price']),
+                    'percent' => $petro['percent'],
+                    'change' => $petro['change'],
+                    'color' => $petro['color'],
+                    'symbol' => $petro['symbol'],
+                ),
                 'zelle' => array(
                     'name' => 'ZELLE',
                     'rate' => number_format(FunctionTerror::cambiarComas_puntos($enparalelo['price']) - (FunctionTerror::cambiarComas_puntos($enparalelo['price']) * 0.02), 2),
@@ -134,7 +194,6 @@ if (!empty($get) && !empty($get['rates'])) {
                     'color' => $bcv['color'],
                     'symbol' => $bcv['symbol'],
                 )
-
             );
             $respuesta = $tasatoday; #Devolvemos datos en formato json
         } else {
@@ -338,6 +397,180 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $dolartoday['change'],
                     'color' => $dolartoday['color'],
                     'symbol' => $dolartoday['symbol'],
+                ),
+            );
+
+            $respuesta = $tasaDivisa; #Devolvemos datos en formato json
+        } else {
+            $respuesta = array('error' => array(
+                'message' => array(
+                    'lang' => array(
+                        'en' =>
+                        "Error: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection with server",
+                        'es' =>
+                        "Error: : OpenSSL SSL_connect: SSL_ERROR_SYSCALL en conexión con el servidor"
+                    ),
+                ),
+            ));
+        }
+    }else if ($get['rates'] === "skrill") {
+        //Obtener tasa skrill
+        $skrill = CurlTerror::get_simple(URL_CURL . 'skrill');
+
+        if (is_array($skrill)) {
+            $tasaDivisa  = array(
+                'skrill' => array(
+                    'name' => $skrill['name'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($skrill['price']),
+                    'percent' => $skrill['percent'],
+                    'change' => $skrill['change'],
+                    'color' => $skrill['color'],
+                    'symbol' => $skrill['symbol'],
+                ),
+            );
+
+            $respuesta = $tasaDivisa; #Devolvemos datos en formato json
+        } else {
+            $respuesta = array('error' => array(
+                'message' => array(
+                    'lang' => array(
+                        'en' =>
+                        "Error: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection with server",
+                        'es' =>
+                        "Error: : OpenSSL SSL_connect: SSL_ERROR_SYSCALL en conexión con el servidor"
+                    ),
+                ),
+            ));
+        }
+    }else if ($get['rates'] === "amazon") {
+        //Obtener tasa amazon
+        $amazon = CurlTerror::get_simple(URL_CURL . 'amazon');
+
+        if (is_array($amazon)) {
+            $tasaDivisa  = array(
+                'amazon' => array(
+                    'name' => $amazon['name'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($amazon['price']),
+                    'percent' => $amazon['percent'],
+                    'change' => $amazon['change'],
+                    'color' => $amazon['color'],
+                    'symbol' => $amazon['symbol'],
+                ),
+            );
+
+            $respuesta = $tasaDivisa; #Devolvemos datos en formato json
+        } else {
+            $respuesta = array('error' => array(
+                'message' => array(
+                    'lang' => array(
+                        'en' =>
+                        "Error: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection with server",
+                        'es' =>
+                        "Error: : OpenSSL SSL_connect: SSL_ERROR_SYSCALL en conexión con el servidor"
+                    ),
+                ),
+            ));
+        }
+    }else if ($get['rates'] === "zoom") {
+        //Obtener tasa zoom
+        $zoom = CurlTerror::get_simple(URL_CURL . 'zoom');
+
+        if (is_array($zoom)) {
+            $tasaDivisa  = array(
+                'zoom' => array(
+                    'name' => $zoom['name'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($zoom['price']),
+                    'percent' => $zoom['percent'],
+                    'change' => $zoom['change'],
+                    'color' => $zoom['color'],
+                    'symbol' => $zoom['symbol'],
+                ),
+            );
+
+            $respuesta = $tasaDivisa; #Devolvemos datos en formato json
+        } else {
+            $respuesta = array('error' => array(
+                'message' => array(
+                    'lang' => array(
+                        'en' =>
+                        "Error: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection with server",
+                        'es' =>
+                        "Error: : OpenSSL SSL_connect: SSL_ERROR_SYSCALL en conexión con el servidor"
+                    ),
+                ),
+            ));
+        }
+    }else if ($get['rates'] === "yadio") {
+        //Obtener tasa yadio
+        $yadio = CurlTerror::get_simple(URL_CURL . 'yadio');
+
+        if (is_array($yadio)) {
+            $tasaDivisa  = array(
+                'yadio' => array(
+                    'name' => $yadio['name'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($yadio['price']),
+                    'percent' => $yadio['percent'],
+                    'change' => $yadio['change'],
+                    'color' => $yadio['color'],
+                    'symbol' => $yadio['symbol'],
+                ),
+            );
+
+            $respuesta = $tasaDivisa; #Devolvemos datos en formato json
+        } else {
+            $respuesta = array('error' => array(
+                'message' => array(
+                    'lang' => array(
+                        'en' =>
+                        "Error: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection with server",
+                        'es' =>
+                        "Error: : OpenSSL SSL_connect: SSL_ERROR_SYSCALL en conexión con el servidor"
+                    ),
+                ),
+            ));
+        }
+    }else if ($get['rates'] === "citibank") {
+        //Obtener tasa citibank
+        $citibank = CurlTerror::get_simple(URL_CURL . 'citibank');
+
+        if (is_array($citibank)) {
+            $tasaDivisa  = array(
+                'citibank' => array(
+                    'name' => $citibank['name'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($citibank['price']),
+                    'percent' => $citibank['percent'],
+                    'change' => $citibank['change'],
+                    'color' => $citibank['color'],
+                    'symbol' => $citibank['symbol'],
+                ),
+            );
+
+            $respuesta = $tasaDivisa; #Devolvemos datos en formato json
+        } else {
+            $respuesta = array('error' => array(
+                'message' => array(
+                    'lang' => array(
+                        'en' =>
+                        "Error: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection with server",
+                        'es' =>
+                        "Error: : OpenSSL SSL_connect: SSL_ERROR_SYSCALL en conexión con el servidor"
+                    ),
+                ),
+            ));
+        }
+    }else if ($get['rates'] === "petro") {
+        //Obtener tasa petro
+        $petro = CurlTerror::get_simple(URL_CURL . 'petro');
+
+        if (is_array($petro)) {
+            $tasaDivisa  = array(
+                'petro' => array(
+                    'name' => $petro['name'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($petro['price']),
+                    'percent' => $petro['percent'],
+                    'change' => $petro['change'],
+                    'color' => $petro['color'],
+                    'symbol' => $petro['symbol'],
                 ),
             );
 
