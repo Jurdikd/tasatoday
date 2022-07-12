@@ -1,6 +1,6 @@
 // Import calcualteTodayTerror (funtions) for to calculate
 import { calcualteTodayTerror } from "./calcualteTodayTerror.js";
-import { contactsMobile } from "./contacts.js";
+// import { contactsMobile } from "./contacts.js";
 
 // Load
 document.addEventListener("DOMContentLoaded", () => {
