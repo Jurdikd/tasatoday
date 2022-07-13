@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
+<body class="body-page">
     <div class="load">
         <div id="preloader" class="preloader"></div>
     </div>
