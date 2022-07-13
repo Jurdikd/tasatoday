@@ -42,28 +42,24 @@ changeDivisa.addEventListener("click", (e) => {
 	if (localStorage.getItem("divisa") === "usd") {
 		localStorage.setItem("divisa", "eur");
 		e.target.text = "Cambiar a BsD";
-		calcualteTodayTerror.bcv_BS_to_USD(rates);
+		calcualteTodayTerror.bcv_BS_to_bsd(rates);
 	} else {
 		localStorage.setItem("divisa", "usd");
 		e.target.text = "Cambiar a USD";
-		calcualteTodayTerror.bcv_BS_to_USD(rates);
+		calcualteTodayTerror.bcv_BS_to_bsd(rates);
 	}
 	console.log(e.target.text);
 });
 
 const calculateEvent = () => {
-	const rates = {
-		rates: "enparalelovzla",
-	};
-
 	if (localStorage.getItem("divisa") === "usd") {
 		tittleDivisa.innerText = "BsD a USD";
 		// Convertir bs a usd
-		calcualteTodayTerror.enparalelovzla_to_usd(rates);
+		calcualteTodayTerror.enparalelovzla_to_bsd();
 	} else if (localStorage.getItem("divisa") === "eur") {
 		// Convertir bs a eur
 		tittleDivisa.innerText = "USD a BsD";
-		calcualteTodayTerror.usd_to_enparalelovzla(rates);
+		calcualteTodayTerror.bsd_to_enparalelovzla();
 	}
 };
 const tasatodayRate = document.querySelector(".tasatoday-rate");
@@ -74,10 +70,7 @@ const zelleRate = document.querySelector(".zelle-rate");
 const dolartodayRate = document.querySelector(".dolartoday-rate");
 const reserveRate = document.querySelector(".reserve-rate");
 const showRates = async () => {
-	const rates = {
-		rates: "rates",
-	};
-	const allRates = await calcualteTodayTerror.fetchDivisa(rates);
+	const allRates = await calcualteTodayTerror.fetchDivisa({ rates: "rates" });
 
 	tasatodayRate.innerText = allRates.tasatoday.rate;
 	bcvRate.innerText = allRates.bcv.rate;
