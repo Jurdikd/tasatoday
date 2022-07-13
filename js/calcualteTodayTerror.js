@@ -1,22 +1,22 @@
 /**
  * Get this rates:
- * promedio
- * bcv
- * enparalelovzla
- * airtm
- * localbitcoins
- * reserve
- * dolartoday
- * monedero-skrill
- * monedero-amazon
- * remesas-zoom
- * yadio
- * banco-citibank
- * zelle
- * petro
- * euro
- * yuan
- * lira
+ * promedio,
+ * bcv,
+ * enparalelovzla,
+ * airtm,
+ * localbitcoins,
+ * reserve,
+ * dolartoday,
+ * monedero-skrill,
+ * monedero-amazon,
+ * remesas-zoom,
+ * yadio,
+ * banco-citibank,
+ * zelle,
+ * petro,
+ * euro,
+ * yuan,
+ * lira,
  * rublo
  * */
 export const calcualteTodayTerror = {

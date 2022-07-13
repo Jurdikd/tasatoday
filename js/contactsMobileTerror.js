@@ -1,6 +1,9 @@
 
-export const contactsMobile = {
-
+export const contactsMobileTerror = {
+    availableProperties: async ()=>{
+        const availableProperties = await navigator.contacts.getProperties();
+        return availableProperties;
+    },
     showContact: ()=>{
         const supported = "contacts" in navigator;
         console.log(supported);
@@ -10,8 +13,7 @@ export const contactsMobile = {
             "getProperties" in navigator.contacts
         ) {
             try {
-                const availableProperties = await navigator.contacts.getProperties();
-        
+                const availableProperties =contactsMobile.availableProperties()
                 if (availableProperties.includes("address")) {
                     const contactProperties = ["name", "tel"];
         
