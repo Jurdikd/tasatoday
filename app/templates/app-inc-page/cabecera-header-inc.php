@@ -10,6 +10,6 @@
 
 </head>
 <body class="body-page">
-    <div class="load">
-        <div id="preloader" class="preloader"></div>
+    <div id="preloader" class="load">
+        <div  class="preloader"></div>
     </div>
