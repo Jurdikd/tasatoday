@@ -6,11 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	showRates();
 	localStorage.setItem("divisa", "usd");
 	tittleDivisa.innerText = "BS a USD";
-	document.getElementById("msgPreloader").innerText =
-		"El tiempo de un soberano haciende y deciende como el sol...";
-	setTimeout(() => {
-		loadingTerror.load(document.getElementById("preloader"));
-	}, 5000);
+	loadingTerror.message(document.getElementById("msgPreloader"));
+	loadingTerror.load(document.getElementById("preloader"), 5000);
 });
 
 // inputs
