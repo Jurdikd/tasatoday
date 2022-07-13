@@ -1,2 +1,2 @@
-# api-dolar-today
-How to make querys for API data from dolartoday for to convert
+# tasatodayPro
+How to make querys and scraping for to convert rates to BsD
