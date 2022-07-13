@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	showRates();
 	localStorage.setItem("divisa", "usd");
 	tittleDivisa.innerText = "BS a USD";
+	// Loader and message
 	loadingTerror.message(document.getElementById("msgPreloader"));
 	loadingTerror.load(document.getElementById("preloader"), 5000);
 });
