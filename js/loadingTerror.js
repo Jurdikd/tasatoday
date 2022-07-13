@@ -1,5 +1,5 @@
 export const loadingTerror = {
-	load: (load) => {
-		load.style.display = "none";
+	load: (loading) => {
+		loading.style.display = "none";
 	},
 };

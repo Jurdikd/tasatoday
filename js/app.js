@@ -1,6 +1,4 @@
-// Import calcualteTodayTerror (funtions) for to calculate
-import { calcualteTodayTerror } from "./calcualteTodayTerror.js";
-import { contactsMobileTerror } from "./contactsMobileTerror.js";
+import { calcualteTodayTerror } from "./calcualteTodayTerror.js"; // Import calcualteTodayTerror (funtions) for to calculate
 import { loadingTerror } from "./loadingTerror.js"; // This is while the page it's loading everething
 
 // Load
@@ -8,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	showRates();
 	localStorage.setItem("divisa", "usd");
 	tittleDivisa.innerText = "BS a USD";
-	loadingTerror.load(document.getElementById(""));
+	//loadingTerror.load(document.getElementById("preloader"));
 });
 
 // inputs
