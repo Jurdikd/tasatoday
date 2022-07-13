@@ -210,19 +210,19 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
             ));
         }
-    }else if ($get['rates'] === "promedio") {
+    }else if ($get['rates'] === "tasatoday") {
         //Obtener tasa enparalelovzla
-        $promedio = CurlTerror::get_simple(URL_CURL . 'promedio');
+        $tasatoday = CurlTerror::get_simple(URL_CURL . 'promedio');
 
-        if (is_array($promedio)) {
+        if (is_array($tasatoday)) {
             $tasaDivisa  = array(
                 'tasatoday' => array(
                     'name' => 'TasaToday',
-                    'rate' => FunctionTerror::cambiarComas_puntos($promedio['price']),
-                    'percent' => $promedio['percent'],
-                    'change' => $promedio['change'],
-                    'color' => $promedio['color'],
-                    'symbol' => $promedio['symbol'],
+                    'rate' => FunctionTerror::cambiarComas_puntos($tasatoday['price']),
+                    'percent' => $tasatoday['percent'],
+                    'change' => $tasatoday['change'],
+                    'color' => $tasatoday['color'],
+                    'symbol' => $tasatoday['symbol'],
                 ),
             );
 
