@@ -12,4 +12,5 @@
 <body class="body-page">
     <div id="preloader" class="load">
         <div  class="preloader"></div>
+        <p id="msgPreloader"></p>
     </div>

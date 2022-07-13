@@ -12,6 +12,9 @@
 	-o-transition:all 1s ease; 
 	transition:all 1s ease;
 	z-index: 9999999;
+	display: flex;
+	align-items: center;
+  justify-content: center;
 }
 .preloader {
 	width: 70px;
@@ -37,4 +40,7 @@
 	to {
 	  transform: rotate(360deg);
 	}
+  }
+  #msgPreloader{
+	margin-top: 7em;
   }
