@@ -15,19 +15,50 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
             </div>
             </div>
         <div class="row rates">
-            <template id="card-rate">
                 <div class="col-md-3">
-                    <div class="card m-2">
+                    <div class="card m-2 skeeleton">
                         <div class="card-header text-center">
                             <h5 class="card-tittle">Name rate</h5>
                         </div>
                         <div class="card-body text-center">
-                            <span class="tasatoday-rate">Loading...</span>
-                            <button class="btn btn-sm btn-success" disable>Choose</button>
+                            <span class="card__rate-text">Loading...</span>
+                            <button class="btn btn-sm">Elegir</button>
                         </div>
                     </div>
                 </div>
-            </template>
+                <div class="col-md-3">
+                    <div class="card m-2 skeeleton">
+                        <div class="card-header text-center">
+                            <h5 class="card-tittle">Name rate</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <span class="card__rate-text">Loading...</span>
+                            <button class="btn btn-sm">Elegir</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card m-2 skeeleton">
+                        <div class="card-header text-center">
+                            <h5 class="card-tittle">Name rate</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <span class="card__rate-text">Loading...</span>
+                            <button class="btn btn-sm">Elegir</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card m-2 skeeleton">
+                        <div class="card-header text-center">
+                            <h5 class="card-tittle">Name rate</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <span class="card__rate-text">Loading...</span>
+                            <button class="btn btn-sm">Elegir</button>
+                        </div>
+                    </div>
+                </div>
         </div>
         <div class="row">
         <h4 class="h4 mx-auto p-5 text-white">Calculadoras de tasas</h4>
@@ -102,9 +133,22 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
 
         </div>
     </div>
-    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-    </script>
-    <script src="js/app.js" type="module"></script>
-</body>
+   <!-- templates -->
+   <template id="card-rate">
+                <div class="col-md-3">
+                    <div class="card m-2">
+                        <div class="card-header text-center">
+                            <h5 class="card-tittle">Name rate</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <span class="tasatoday-rate">Loading...</span>
+                            <button class="btn btn-sm btn-success" disable>Elegir</button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+<?php
+    include_once "app/templates/app-inc-page/cuerpo-body-close.inc.php";
+?>
 
 </html>

@@ -64,33 +64,31 @@ const calculateEvent = () => {
 		calcualteTodayTerror.bsd_to_enparalelovzla();
 	}
 };
-const tasatodayRate = document.querySelector(".tasatoday-rate");
-const enparaleloRate = document.querySelector(".enparalelo-rate");
-const airtmRate = document.querySelector(".airtm-rate");
-const bcvRate = document.querySelector(".bcv-rate");
-const zelleRate = document.querySelector(".zelle-rate");
-const dolartodayRate = document.querySelector(".dolartoday-rate");
-const reserveRate = document.querySelector(".reserve-rate");
 
 const showRates = async () => {
 	const rates = document.querySelector(".rates");
 	const template = document.getElementById("card-rate").content;
 	const fragment = document.createDocumentFragment();
 	const allRates = await calcualteTodayTerror.fetchDivisa({ rates: "rates" });
+	await accionAsincrona();
 
-	if (allRates) {
-		//	console.log(allRates);
+	for (let clave in allRates) {
+		//console.log(allRates[clave].rate);
+		const clone = template.cloneNode(true);
+		clone.querySelector(".tasatoday-rate").textContent = allRates[clave].rate;
+		clone.querySelector(".card-tittle").textContent = allRates[clave].name;
 
-		for (let clave in allRates) {
-			//console.log(allRates[clave].rate);
-			const clone = template.cloneNode(true);
-			clone.querySelector(".tasatoday-rate").textContent = allRates[clave].rate;
-			clone.querySelector(".card-tittle").textContent = allRates[clave].name;
-
-			fragment.appendChild(clone);
-		}
-		rates.appendChild(fragment);
-		console.log(fragment);
-	} else {
+		fragment.appendChild(clone);
 	}
+	console.log("A borrar!!!");
+	rates.innerHTML = "";
+	rates.appendChild(fragment);
+	console.log(fragment);
+};
+const accionAsincrona = async () => {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve();
+		}, 3000);
+	});
 };
