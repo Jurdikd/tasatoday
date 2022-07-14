@@ -13,100 +13,23 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
                     </p>
                 </div>
             </div>
-            <div class="col-md-12 mx-auto m-4">
-                <div class="card">
-                    <div class="card-hedaer">
-                        <h3 class="card-tittle text-center">Elije una tasa para convertir</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                            <button type="button" class="btn btn-danger">EnPARALELO</button>
-                            <button type="button" class="btn btn-warning">DOLARTODAY</button>
-                            <button type="button" class="btn btn-success">PERSONALIZADA</button>
+            </div>
+        <div class="row rates">
+            <template id="card-rate">
+                <div class="col-md-3">
+                    <div class="card m-2">
+                        <div class="card-header text-center">
+                            <h5 class="card-tittle">Name rate</h5>
                         </div>
-
+                        <div class="card-body text-center">
+                            <span class="tasatoday-rate">Loading...</span>
+                            <button class="btn btn-sm btn-success" disable>Choose</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card m-2">
-                    <div class="card-header text-center">
-                        <h3 class="card-tittle">TasaToday</h3>
-                    </div>
-                    <div class="card-body text-center">
-                        <span class="tasatoday-rate">Cargando...</span>
-                        <button class="btn btn-sm btn-success">Elegir</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card m-2">
-                    <div class="card-header text-center">
-                        <h3 class="card-tittle">BCV</h3>
-                    </div>
-                    <div class="card-body text-center">
-                        <span class="bcv-rate">Cargando...</span>
-                        <button class="btn btn-sm btn-success">Elegir</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card m-2">
-                    <div class="card-header text-center">
-                        <h3 class="card-tittle">EnparaleloVzla</h3>
-                    </div>
-                    <div class="card-body text-center">
-                        <span class="enparalelo-rate">Cargando...</span>
-                        <button class="btn btn-sm btn-success">Elegir</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card m-2">
-                    <div class="card-header text-center">
-                        <h3 class="card-tittle">Airtm</h3>
-                    </div>
-                    <div class="card-body text-center">
-                        <span class="airtm-rate">Cargando...</span>
-                        <button class="btn btn-sm btn-success">Elegir</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card m-2">
-                    <div class="card-header text-center">
-                        <h3 class="card-tittle">DolarToday</h3>
-                    </div>
-                    <div class="card-body text-center">
-                        <span class="dolartoday-rate">Cargando...</span>
-                        <button class="btn btn-sm btn-success">Elegir</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card m-2">
-                    <div class="card-header text-center">
-                        <h3 class="card-tittle">ZELLE</h3>
-                    </div>
-                    <div class="card-body text-center">
-                        <span class="zelle-rate">Cargando...</span>
-                        <button class="btn btn-sm btn-success">Elegir</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card m-2">
-                    <div class="card-header text-center">
-                        <h3 class="card-tittle">Reserve</h3>
-                    </div>
-                    <div class="card-body text-center">
-                        <span class="reserve-rate">Cargando...</span>
-                        <button class="btn btn-sm btn-success">Elegir</button>
-                    </div>
-                </div>
-            </div>
+            </template>
         </div>
-
+        <div class="row">
         <h4 class="h4 mx-auto p-5 text-white">Calculadoras de tasas</h4>
         <div class="col-md-6">
             <div class="card m-5">
@@ -147,6 +70,7 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <div class="row">
 

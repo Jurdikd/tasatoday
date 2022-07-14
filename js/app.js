@@ -71,14 +71,26 @@ const bcvRate = document.querySelector(".bcv-rate");
 const zelleRate = document.querySelector(".zelle-rate");
 const dolartodayRate = document.querySelector(".dolartoday-rate");
 const reserveRate = document.querySelector(".reserve-rate");
+
 const showRates = async () => {
+	const rates = document.querySelector(".rates");
+	const template = document.getElementById("card-rate").content;
+	const fragment = document.createDocumentFragment();
 	const allRates = await calcualteTodayTerror.fetchDivisa({ rates: "rates" });
 
-	tasatodayRate.innerText = allRates.tasatoday.rate;
-	bcvRate.innerText = allRates.bcv.rate;
-	enparaleloRate.innerText = allRates.enparalelovzla.rate;
-	airtmRate.innerText = allRates.airtm.rate;
-	zelleRate.innerText = allRates.zelle.rate;
-	dolartodayRate.innerText = allRates.dolartoday.rate;
-	reserveRate.innerText = allRates.reserve.rate;
+	if (allRates) {
+		//	console.log(allRates);
+
+		for (let clave in allRates) {
+			//console.log(allRates[clave].rate);
+			const clone = template.cloneNode(true);
+			clone.querySelector(".tasatoday-rate").textContent = allRates[clave].rate;
+			clone.querySelector(".card-tittle").textContent = allRates[clave].name;
+
+			fragment.appendChild(clone);
+		}
+		rates.appendChild(fragment);
+		console.log(fragment);
+	} else {
+	}
 };
