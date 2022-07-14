@@ -70,7 +70,7 @@ const showRates = async () => {
 	const template = document.getElementById("card-rate").content;
 	const fragment = document.createDocumentFragment();
 	const allRates = await calcualteTodayTerror.fetchDivisa({ rates: "rates" });
-	await accionAsincrona();
+	await actionasync();
 
 	for (let clave in allRates) {
 		//console.log(allRates[clave].rate);
@@ -85,10 +85,10 @@ const showRates = async () => {
 	rates.appendChild(fragment);
 	console.log(fragment);
 };
-const accionAsincrona = async () => {
+const actionasync = async () => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
 			resolve();
-		}, 3000);
+		}, 7000);
 	});
 };
