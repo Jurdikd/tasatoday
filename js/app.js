@@ -71,7 +71,7 @@ const showRates = async () => {
 	const fragment = document.createDocumentFragment();
 	const allRates = await calcualteTodayTerror.fetchDivisa({ rates: "rates" });
 	await actionasync();
-
+	//set rate
 	for (let clave in allRates) {
 		//console.log(allRates[clave].rate);
 		const clone = template.cloneNode(true);
