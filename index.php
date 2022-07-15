@@ -146,9 +146,9 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
                         </div>
                     </div>
                 </div>
-            </template>
+      </template>
 <?php
     include_once "app/templates/app-inc-page/cuerpo-body-close.inc.php";
+    include_once "app/templates/app-inc-page/pie-footer.inc.php";
 ?>
 
-</html>
