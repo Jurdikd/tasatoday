@@ -52,6 +52,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasatoday  = array(
                 'tasatoday' => array(
                     'name' => 'TasaToday',
+                    'shortName' => 'tasatoday',
                     'rate' => FunctionTerror::cambiarComas_puntos($promedio['price']),
                     'percent' => $promedio['percent'],
                     'change' => $promedio['change'],
@@ -60,6 +61,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'bcv' => array(
                     'name' => $bcv['name'],
+                    'shortName' => 'bcv',
                     'rate' => FunctionTerror::cambiarComas_puntos($bcv['price']),
                     'percent' => $bcv['percent'],
                     'change' => $bcv['change'],
@@ -68,6 +70,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'enparalelovzla' => array(
                     'name' => $enparalelo['name'],
+                    'shortName' => 'enparalelovzla',
                     'rate' => FunctionTerror::cambiarComas_puntos($enparalelo['price']),
                     'percent' => $enparalelo['percent'],
                     'change' => $enparalelo['change'],
@@ -76,6 +79,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'airtm' => array(
                     'name' => $airtm['name'],
+                    'shortName' => 'airtm',
                     'rate' => FunctionTerror::cambiarComas_puntos($airtm['price']),
                     'percent' => $airtm['percent'],
                     'change' => $airtm['change'],
@@ -84,6 +88,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'localbitcoins' => array(
                     'name' => $localbitcoins['name'],
+                    'shortName' => 'localbitcoins',
                     'rate' => FunctionTerror::cambiarComas_puntos($localbitcoins['price']),
                     'percent' => $localbitcoins['percent'],
                     'change' => $localbitcoins['change'],
@@ -92,6 +97,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'reserve' => array(
                     'name' => $reserve['name'],
+                    'shortName' => 'reserve',
                     'rate' => FunctionTerror::cambiarComas_puntos($reserve['price']),
                     'percent' => $reserve['percent'],
                     'change' => $reserve['change'],
@@ -100,6 +106,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'dolartoday' => array(
                     'name' => $dolartoday['name'],
+                    'shortName' => 'dolartoday',
                     'rate' => FunctionTerror::cambiarComas_puntos($dolartoday['price']),
                     'percent' => $dolartoday['percent'],
                     'change' => $dolartoday['change'],
@@ -108,6 +115,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'skrill' => array(
                     'name' => $skrill['name'],
+                    'shortName' => 'skrill',
                     'rate' => FunctionTerror::cambiarComas_puntos($skrill['price']),
                     'percent' => $skrill['percent'],
                     'change' => $skrill['change'],
@@ -116,6 +124,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'amazon' => array(
                     'name' => $amazon['name'],
+                    'shortName' => 'amazon',
                     'rate' => FunctionTerror::cambiarComas_puntos($amazon['price']),
                     'percent' => $amazon['percent'],
                     'change' => $amazon['change'],
@@ -124,6 +133,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'zoom' => array(
                     'name' => $zoom['name'],
+                    'shortName' => 'zoom',
                     'rate' => FunctionTerror::cambiarComas_puntos($zoom['price']),
                     'percent' => $zoom['percent'],
                     'change' => $zoom['change'],
@@ -132,6 +142,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'yadio' => array(
                     'name' => $yadio['name'],
+                    'shortName' => 'yadio',
                     'rate' => FunctionTerror::cambiarComas_puntos($yadio['price']),
                     'percent' => $yadio['percent'],
                     'change' => $yadio['change'],
@@ -140,6 +151,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'citibank' => array(
                     'name' => $citibank['name'],
+                    'shortName' => 'citibank',
                     'rate' => FunctionTerror::cambiarComas_puntos($citibank['price']),
                     'percent' => $citibank['percent'],
                     'change' => $citibank['change'],
@@ -148,6 +160,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'petro' => array(
                     'name' => $petro['name'],
+                    'shortName' => 'petro',
                     'rate' => FunctionTerror::cambiarComas_puntos($petro['price']),
                     'percent' => $petro['percent'],
                     'change' => $petro['change'],
@@ -156,6 +169,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'zelle' => array(
                     'name' => 'ZELLE',
+                    'shortName' => 'zelle',
                     'rate' => number_format(FunctionTerror::cambiarComas_puntos($enparalelo['price']) - (FunctionTerror::cambiarComas_puntos($enparalelo['price']) * 0.02), 2),
                     'percent' => $enparalelo['percent'],
                     'change' => $enparalelo['change'],
@@ -164,6 +178,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'euro' => array(
                     'name' => $bcvTasa['euro']['name'],
+                    'shortName' => 'euro',
                     'rate' => $bcvTasa['euro']['rate'],
                     'percent' => $bcv['percent'],
                     'change' => $bcv['change'],
@@ -172,6 +187,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'yuan' => array(
                     'name' => $bcvTasa['yuan']['name'],
+                    'shortName' => 'yuan',
                     'rate' => $bcvTasa['yuan']['rate'],
                     'percent' => $bcv['percent'],
                     'change' => $bcv['change'],
@@ -180,6 +196,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'lira' => array(
                     'name' => $bcvTasa['lira']['name'],
+                    'shortName' => 'lira',
                     'rate' => $bcvTasa['lira']['rate'],
                     'percent' => $bcv['percent'],
                     'change' => $bcv['change'],
@@ -188,6 +205,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
                 'rublo' => array(
                     'name' => $bcvTasa['rublo']['name'],
+                    'shortName' => 'rublo',
                     'rate' => $bcvTasa['rublo']['rate'],
                     'percent' => $bcv['percent'],
                     'change' => $bcv['change'],
@@ -197,8 +215,6 @@ if (!empty($get) && !empty($get['rates'])) {
             );
             $respuesta = $tasatoday; #Devolvemos datos en formato json
         } else {
-
-
             $respuesta = array('error' => array(
                 'message' => array(
                     'lang' => array(
@@ -218,6 +234,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasaDivisa  = array(
                 'tasatoday' => array(
                     'name' => 'TasaToday',
+                    'shortName' => 'tasatoday',
                     'rate' => FunctionTerror::cambiarComas_puntos($tasatoday['price']),
                     'percent' => $tasatoday['percent'],
                     'change' => $tasatoday['change'],
@@ -247,6 +264,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasaDivisa  = array(
                 'bcv' => array(
                     'name' => $bcv['name'],
+                    'shortName' => 'bcv',
                     'rate' => FunctionTerror::cambiarComas_puntos($bcv['price']),
                     'percent' => $bcv['percent'],
                     'change' => $bcv['change'],
@@ -276,6 +294,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasaDivisa  = array(
                 'enparalelovzla' => array(
                     'name' => $enparalelo['name'],
+                    'shortName' => 'enparalelovzla',
                     'rate' => FunctionTerror::cambiarComas_puntos($enparalelo['price']),
                     'percent' => $enparalelo['percent'],
                     'change' => $enparalelo['change'],
@@ -305,6 +324,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasaDivisa  = array(
                 'airtm' => array(
                     'name' => $airtm['name'],
+                    'shortName' => 'airtm',
                     'rate' => FunctionTerror::cambiarComas_puntos($airtm['price']),
                     'percent' => $airtm['percent'],
                     'change' => $airtm['change'],
@@ -334,6 +354,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasaDivisa  = array(
                 'localbitcoins' => array(
                     'name' => $localbitcoins['name'],
+                    'shortName' => 'localbitcoins',
                     'rate' => FunctionTerror::cambiarComas_puntos($localbitcoins['price']),
                     'percent' => $localbitcoins['percent'],
                     'change' => $localbitcoins['change'],
@@ -363,6 +384,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasaDivisa  = array(
                 'reserve' => array(
                     'name' => $reserve['name'],
+                    'shortName' => 'reserve',
                     'rate' => FunctionTerror::cambiarComas_puntos($reserve['price']),
                     'percent' => $reserve['percent'],
                     'change' => $reserve['change'],
@@ -392,6 +414,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasaDivisa  = array(
                 'dolartoday' => array(
                     'name' => $dolartoday['name'],
+                    'shortName' => 'dolartoday',
                     'rate' => FunctionTerror::cambiarComas_puntos($dolartoday['price']),
                     'percent' => $dolartoday['percent'],
                     'change' => $dolartoday['change'],
@@ -413,7 +436,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
             ));
         }
-    }else if ($get['rates'] === "monedero-skrill") {
+    }else if ($get['rates'] === "skrill") {
         //Obtener tasa skrill
         $skrill = CurlTerror::get_simple(URL_CURL . 'skrill');
 
@@ -421,6 +444,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasaDivisa  = array(
                 'skrill' => array(
                     'name' => $skrill['name'],
+                    'shortName' => 'skrill',
                     'rate' => FunctionTerror::cambiarComas_puntos($skrill['price']),
                     'percent' => $skrill['percent'],
                     'change' => $skrill['change'],
@@ -442,7 +466,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
             ));
         }
-    }else if ($get['rates'] === "monedero-amazon") {
+    }else if ($get['rates'] === "amazon") {
         //Obtener tasa amazon
         $amazon = CurlTerror::get_simple(URL_CURL . 'amazon');
 
@@ -450,6 +474,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasaDivisa  = array(
                 'amazon' => array(
                     'name' => $amazon['name'],
+                    'shortName' => 'amazon',
                     'rate' => FunctionTerror::cambiarComas_puntos($amazon['price']),
                     'percent' => $amazon['percent'],
                     'change' => $amazon['change'],
@@ -471,7 +496,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
             ));
         }
-    }else if ($get['rates'] === "remesas-zoom") {
+    }else if ($get['rates'] === "zoom") {
         //Obtener tasa zoom
         $zoom = CurlTerror::get_simple(URL_CURL . 'zoom');
 
@@ -479,6 +504,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasaDivisa  = array(
                 'zoom' => array(
                     'name' => $zoom['name'],
+                    'shortName' => 'zoom',
                     'rate' => FunctionTerror::cambiarComas_puntos($zoom['price']),
                     'percent' => $zoom['percent'],
                     'change' => $zoom['change'],
@@ -508,6 +534,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasaDivisa  = array(
                 'yadio' => array(
                     'name' => $yadio['name'],
+                    'shortName' => 'yadio',
                     'rate' => FunctionTerror::cambiarComas_puntos($yadio['price']),
                     'percent' => $yadio['percent'],
                     'change' => $yadio['change'],
@@ -529,7 +556,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
             ));
         }
-    }else if ($get['rates'] === "banco-citibank") {
+    }else if ($get['rates'] === "citibank") {
         //Obtener tasa citibank
         $citibank = CurlTerror::get_simple(URL_CURL . 'citibank');
 
@@ -537,6 +564,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasaDivisa  = array(
                 'citibank' => array(
                     'name' => $citibank['name'],
+                    'shortName' => 'citibank',
                     'rate' => FunctionTerror::cambiarComas_puntos($citibank['price']),
                     'percent' => $citibank['percent'],
                     'change' => $citibank['change'],
@@ -566,6 +594,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasaDivisa  = array(
                 'petro' => array(
                     'name' => $petro['name'],
+                    'shortName' => 'petro',
                     'rate' => FunctionTerror::cambiarComas_puntos($petro['price']),
                     'percent' => $petro['percent'],
                     'change' => $petro['change'],
@@ -595,6 +624,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasaDivisa  = array(
                 'zelle' => array(
                     'name' => 'ZELLE',
+                    'shortName' => 'zelle',
                     'rate' => number_format(FunctionTerror::cambiarComas_puntos($zelle['price']) - (FunctionTerror::cambiarComas_puntos($enparalelo['price']) * 0.02), 2),
                     'percent' => $zelle['percent'],
                     'change' => $zelle['change'],
@@ -624,6 +654,7 @@ if (!empty($get) && !empty($get['rates'])) {
             $tasaDivisa  = array(
                 'euro' => array(
                     'name' => $bcvTasa['euro']['name'],
+                    'shortName' => 'euro',
                     'rate' => $bcvTasa['euro']['rate'],
                     'percent' => $bcv['percent'],
                     'change' => $bcv['change'],
@@ -653,6 +684,7 @@ if (!empty($get) && !empty($get['rates'])) {
           $tasaDivisa  = array(
             'yuan' => array(
                 'name' => $bcvTasa['yuan']['name'],
+                'shortName' => 'yuan',
                 'rate' => $bcvTasa['yuan']['rate'],
                 'percent' => $bcv['percent'],
                 'change' => $bcv['change'],
@@ -682,6 +714,7 @@ if (!empty($get) && !empty($get['rates'])) {
           $tasaDivisa  = array(
             'lira' => array(
                 'name' => $bcvTasa['lira']['name'],
+                'shortName' => 'lira',
                 'rate' => $bcvTasa['lira']['rate'],
                 'percent' => $bcv['percent'],
                 'change' => $bcv['change'],
@@ -711,6 +744,7 @@ if (!empty($get) && !empty($get['rates'])) {
           $tasaDivisa  = array(
             'rublo' => array(
                 'name' => $bcvTasa['rublo']['name'],
+                'shortName' => 'rublo',
                 'rate' => $bcvTasa['rublo']['rate'],
                 'percent' => $bcv['percent'],
                 'change' => $bcv['change'],
