@@ -413,7 +413,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
             ));
         }
-    }else if ($get['rates'] === "skrill") {
+    }else if ($get['rates'] === "monedero-skrill") {
         //Obtener tasa skrill
         $skrill = CurlTerror::get_simple(URL_CURL . 'skrill');
 
@@ -442,7 +442,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
             ));
         }
-    }else if ($get['rates'] === "amazon") {
+    }else if ($get['rates'] === "monedero-amazon") {
         //Obtener tasa amazon
         $amazon = CurlTerror::get_simple(URL_CURL . 'amazon');
 
@@ -471,7 +471,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
             ));
         }
-    }else if ($get['rates'] === "zoom") {
+    }else if ($get['rates'] === "remesas-zoom") {
         //Obtener tasa zoom
         $zoom = CurlTerror::get_simple(URL_CURL . 'zoom');
 
@@ -529,7 +529,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 ),
             ));
         }
-    }else if ($get['rates'] === "citibank") {
+    }else if ($get['rates'] === "banco-citibank") {
         //Obtener tasa citibank
         $citibank = CurlTerror::get_simple(URL_CURL . 'citibank');
 

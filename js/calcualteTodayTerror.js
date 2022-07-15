@@ -48,6 +48,7 @@ export const calcualteTodayTerror = {
 		} else if (mate === "*") {
 			return (amount * getRate[rates].rate).toFixed(2);
 		} else if (mate === "/") {
+			console.log(amount);
 			return (amount / getRate[rates].rate).toFixed(2);
 		}
 	} /*

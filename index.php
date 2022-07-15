@@ -105,37 +105,16 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
         </div>
         <div class="row">
 
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        <div class=" card-tittle text-dark">
-                            Para convertir coloca la cantidad a converitir
-                        </div>
-                        <div class="form-group">
-                            <label for="amount" class="text-success labelAmount ">Cantidad: <small class="amountRate text-muted">BsD</small></label>
-                            <input id="amount" class="form-control form-control-sm text-sm" type="number" placeholder="Monto a convertir" aria-label="amount">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label for="result" class="text-success labelResult">Resultado: <small class="resultRate text-muted">USD</small></label>
-                            <input id="result" class="form-control form-control-sm text-sm" type="number" aria-label="result" readonly>
-                        </div>
-                    </div>
-                    <div class="card-footer text-center">
-                        <div class="text-danger text-xs">
-
-                        </div>
-                        <button class="btn btn-primary btn-md" id="changeDivisa">Cambiar a EUR</button>
-                    </div>
-                </div>
+            <div class="col-md-4 card-calculator">
+                
             </div>
 
         </div>
     </div>
    
 <?php
-include_once "app/templates/components/cards/card-rates.comp.php";
+    include_once "app/templates/components/cards/card-rates.comp.php";
+    include_once "app/templates/components/cards/card-calculator.comp.php";
     include_once "app/templates/app-inc-page/cuerpo-body-close.inc.php";
     include_once "app/templates/app-inc-page/pie-footer.inc.php";
 ?>

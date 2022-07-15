@@ -3,25 +3,25 @@ import { loadRatesTerror } from "./loadRatesTerror.js"; // This is for load or s
 import { loadingTerror } from "./loadingTerror.js"; // This is while the page it's loading everething
 
 // Load
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+	loadRatesTerror.loadDefault();
 	showRates();
-	localStorage.setItem("divisa", "usd");
-	tittleDivisa.textContent = "BS a USD";
+	loadCalculator();
 	// Loader and message
 	loadingTerror.message(document.getElementById("msgPreloader"));
 	loadingTerror.load(document.getElementById("preloader"), 5000);
 });
 
 // inputs
-const amount = document.getElementById("amount"); // cantidad
-const result = document.getElementById("result"); // resultado
+//const amount = document.getElementById("amount"); // cantidad
+//const result = document.getElementById("result"); // resultado
 // labels
 const labelAmount = document.getElementsByClassName("labelAmount"); // etiqueta cantidad
 const labelResult = document.getElementsByClassName("labelResult"); // etiqueta resultado
 // buttons
 const changeDivisa = document.getElementById("changeDivisa");
 const tittleDivisa = document.getElementsByClassName("tittleDivisa");
-
+/*
 // Automatic convert
 amount.addEventListener("keyup", (e) => {
 	//console.log(e.target.value);
@@ -53,17 +53,7 @@ changeDivisa.addEventListener("click", (e) => {
 	}
 	console.log(e.target.text);
 });
-
-const calculateEvent = async () => {
-	if (localStorage.getItem("divisa") === "usd") {
-		tittleDivisa.textContent = "BsD a USD";
-		result.value = await calcualteTodayTerror.covert("enparalelovzla", "/", amount.value);
-	} else if (localStorage.getItem("divisa") === "eur") {
-		// Convertir bs a eur
-		tittleDivisa.textContent = "USD a BsD";
-		result.value = await calcualteTodayTerror.covert("enparalelovzla", "*", amount.value);
-	}
-};
+*/
 
 const showRates = async () => {
 	const rates = document.querySelector(".rates");
@@ -94,6 +84,48 @@ const actionAsync = async () => {
 document.querySelector(".rates").addEventListener("click", (e) => {
 	if (e.target && e.target.tagName === "BUTTON") {
 		const setRate = e.target.getAttribute("data-setRate").toLowerCase().replace(" ", "-");
-		console.log(setRate);
+		loadRatesTerror.setRate(setRate);
+		document.querySelector(".amountRate").textContent = loadRatesTerror.getRate();
+		document.querySelector(".resultRate").textContent = loadRatesTerror.getCurrency();
+
+		/*const amount = document.getElementById("amount");
+		const result = document.getElementById("result");
+		console.log(amount);
+		calculateEvent(amount, result);*/
 	}
 });
+const loadCalculator = () => {
+	const calculator = document.querySelector(".card-calculator");
+	const template = document.getElementById("card-calculator").content;
+	const fragment = document.createDocumentFragment();
+
+	const clone = template.cloneNode(true);
+	clone.querySelector(".amountRate").textContent = loadRatesTerror.getRate();
+	clone.querySelector(".resultRate").textContent = loadRatesTerror.getCurrency();
+	fragment.appendChild(clone);
+	calculator.appendChild(fragment);
+};
+document.querySelector(".card-calculator").addEventListener("change", (e) => {
+	if (e.target && e.target.name === "amount") {
+		const amount = e.target;
+		const result =
+			e.target.parentElement.parentElement.nextElementSibling.firstElementChild
+				.lastElementChild;
+		//console.log(result.value);
+		calculateEvent(amount, result);
+	}
+});
+const calculateEvent = async (amount, result) => {
+	if (loadRatesTerror.getCurrency() === "usd") {
+		tittleDivisa.textContent = "BsD a USD";
+		result.value = await calcualteTodayTerror.covert(
+			loadRatesTerror.getRate(),
+			"/",
+			amount.value
+		);
+	} else if (localStorage.getItem("divisa") === "eur") {
+		// Convertir bs a eur
+		tittleDivisa.textContent = "USD a BsD";
+		result.value = await calcualteTodayTerror.covert("enparalelovzla", "*", amount.value);
+	}
+};
