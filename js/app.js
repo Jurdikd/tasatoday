@@ -5,7 +5,7 @@ import { loadingTerror } from "./loadingTerror.js"; // This is while the page it
 document.addEventListener("DOMContentLoaded", () => {
 	showRates();
 	localStorage.setItem("divisa", "usd");
-	tittleDivisa.innerText = "BS a USD";
+	tittleDivisa.textContent = "BS a USD";
 	// Loader and message
 	loadingTerror.message(document.getElementById("msgPreloader"));
 	loadingTerror.load(document.getElementById("preloader"), 5000);
@@ -53,15 +53,14 @@ changeDivisa.addEventListener("click", (e) => {
 	console.log(e.target.text);
 });
 
-const calculateEvent = () => {
+const calculateEvent = async () => {
 	if (localStorage.getItem("divisa") === "usd") {
-		tittleDivisa.innerText = "BsD a USD";
-		// Convertir bs a usd
-		calcualteTodayTerror.enparalelovzla_to_bsd();
+		tittleDivisa.textContent = "BsD a USD";
+		result.value = await calcualteTodayTerror.covert("enparalelovzla", "/", amount.value);
 	} else if (localStorage.getItem("divisa") === "eur") {
 		// Convertir bs a eur
-		tittleDivisa.innerText = "USD a BsD";
-		calcualteTodayTerror.bsd_to_enparalelovzla();
+		tittleDivisa.textContent = "USD a BsD";
+		result.value = await calcualteTodayTerror.covert("enparalelovzla", "*", amount.value);
 	}
 };
 
@@ -70,7 +69,7 @@ const showRates = async () => {
 	const template = document.getElementById("card-rate").content;
 	const fragment = document.createDocumentFragment();
 	const allRates = await calcualteTodayTerror.fetchDivisa({ rates: "rates" });
-	await actionasync();
+
 	//set rate
 	for (let clave in allRates) {
 		//console.log(allRates[clave].rate);
@@ -80,12 +79,11 @@ const showRates = async () => {
 
 		fragment.appendChild(clone);
 	}
-	console.log("A borrar!!!");
+	await actionAsync();
 	rates.innerHTML = "";
 	rates.appendChild(fragment);
-	console.log(fragment);
 };
-const actionasync = async () => {
+const actionAsync = async () => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
 			resolve();
