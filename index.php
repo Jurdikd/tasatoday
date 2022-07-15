@@ -133,21 +133,9 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
 
         </div>
     </div>
-   <!-- templates -->
-   <template id="card-rate">
-                <div class="col-md-3">
-                    <div class="card m-2">
-                        <div class="card-header text-center">
-                            <h5 class="card-tittle">Name rate</h5>
-                        </div>
-                        <div class="card-body text-center">
-                            <span class="tasatoday-rate">Loading...</span>
-                            <button class="btn btn-sm btn-success" disable>Elegir</button>
-                        </div>
-                    </div>
-                </div>
-      </template>
+   
 <?php
+include_once "app/templates/components/cards/card-rates.comp.php";
     include_once "app/templates/app-inc-page/cuerpo-body-close.inc.php";
     include_once "app/templates/app-inc-page/pie-footer.inc.php";
 ?>
