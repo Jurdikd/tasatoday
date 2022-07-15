@@ -1,4 +1,5 @@
 import { calcualteTodayTerror } from "./calcualteTodayTerror.js"; // Import calcualteTodayTerror (funtions) for to calculate
+import { loadRatesTerror } from "./loadRatesTerror.js"; // This is for load or set rates
 import { loadingTerror } from "./loadingTerror.js"; // This is while the page it's loading everething
 
 // Load
@@ -71,12 +72,12 @@ const showRates = async () => {
 	const allRates = await calcualteTodayTerror.fetchDivisa({ rates: "rates" });
 
 	//set rate
-	for (let clave in allRates) {
-		//console.log(allRates[clave].rate);
+	for (let key in allRates) {
+		//console.log(allRates[key].rate);
 		const clone = template.cloneNode(true);
-		clone.querySelector(".tasatoday-rate").textContent = allRates[clave].rate;
-		clone.querySelector(".card-tittle").textContent = allRates[clave].name;
-
+		clone.querySelector(".tasatoday-rate").textContent = allRates[key].rate;
+		clone.querySelector(".card-tittle").textContent = allRates[key].name;
+		clone.querySelector(".btn-setRate").setAttribute("data-setRate", allRates[key].name);
 		fragment.appendChild(clone);
 	}
 	await actionAsync();
@@ -90,3 +91,9 @@ const actionAsync = async () => {
 		}, 7000);
 	});
 };
+document.querySelector(".rates").addEventListener("click", (e) => {
+	if (e.target && e.target.tagName === "BUTTON") {
+		const setRate = e.target.getAttribute("data-setRate").toLowerCase().replace(" ", "-");
+		console.log(setRate);
+	}
+});
