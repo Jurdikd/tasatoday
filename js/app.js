@@ -116,6 +116,9 @@ document.querySelector(".card-calculator").addEventListener("change", (e) => {
 	}
 });
 const calculateEvent = async (amount, result) => {
+	if (amount.value < 0) {
+		amount.value = 0;
+	}
 	if (loadRatesTerror.getCurrency() === "usd") {
 		tittleDivisa.textContent = "BsD a USD";
 		result.value = await calcualteTodayTerror.covert(
