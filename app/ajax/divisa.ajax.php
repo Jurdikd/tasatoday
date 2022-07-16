@@ -26,6 +26,7 @@ if (!empty($get) && !empty($get['rates'])) {
         $dolartoday = CurlTerror::get_simple(URL_CURL . 'dolartoday');
         $skrill = CurlTerror::get_simple(URL_CURL . 'monedero-skrill');
         $amazon = CurlTerror::get_simple(URL_CURL . 'monedero-amazon');
+        $paypal = CurlTerror::get_simple(URL_CURL . 'monedero-paypal');
         $zoom = CurlTerror::get_simple(URL_CURL . 'remesas-zoom');
         $yadio = CurlTerror::get_simple(URL_CURL . 'yadio');
         $petro = CurlTerror::get_simple(URL_CURL . 'petro');
@@ -42,6 +43,7 @@ if (!empty($get) && !empty($get['rates'])) {
             is_array($dolartoday) &&
             is_array($skrill) &&
             is_array($amazon) &&
+            is_array($paypal) &&
             is_array($zoom) &&
             is_array($yadio) &&
             is_array($petro) &&
@@ -128,6 +130,15 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $amazon['change'],
                     'color' => $amazon['color'],
                     'symbol' => $amazon['symbol'],
+                ),
+                'paypal' => array(
+                    'name' => $paypal['name'],
+                    'shortName' => 'paypal',
+                    'rate' => FunctionTerror::cambiarComas_puntos($paypal['price']),
+                    'percent' => $paypal['percent'],
+                    'change' => $paypal['change'],
+                    'color' => $paypal['color'],
+                    'symbol' => $paypal['symbol'],
                 ),
                 'zoom' => array(
                     'name' => $zoom['name'],
@@ -469,6 +480,36 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $amazon['change'],
                     'color' => $amazon['color'],
                     'symbol' => $amazon['symbol'],
+                ),
+            );
+
+            $respuesta = $tasaDivisa; #Devolvemos datos en formato json
+        } else {
+            $respuesta = array('error' => array(
+                'message' => array(
+                    'lang' => array(
+                        'en' =>
+                        "Error: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection with server",
+                        'es' =>
+                        "Error: : OpenSSL SSL_connect: SSL_ERROR_SYSCALL en conexión con el servidor"
+                    ),
+                ),
+            ));
+        }
+    }else if ($get['rates'] === "paypal") {
+        //Obtener tasa paypal
+        $paypal = CurlTerror::get_simple(URL_CURL . 'monedero-paypal');
+
+        if (is_array($amazon)) {
+            $tasaDivisa  = array(
+                'paypal' => array(
+                    'name' => $paypal['name'],
+                    'shortName' => 'paypal',
+                    'rate' => FunctionTerror::cambiarComas_puntos($paypal['price']),
+                    'percent' => $paypal['percent'],
+                    'change' => $paypal['change'],
+                    'color' => $paypal['color'],
+                    'symbol' => $paypal['symbol'],
                 ),
             );
 

@@ -124,7 +124,6 @@ cardCalculator.addEventListener("change", (e) => {
 		} else {
 			btnShare.disabled = true;
 		}
-		console.log(amount.value);
 	}
 });
 cardCalculator.addEventListener("click", (e) => {
@@ -137,7 +136,6 @@ cardCalculator.addEventListener("click", (e) => {
 			const result =
 				e.target.parentElement.previousElementSibling.firstElementChild.firstElementChild
 					.nextElementSibling;
-			console.log(result.value);
 			amount.value = result.value;
 			calculateEvent(amount, result);
 		} else if (loadRatesTerror.getCurrency() === "ves") {
