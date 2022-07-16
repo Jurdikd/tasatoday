@@ -8,9 +8,9 @@ export const loadRatesTerror = {
 	},
 	loadDefault: () => {
 		if (loadRatesTerror.verifyStorage() === true) {
-			if (!localStorage.getItem("rate")) {
+			if (!localStorage.getItem("rate") && !localStorage.getItem("currency")) {
 				localStorage.setItem("rate", "bcv");
-				localStorage.setItem("currency", "usd");
+				localStorage.setItem("currency", "others");
 			}
 		}
 	},

@@ -51,7 +51,8 @@ export const calcualteTodayTerror = {
 			console.log(amount + " " + getRate);
 			return (amount / getRate[rates].rate).toFixed(2);
 		}
-	} /*
+	},
+	/*
 	//Convert promedio to USD
 	tasatoday_to_bsd: async () => {
 		const rate = await calcualteTodayTerror.fetchDivisa({ rates: "tasatoday" });
@@ -303,5 +304,5 @@ export const calcualteTodayTerror = {
 		//console.log(rate);
 		let convertion = amount.value * rate.rublo.rate;
 		result.value = convertion.toFixed(2);
-	},*/,
+	},*/
 };

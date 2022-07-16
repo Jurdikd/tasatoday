@@ -7,11 +7,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 	loadRatesTerror.loadDefault();
 	loadCalculator();
 	showRates();
+
 	// Loader and message
 	loadingTerror.message(document.getElementById("msgPreloader"));
 	loadingTerror.load(document.getElementById("preloader"), 5000);
 });
-
+console.log(loadRatesTerror.getCurrency());
 // inputs
 //const amount = document.getElementById("amount"); // cantidad
 //const result = document.getElementById("result"); // resultado
@@ -107,7 +108,8 @@ const loadCalculator = () => {
 	fragment.appendChild(clone);
 	calculator.appendChild(fragment);
 };
-document.querySelector(".card-calculator").addEventListener("change", (e) => {
+const cardCalculator = document.querySelector(".card-calculator");
+cardCalculator.addEventListener("change", (e) => {
 	if (e.target && e.target.name === "amount") {
 		const amount = e.target;
 		const result =
@@ -117,19 +119,47 @@ document.querySelector(".card-calculator").addEventListener("change", (e) => {
 		calculateEvent(amount, result);
 	}
 });
+cardCalculator.addEventListener("click", (e) => {
+	if (e.target && e.target.name === "rateInverter") {
+		if (loadRatesTerror.getCurrency() === "others") {
+			loadRatesTerror.setCurrency("ves");
+			const amount =
+				e.target.parentElement.parentElement.firstElementChild.lastElementChild
+					.lastElementChild;
+			const result =
+				e.target.parentElement.previousElementSibling.firstElementChild.firstElementChild
+					.nextElementSibling;
+			calculateEvent(amount, result);
+		} else if (loadRatesTerror.getCurrency() === "ves") {
+			loadRatesTerror.setCurrency("others");
+			const amount =
+				e.target.parentElement.parentElement.firstElementChild.lastElementChild
+					.lastElementChild;
+			const result =
+				e.target.parentElement.previousElementSibling.firstElementChild.firstElementChild
+					.nextElementSibling;
+			calculateEvent(amount, result);
+			{
+			}
+		}
+	}
+});
 const calculateEvent = async (amount, result) => {
 	if (amount.value < 0) {
 		amount.value = 0;
 	}
-	if (loadRatesTerror.getCurrency() === "usd") {
+	if (loadRatesTerror.getCurrency() === "others") {
 		result.value = await calcualteTodayTerror.covert(
 			loadRatesTerror.getRate(),
 			"/",
 			amount.value
 		);
-	} else if (localStorage.getItem("divisa") === "eur") {
+	} else if (loadRatesTerror.getCurrency() === "ves") {
 		// Convertir bs a eur
-
-		result.value = await calcualteTodayTerror.covert("enparalelovzla", "*", amount.value);
+		result.value = await calcualteTodayTerror.covert(
+			loadRatesTerror.getRate(),
+			"*",
+			amount.value
+		);
 	}
 };

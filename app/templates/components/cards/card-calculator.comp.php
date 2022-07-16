@@ -20,7 +20,7 @@
         <div class="text-danger text-xs">
 
         </div>
-        <button class="btn btn-primary btn-md" id="changeDivisa">Cambiar a EUR</button>
+        <button class="btn btn-primary btn-md" id="rateInverter" name="rateInverter" role="button" type="button">Invertir</button>
     </div>
     </div>
 </template>
