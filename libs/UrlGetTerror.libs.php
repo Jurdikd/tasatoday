@@ -5,4 +5,18 @@ class UrlGetTerror
     {
         return json_decode(file_get_contents('php://input'), true);
     }
+    public static function Getquery($query)
+    {
+        $url = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; # obtener url
+        
+        $components = parse_url($url); # componentes de la url
+        
+        if (!empty($components['query'])) {
+        # mostramos resultados...
+        parse_str($components['query'], $results); # obtener variable plan
+            return  $results[$query];
+        }else{
+            return  false;
+        }
+    }
 }

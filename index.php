@@ -1,5 +1,8 @@
 <?php
 include_once "app/templates/app-inc-page/cabecera-header-inc.php";
+//include_once "libs/UrlGetTerror.libs.php";
+//$get_query = UrlGetTerror::Getquery("rate");
+
 ?>
     <div class="container mt-5">
         <div class="row">
