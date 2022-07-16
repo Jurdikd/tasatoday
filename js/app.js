@@ -92,6 +92,7 @@ document.querySelector(".rates").addEventListener("click", (e) => {
 		document.querySelector(".resultRate").textContent = loadRatesTerror.getCurrency();
 		const amount = document.getElementById("amount");
 		const result = document.getElementById("result");
+		amount.focus();
 		calculateEvent(amount, result);
 	}
 });
