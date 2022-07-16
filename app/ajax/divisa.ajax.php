@@ -500,7 +500,7 @@ if (!empty($get) && !empty($get['rates'])) {
         //Obtener tasa paypal
         $paypal = CurlTerror::get_simple(URL_CURL . 'monedero-paypal');
 
-        if (is_array($amazon)) {
+        if (is_array($paypal)) {
             $tasaDivisa  = array(
                 'paypal' => array(
                     'name' => $paypal['name'],
