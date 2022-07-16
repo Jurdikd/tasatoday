@@ -90,6 +90,9 @@ document.querySelector(".rates").addEventListener("click", (e) => {
 		loadRatesTerror.setRate(setRate);
 		document.querySelector(".amountRate").textContent = loadRatesTerror.getRate();
 		document.querySelector(".resultRate").textContent = loadRatesTerror.getCurrency();
+		const amount = document.getElementById("amount");
+		const result = document.getElementById("result");
+		calculateEvent(amount, result);
 	}
 });
 const loadCalculator = () => {
