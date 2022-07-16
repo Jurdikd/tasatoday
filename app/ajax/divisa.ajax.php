@@ -28,7 +28,6 @@ if (!empty($get) && !empty($get['rates'])) {
         $amazon = CurlTerror::get_simple(URL_CURL . 'monedero-amazon');
         $zoom = CurlTerror::get_simple(URL_CURL . 'remesas-zoom');
         $yadio = CurlTerror::get_simple(URL_CURL . 'yadio');
-        $citibank = CurlTerror::get_simple(URL_CURL . 'banco-citibank');
         $petro = CurlTerror::get_simple(URL_CURL . 'petro');
         $bcvTasa = CurlTerror::get_bcv(URL_CURL_BCV);
 
@@ -45,7 +44,6 @@ if (!empty($get) && !empty($get['rates'])) {
             is_array($amazon) &&
             is_array($zoom) &&
             is_array($yadio) &&
-            is_array($citibank) &&
             is_array($petro) &&
             is_array($bcvTasa)
         ) {
@@ -148,15 +146,6 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $yadio['change'],
                     'color' => $yadio['color'],
                     'symbol' => $yadio['symbol'],
-                ),
-                'citibank' => array(
-                    'name' => $citibank['name'],
-                    'shortName' => 'citibank',
-                    'rate' => FunctionTerror::cambiarComas_puntos($citibank['price']),
-                    'percent' => $citibank['percent'],
-                    'change' => $citibank['change'],
-                    'color' => $citibank['color'],
-                    'symbol' => $citibank['symbol'],
                 ),
                 'petro' => array(
                     'name' => $petro['name'],
@@ -438,7 +427,7 @@ if (!empty($get) && !empty($get['rates'])) {
         }
     }else if ($get['rates'] === "skrill") {
         //Obtener tasa skrill
-        $skrill = CurlTerror::get_simple(URL_CURL . 'skrill');
+        $skrill = CurlTerror::get_simple(URL_CURL . 'monedero-skrill');
 
         if (is_array($skrill)) {
             $tasaDivisa  = array(
@@ -468,7 +457,7 @@ if (!empty($get) && !empty($get['rates'])) {
         }
     }else if ($get['rates'] === "amazon") {
         //Obtener tasa amazon
-        $amazon = CurlTerror::get_simple(URL_CURL . 'amazon');
+        $amazon = CurlTerror::get_simple(URL_CURL . 'monedero-amazon');
 
         if (is_array($amazon)) {
             $tasaDivisa  = array(
@@ -498,7 +487,7 @@ if (!empty($get) && !empty($get['rates'])) {
         }
     }else if ($get['rates'] === "zoom") {
         //Obtener tasa zoom
-        $zoom = CurlTerror::get_simple(URL_CURL . 'zoom');
+        $zoom = CurlTerror::get_simple(URL_CURL . 'remesas-zoom');
 
         if (is_array($zoom)) {
             $tasaDivisa  = array(
@@ -540,36 +529,6 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $yadio['change'],
                     'color' => $yadio['color'],
                     'symbol' => $yadio['symbol'],
-                ),
-            );
-
-            $respuesta = $tasaDivisa; #Devolvemos datos en formato json
-        } else {
-            $respuesta = array('error' => array(
-                'message' => array(
-                    'lang' => array(
-                        'en' =>
-                        "Error: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection with server",
-                        'es' =>
-                        "Error: : OpenSSL SSL_connect: SSL_ERROR_SYSCALL en conexión con el servidor"
-                    ),
-                ),
-            ));
-        }
-    }else if ($get['rates'] === "citibank") {
-        //Obtener tasa citibank
-        $citibank = CurlTerror::get_simple(URL_CURL . 'citibank');
-
-        if (is_array($citibank)) {
-            $tasaDivisa  = array(
-                'citibank' => array(
-                    'name' => $citibank['name'],
-                    'shortName' => 'citibank',
-                    'rate' => FunctionTerror::cambiarComas_puntos($citibank['price']),
-                    'percent' => $citibank['percent'],
-                    'change' => $citibank['change'],
-                    'color' => $citibank['color'],
-                    'symbol' => $citibank['symbol'],
                 ),
             );
 

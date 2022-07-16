@@ -5,8 +5,8 @@ import { loadingTerror } from "./loadingTerror.js"; // This is while the page it
 // Load
 document.addEventListener("DOMContentLoaded", async () => {
 	loadRatesTerror.loadDefault();
-	showRates();
 	loadCalculator();
+	showRates();
 	// Loader and message
 	loadingTerror.message(document.getElementById("msgPreloader"));
 	loadingTerror.load(document.getElementById("preloader"), 5000);
@@ -16,11 +16,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 //const amount = document.getElementById("amount"); // cantidad
 //const result = document.getElementById("result"); // resultado
 // labels
+/*
 const labelAmount = document.getElementsByClassName("labelAmount"); // etiqueta cantidad
 const labelResult = document.getElementsByClassName("labelResult"); // etiqueta resultado
 // buttons
 const changeDivisa = document.getElementById("changeDivisa");
-const tittleDivisa = document.getElementsByClassName("tittleDivisa");
+const tittleDivisa = document.getElementsByClassName("tittleDivisa");*/
 /*
 // Automatic convert
 amount.addEventListener("keyup", (e) => {
@@ -67,7 +68,9 @@ const showRates = async () => {
 		const clone = template.cloneNode(true);
 		clone.querySelector(".tasatoday-rate").textContent = allRates[key].rate;
 		clone.querySelector(".card-tittle").textContent = allRates[key].name;
-		clone.querySelector(".btn-setRate").setAttribute("data-setRate", allRates[key].name);
+		clone
+			.querySelector(".btn-setRate")
+			.setAttribute("data-setRate", allRates[key].shortName);
 		fragment.appendChild(clone);
 	}
 	await actionAsync();
@@ -87,11 +90,6 @@ document.querySelector(".rates").addEventListener("click", (e) => {
 		loadRatesTerror.setRate(setRate);
 		document.querySelector(".amountRate").textContent = loadRatesTerror.getRate();
 		document.querySelector(".resultRate").textContent = loadRatesTerror.getCurrency();
-
-		/*const amount = document.getElementById("amount");
-		const result = document.getElementById("result");
-		console.log(amount);
-		calculateEvent(amount, result);*/
 	}
 });
 const loadCalculator = () => {
@@ -120,7 +118,6 @@ const calculateEvent = async (amount, result) => {
 		amount.value = 0;
 	}
 	if (loadRatesTerror.getCurrency() === "usd") {
-		tittleDivisa.textContent = "BsD a USD";
 		result.value = await calcualteTodayTerror.covert(
 			loadRatesTerror.getRate(),
 			"/",
@@ -128,7 +125,7 @@ const calculateEvent = async (amount, result) => {
 		);
 	} else if (localStorage.getItem("divisa") === "eur") {
 		// Convertir bs a eur
-		tittleDivisa.textContent = "USD a BsD";
+
 		result.value = await calcualteTodayTerror.covert("enparalelovzla", "*", amount.value);
 	}
 };

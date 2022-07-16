@@ -65,7 +65,7 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
         <div class="col-md-6">
             <div class="card m-5">
                 <div class="card-header">
-                    <h3 class="card-tittle tittleDivisa text-center">Caculadora</h3>
+                    <h3 class="card-tittle text-center">Caculadora</h3>
                 </div>
                 <div class="card-body text-center">
                     <button class="btn btn-success" disabled>USD a BsD</button>
@@ -85,7 +85,7 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
         <div class="col-md-6">
             <div class="card m-5">
                 <div class="card-header">
-                    <h4 class="card-tittle tittleDivisa text-center">Caculadora de ganancias o gastos</h3>
+                    <h4 class="card-tittle text-center">Caculadora de ganancias o gastos</h3>
                 </div>
                 <div class="card-body text-center">
                     <button class="btn btn-success" disabled>USD a BsD</button>
