@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	loadingTerror.message(document.getElementById("msgPreloader"));
 	loadingTerror.load(document.getElementById("preloader"), 5000);
 });
-console.log(loadRatesTerror.getCurrency());
 // inputs
 //const amount = document.getElementById("amount"); // cantidad
 //const result = document.getElementById("result"); // resultado
@@ -117,6 +116,15 @@ cardCalculator.addEventListener("change", (e) => {
 				.lastElementChild;
 		//console.log(result.value);
 		calculateEvent(amount, result);
+		const btnShare =
+			e.target.parentElement.parentElement.nextElementSibling.nextElementSibling
+				.lastElementChild;
+		if (amount.value !== "" && amount.value > 0) {
+			btnShare.disabled = false;
+		} else {
+			btnShare.disabled = true;
+		}
+		console.log(amount.value);
 	}
 });
 cardCalculator.addEventListener("click", (e) => {
@@ -129,6 +137,8 @@ cardCalculator.addEventListener("click", (e) => {
 			const result =
 				e.target.parentElement.previousElementSibling.firstElementChild.firstElementChild
 					.nextElementSibling;
+			console.log(result.value);
+			amount.value = result.value;
 			calculateEvent(amount, result);
 		} else if (loadRatesTerror.getCurrency() === "ves") {
 			loadRatesTerror.setCurrency("others");
@@ -138,28 +148,42 @@ cardCalculator.addEventListener("click", (e) => {
 			const result =
 				e.target.parentElement.previousElementSibling.firstElementChild.firstElementChild
 					.nextElementSibling;
+			amount.value = result.value;
 			calculateEvent(amount, result);
 			{
 			}
 		}
+	} else if (e.target && e.target.name === "shareRate") {
+		//console.log(e.target);
+		const result =
+			e.target.parentElement.previousElementSibling.firstElementChild.firstElementChild
+				.nextElementSibling;
+		console.log(result.value);
+		const message =
+			"El monto es: " +
+			result.value +
+			" y tasa  " +
+			loadRatesTerror.getRate().replace(" ", "%20");
+		window.open("https://wa.me/?text=" + message, "_blank");
 	}
 });
 const calculateEvent = async (amount, result) => {
 	if (amount.value < 0) {
 		amount.value = 0;
-	}
-	if (loadRatesTerror.getCurrency() === "others") {
-		result.value = await calcualteTodayTerror.covert(
-			loadRatesTerror.getRate(),
-			"/",
-			amount.value
-		);
-	} else if (loadRatesTerror.getCurrency() === "ves") {
-		// Convertir bs a eur
-		result.value = await calcualteTodayTerror.covert(
-			loadRatesTerror.getRate(),
-			"*",
-			amount.value
-		);
+	} else {
+		if (loadRatesTerror.getCurrency() === "others") {
+			result.value = await calcualteTodayTerror.covert(
+				loadRatesTerror.getRate(),
+				"/",
+				amount.value
+			);
+		} else if (loadRatesTerror.getCurrency() === "ves") {
+			// Convertir bs a eur
+			result.value = await calcualteTodayTerror.covert(
+				loadRatesTerror.getRate(),
+				"*",
+				amount.value
+			);
+		}
 	}
 };
