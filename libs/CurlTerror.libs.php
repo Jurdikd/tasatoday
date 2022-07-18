@@ -78,23 +78,23 @@ class CurlTerror
 
             $data = array(
                 'euro' => array(
-                    'name' => $euro[1],
+                    'name' => 'Euro',
                     'rate' => $euro[2]
                 ),
                 'yuan' => array(
-                    'name' => $yuan[1],
+                    'name' => 'Yuan',
                     'rate' => $yuan[2]
                 ),
                 'lira' => array(
-                    'name' => $lira[1],
+                    'name' => 'Lira',
                     'rate' => $lira[2]
                 ),
                 'rublo' => array(
-                    'name' => $rublo[1],
+                    'name' => 'Rublo',
                     'rate' => $rublo[2],
                 ),
                 'dolar' => array(
-                    'name' => $dolar[1],
+                    'name' => 'Dolar',
                     'rate' => $dolar[2]
                 ),
             );
@@ -104,30 +104,29 @@ class CurlTerror
         }
     }
     function get_ratesGoogle($currency)
-{
-    # Aquí...
-    $html = file_get_contents('https://www.google.com/finance/quote/' . strtolower($currency) . '-VES');
-    //https://www.google.com/finance/quote/USD-VES
-    $doc = new DOMDocument();
-    @$doc->loadHTML($html);
-    $xpath = new DOMXpath($doc);
-    //$value = $xpath->query('//*[@class="YMlKec fxKbKc"]/div')->item(0)->nodeValue;
-    $see = $xpath->query('//div[contains(@class,"rPF6Lc")]');
-    
-    if (!empty($see["length"])) {
-        # code...["length"]
-        $value =  $see->item(0)->nodeValue;
-            $num = number_format(floatval($value),2);
+    {
+        # Aquí...
+        $html = file_get_contents('https://www.google.com/finance/quote/' . strtolower($currency) . '-VES');
+        //https://www.google.com/finance/quote/USD-VES
+        $doc = new DOMDocument();
+        @$doc->loadHTML($html);
+        $xpath = new DOMXpath($doc);
+        //$value = $xpath->query('//*[@class="YMlKec fxKbKc"]/div')->item(0)->nodeValue;
+        $see = $xpath->query('//div[contains(@class,"rPF6Lc")]');
+
+        if (!empty($see["length"])) {
+            # code...["length"]
+            $value =  $see->item(0)->nodeValue;
+            $num = number_format(floatval($value), 2);
             $rate = array(
                 $currency => array(
-                    'name'=>strtolower($currency),
-                    'rate'=>$num
+                    'name' => strtolower($currency),
+                    'rate' => $num
                 )
             );
             return $rate;
-    } 
-   
-}
+        }
+    }
     public static function get_page($url)
     {
         $curl = curl_init();
