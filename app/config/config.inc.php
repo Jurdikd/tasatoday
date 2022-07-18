@@ -84,9 +84,10 @@ define("RUTA_TERMINOS_CONDICIONES", VISTA . "terminos-y-condiciones");
 #define("RUTA_MUESTRA", SERVIDOR . "muestras" . "/");
 
 //RECURSOS
-define("RUTA_CSS", SERVIDOR . "css" . "/");
-define("RUTA_JS", SERVIDOR . "js" . "/");
-define("RUTA_FAVICON", SERVIDOR . "favicon" . "/");
+define("RUTA_CSS", SERVIDOR . "view/css" . "/");
+define("RUTA_JS", SERVIDOR . "view/js" . "/");
+define("RUTA_FAVICON", SERVIDOR . "view/favicon" . "/");
+define("RUTA_IMG", SERVIDOR . "view/img" . "/");
 define("DIRECTORIO_RAIZ", realpath(dirname(__FILE__) . "/..")); //para php < 5.3
 // realpath(__DIR__."/..") para php 5.3+
 @session_start();
