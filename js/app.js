@@ -126,7 +126,7 @@ cardCalculator.addEventListener("change", (e) => {
 		}
 	}
 });
-cardCalculator.addEventListener("click", (e) => {
+cardCalculator.addEventListener("click", async (e) => {
 	if (e.target && e.target.name === "rateInverter") {
 		if (loadRatesTerror.getCurrency() === "others") {
 			loadRatesTerror.setCurrency("ves");
@@ -136,8 +136,11 @@ cardCalculator.addEventListener("click", (e) => {
 			const result =
 				e.target.parentElement.previousElementSibling.firstElementChild.firstElementChild
 					.nextElementSibling;
+			//let oldAmount = amount.value;
 			amount.value = result.value;
-			calculateEvent(amount, result);
+			//result.value = oldAmount;
+			await calculateEvent(amount, result);
+			//console.log("paso el await");
 		} else if (loadRatesTerror.getCurrency() === "ves") {
 			loadRatesTerror.setCurrency("others");
 			const amount =
@@ -147,7 +150,7 @@ cardCalculator.addEventListener("click", (e) => {
 				e.target.parentElement.previousElementSibling.firstElementChild.firstElementChild
 					.nextElementSibling;
 			amount.value = result.value;
-			calculateEvent(amount, result);
+			await calculateEvent(amount, result);
 			{
 			}
 		}
