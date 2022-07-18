@@ -1,4 +1,40 @@
 <?php
+include_once "app/config/config.inc.php";
+echo SERVIDOR . "<br>";
+$componentes_url = parse_url($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']);
+
+$ruta = $componentes_url['path'];
+
+$partes_ruta = explode('/', $ruta);
+$partes_ruta = array_filter($partes_ruta);
+$partes_ruta = array_slice($partes_ruta, 0);
+echo var_dump($partes_ruta);
+
+
+$ruta_elegida = 'vistas/404.php';
+//echo var_dump($partes_ruta);
+if ($partes_ruta[0] == "tasatoday") { #DOMINIO ES IGUAL A LA RUTA PREDFINIDA
+
+    if (count($partes_ruta) == 1) {
+        $ruta_elegida = 'vistas/inicio.php';
+    } else if (count($partes_ruta) == 2) {
+        // Buscamos los casos comunes
+        switch ($partes_ruta[1]) {
+                #area diplomados
+            case 'javascript-no-activo':
+                $ruta_elegida = 'vistas/sin-js.php';
+                break;
+            case 'login':
+                $ruta_elegida = 'vistas/login.php';
+                break;
+        }
+    }
+}
+//include_once $ruta_elegida;
+
+
+
+
 include_once "app/templates/app-inc-page/cabecera-header-inc.php";
 //include_once "libs/UrlGetTerror.libs.php";
 //$get_query = UrlGetTerror::Getquery("rate");
@@ -120,8 +156,8 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
 </div>
 
 <?php
-    include_once "app/templates/components/cards/card-rates.comp.php";
-    include_once "app/templates/components/cards/card-calculator.comp.php";
-    include_once "app/templates/app-inc-page/cuerpo-body-close.inc.php";
-    include_once "app/templates/app-inc-page/pie-footer.inc.php";
+include_once "app/templates/components/cards/card-rates.comp.php";
+include_once "app/templates/components/cards/card-calculator.comp.php";
+include_once "app/templates/app-inc-page/cuerpo-body-close.inc.php";
+include_once "app/templates/app-inc-page/pie-footer.inc.php";
 ?>
