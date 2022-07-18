@@ -5,7 +5,12 @@ $componentes_url = parse_url($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']);
 $protocol = stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https://' : 'http://';
 echo $protocol . "<br>";
 $ruta = $componentes_url['path'];
-
+if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on') {
+    // NO DISPONE DE CONEXIÓN HTTPS 
+    echo "no es https";
+} else {
+    echo "es https";
+}
 $partes_ruta = explode('/', $ruta);
 $partes_ruta = array_filter($partes_ruta);
 $partes_ruta = array_slice($partes_ruta, 0);
