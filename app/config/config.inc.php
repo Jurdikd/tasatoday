@@ -30,6 +30,16 @@ if (PUERTO !== 80 || PUERTO !== 443) {
     define("SERVIDOR", HTTPS . DOMINIO . "/");
 }
 echo PUERTO . "<br>";
+if (PUERTO === 443) {
+    # code...
+    echo "entro en el 443 <br>";
+} else if (PUERTO === "443") {
+    # code...
+    echo "entro en el '443' <br>";
+} else {
+    echo "puerto es " . PUERTO . "<br>";
+}
+
 #Server para admins
 
 
