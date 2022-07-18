@@ -1,9 +1,9 @@
 <?php
 include_once "app/config/config.inc.php";
-echo SERVIDOR . "<br>" . $_SERVER['SERVER_PROTOCOL'] . "<br>" . $_SERVER['HTTP_HOST'] . "<br>";
+//echo SERVIDOR . "<br>" . $_SERVER['SERVER_PROTOCOL'] . "<br>" . $_SERVER['HTTP_HOST'] . "<br>";
 $componentes_url = parse_url($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']);
-$protocol = stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https://' : 'http://';
-echo $protocol . "<br>";
+//$protocol = stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https://' : 'http://';
+//echo $protocol . "<br>";
 $ruta = $componentes_url['path'];
 if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on') {
     // NO DISPONE DE CONEXIÓN HTTPS 
@@ -11,6 +11,8 @@ if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on') {
 } else {
     echo "es https <br>";
 }
+echo $_SERVER["REQUEST_SCHEME"] . " Aqui si es o no <br>";
+echo var_dump($_SERVER["REQUEST_SCHEME"]);
 $partes_ruta = explode('/', $ruta);
 $partes_ruta = array_filter($partes_ruta);
 $partes_ruta = array_slice($partes_ruta, 0);
