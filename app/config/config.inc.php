@@ -26,6 +26,7 @@ if (PUERTO !== 80 || PUERTO !== 443) {
     echo "entro en el if <br>";
     define("SERVIDOR", HTTPS . DOMINIO . ":" . PUERTO . "/");
 } else {
+    echo "entro en el else <br>";
     define("SERVIDOR", HTTPS . DOMINIO . "/");
 }
 echo PUERTO . "<br>";
