@@ -163,6 +163,7 @@ cardCalculator.addEventListener("click", async (e) => {
 		window.open("https://wa.me/?text=" + message, "_blank");
 	}
 });
+// Caculates
 const calculateEvent = async (amount, result) => {
 	if (amount.value < 0) {
 		amount.value = 0;
