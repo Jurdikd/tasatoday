@@ -130,6 +130,9 @@ const calculatorProcess = async (e) => {
 		btnInverter.disabled = true;
 		btnShare.disabled = true;
 		await calculateEvent(amount, result);
+		if (result.value <= 0) {
+			result.value = "";
+		}
 		if (amount.value !== "" && amount.value > 0) {
 			btnInverter.disabled = false;
 			btnShare.disabled = false;
