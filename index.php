@@ -2,7 +2,8 @@
 include_once "app/config/config.inc.php";
 echo SERVIDOR . "<br>" . $_SERVER['SERVER_PROTOCOL'] . "<br>" . $_SERVER['HTTP_HOST'] . "<br>";
 $componentes_url = parse_url($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']);
-
+$protocol = stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https://' : 'http://';
+echo $protocol . "<br>";
 $ruta = $componentes_url['path'];
 
 $partes_ruta = explode('/', $ruta);
