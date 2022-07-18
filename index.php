@@ -1,6 +1,6 @@
 <?php
 include_once "app/config/config.inc.php";
-echo SERVIDOR . "<br>";
+echo SERVIDOR . "<br>" . $_SERVER['SERVER_PROTOCOL'] . "<br>" . $_SERVER['HTTP_HOST'] . "<br>";
 $componentes_url = parse_url($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']);
 
 $ruta = $componentes_url['path'];
