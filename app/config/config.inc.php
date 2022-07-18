@@ -23,6 +23,7 @@ define("HTTPS", $_SERVER["REQUEST_SCHEME"] . "://");
 define("DOMINIO", $_SERVER['SERVER_NAME']);
 define("PUERTO", $_SERVER['SERVER_PORT']);
 if (PUERTO !== 80 || PUERTO == 443) {
+    echo "entro en el if <br>";
     define("SERVIDOR", HTTPS . DOMINIO . ":" . PUERTO . "/");
 } else {
     define("SERVIDOR", HTTPS . DOMINIO . "/");
