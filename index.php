@@ -18,5 +18,4 @@ if (count($partes_ruta) == 1) {
         $ruta_elegida = 'view/sin-js.php';
     }
 }
-
 include_once $ruta_elegida;

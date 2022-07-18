@@ -1,3 +1,4 @@
+RewriteEngine On
 ErrorDocument 400 /index.php
 ErrorDocument 401 /index.php
 ErrorDocument 403 /index.php
@@ -7,16 +8,12 @@ ErrorDocument 500 /index.php
 Options -Indexes
 IndexIgnore *.php *.html
 
-<FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
-  <IfModule mod_headers.c>
-    Header set Access-Control-Allow-Origin "*"
-  </IfModule>
-</FilesMatch>
 
 Options +FollowSymLinks
-RewriteEngine On
+
 
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
-
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ index.php [L,QSA]
