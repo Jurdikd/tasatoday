@@ -136,11 +136,13 @@ cardCalculator.addEventListener("click", async (e) => {
 			const result =
 				e.target.parentElement.previousElementSibling.firstElementChild.firstElementChild
 					.nextElementSibling;
-			//let oldAmount = amount.value;
-			amount.value = result.value;
-			//result.value = oldAmount;
+
+			let oldResult = result.value;
+			let oldAmount = amount.value;
+			amount.value = oldResult;
+			result.value = oldAmount;
+			// Reload rate
 			await calculateEvent(amount, result);
-			//console.log("paso el await");
 		} else if (loadRatesTerror.getCurrency() === "ves") {
 			loadRatesTerror.setCurrency("others");
 			const amount =
@@ -149,7 +151,11 @@ cardCalculator.addEventListener("click", async (e) => {
 			const result =
 				e.target.parentElement.previousElementSibling.firstElementChild.firstElementChild
 					.nextElementSibling;
-			amount.value = result.value;
+			let oldResult = result.value;
+			let oldAmount = amount.value;
+			amount.value = oldResult;
+			result.value = oldAmount;
+			// Reload rate
 			await calculateEvent(amount, result);
 			{
 			}
