@@ -20,7 +20,7 @@
             <div class="text-danger text-xs">
 
             </div>
-            <button class="btn btn-primary btn-md" id="rateInverter" name="rateInverter" role="button" type="button">Invertir</button>
+            <button class="btn btn-primary btn-md" id="rateInverter" name="rateInverter" role="button" type="button" disabled>Invertir</button>
             <button class="btn btn-success btn-sm" name="shareRate"  role="button" type="button" disabled>Compartir</button>
         </div>
     </div>

@@ -111,41 +111,34 @@ const loadCalculator = () => {
 // Get rate with calculator
 const cardCalculator = document.querySelector(".card-calculator");
 cardCalculator.addEventListener("change", async (e) => {
-	if (e.target && e.target.name === "amount") {
-		const amount = e.target;
-		const result =
-			e.target.parentElement.parentElement.nextElementSibling.firstElementChild
-				.lastElementChild;
-		//console.log(result.value);
-		await calculateEvent(amount, result);
-		const btnShare =
-			e.target.parentElement.parentElement.nextElementSibling.nextElementSibling
-				.lastElementChild;
-		if (amount.value !== "" && amount.value > 0) {
-			btnShare.disabled = false;
-		} else {
-			btnShare.disabled = true;
-		}
-	}
+	await calculatorProcess(e);
 });
 cardCalculator.addEventListener("keyup", async (e) => {
+	await calculatorProcess(e);
+});
+const calculatorProcess = async (e) => {
 	if (e.target && e.target.name === "amount") {
 		const amount = e.target;
 		const result =
 			e.target.parentElement.parentElement.nextElementSibling.firstElementChild
 				.lastElementChild;
-		//console.log(result.value);
-		await calculateEvent(amount, result);
-		const btnShare =
+		const btnInverter =
 			e.target.parentElement.parentElement.nextElementSibling.nextElementSibling
-				.lastElementChild;
+				.firstElementChild.nextElementSibling;
+		const btnShare = btnInverter.nextElementSibling;
+		result.value = "";
+		btnInverter.disabled = true;
+		btnShare.disabled = true;
+		await calculateEvent(amount, result);
 		if (amount.value !== "" && amount.value > 0) {
+			btnInverter.disabled = false;
 			btnShare.disabled = false;
 		} else {
+			btnInverter.disabled = true;
 			btnShare.disabled = true;
 		}
 	}
-});
+};
 //Btn inverter
 cardCalculator.addEventListener("click", async (e) => {
 	if (e.target && e.target.name === "rateInverter") {
@@ -205,7 +198,6 @@ cardCalculator.addEventListener("click", async (e) => {
 		const result =
 			e.target.parentElement.previousElementSibling.firstElementChild.firstElementChild
 				.nextElementSibling;
-		console.log(result.value);
 		const message =
 			"El monto es: " +
 			result.value +
