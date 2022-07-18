@@ -7,9 +7,9 @@ echo $protocol . "<br>";
 $ruta = $componentes_url['path'];
 if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on') {
     // NO DISPONE DE CONEXIÓN HTTPS 
-    echo "no es https";
+    echo "no es https <br>";
 } else {
-    echo "es https";
+    echo "es https <br>";
 }
 $partes_ruta = explode('/', $ruta);
 $partes_ruta = array_filter($partes_ruta);
