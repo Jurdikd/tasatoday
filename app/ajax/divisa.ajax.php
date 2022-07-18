@@ -196,7 +196,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 'zelle' => array(
                     'name' => 'ZELLE',
                     'shortName' => 'zelle',
-                    'rate' => number_format(FunctionTerror::cambiarComas_puntos($enparalelo['price']) - (FunctionTerror::cambiarComas_puntos($enparalelo['price']) * 0.02), 2),
+                    'rate' => number_format(FunctionTerror::cambiarComas_puntos($enparalelo['price']) - (FunctionTerror::cambiarComas_puntos($enparalelo['price']) * 0.01), 2),
                     'percent' => $enparalelo['percent'],
                     'change' => $enparalelo['change'],
                     'color' => $enparalelo['color'],
@@ -687,7 +687,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 'zelle' => array(
                     'name' => 'ZELLE',
                     'shortName' => 'zelle',
-                    'rate' => number_format(FunctionTerror::cambiarComas_puntos($zelle['price']) - (FunctionTerror::cambiarComas_puntos($zelle['price']) * 0.02), 2),
+                    'rate' => number_format(FunctionTerror::cambiarComas_puntos($zelle['price']) - (FunctionTerror::cambiarComas_puntos($zelle['price']) * 0.01), 2),
                     'percent' => $zelle['percent'],
                     'change' => $zelle['change'],
                     'color' => $zelle['color'],
