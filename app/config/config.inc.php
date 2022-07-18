@@ -27,6 +27,7 @@ if (PUERTO !== "80" || PUERTO !== "443") {
 } else {
     define("SERVIDOR", HTTPS . DOMINIO . "/");
 }
+echo PUERTO . "<br>";
 #Server para admins
 
 
