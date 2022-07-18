@@ -6,18 +6,18 @@
                 Para convertir coloca la cantidad a converitir
             </div>
             <div class="form-group">
-                <label for="amount" class="text-success labelAmount ">Cantidad: <small
+                <label for="amountCalculator" class="text-success labelAmount ">Cantidad: <small
                         class="amountRate text-muted">BsD</small></label>
-                <input id="amount" name="amount" class="form-control form-control-sm text-sm" type="number"
-                    placeholder="Monto a convertir" aria-label="amount">
+                <input id="amountCalculator" name="amount" class="form-control form-control-sm text-sm" type="number"
+                    placeholder="Monto a convertir" aria-label="amountCalculator">
             </div>
         </div>
         <div class="card-body">
             <div class="form-group">
-                <label for="result" class="text-success labelResult">Resultado: <small
+                <label for="resultCalculator" class="text-success labelResult">Resultado: <small
                         class="resultRate text-muted">USD</small></label>
-                <input id="result" name="result" class="form-control form-control-sm text-sm" type="number"
-                    aria-label="result" readonly>
+                <input id="resultCalculator" name="result" class="form-control form-control-sm text-sm" type="number"
+                    aria-label="resultCalculator" readonly>
             </div>
         </div>
         <div class="card-footer text-center">

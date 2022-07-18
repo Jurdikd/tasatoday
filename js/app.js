@@ -2,7 +2,7 @@ import { calcualteTodayTerror } from "./calcualteTodayTerror.js"; // Import calc
 import { loadRatesTerror } from "./loadRatesTerror.js"; // This is for load or set rates
 import { loadingTerror } from "./loadingTerror.js"; // This is while the page it's loading everething
 
-// Load
+// Load page
 document.addEventListener("DOMContentLoaded", async () => {
 	// set values
 	loadRatesTerror.loadDefault();
@@ -13,50 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	await showRates();
 	await loadCalculator();
 });
-// inputs
-//const amount = document.getElementById("amount"); // cantidad
-//const result = document.getElementById("result"); // resultado
-// labels
-/*
-const labelAmount = document.getElementsByClassName("labelAmount"); // etiqueta cantidad
-const labelResult = document.getElementsByClassName("labelResult"); // etiqueta resultado
-// buttons
-const changeDivisa = document.getElementById("changeDivisa");
-const tittleDivisa = document.getElementsByClassName("tittleDivisa");*/
-/*
-// Automatic convert
-amount.addEventListener("keyup", (e) => {
-	//console.log(e.target.value);
-	if (e.target.value < 0) {
-		e.target.value = 0;
-	}
-	calculateEvent();
-});
-amount.addEventListener("change", (e) => {
-	//console.log(e.target.value);
-	if (e.target.value < 0) {
-		e.target.value = 0;
-	}
-	calculateEvent();
-});
-// Convert divisa with a click on change
-changeDivisa.addEventListener("click", (e) => {
-	const rates = {
-		rates: 2,
-	};
-	if (localStorage.getItem("divisa") === "usd") {
-		localStorage.setItem("divisa", "eur");
-		e.target.text = "Cambiar a BsD";
-		calcualteTodayTerror.bcv_BS_to_bsd(rates);
-	} else {
-		localStorage.setItem("divisa", "usd");
-		e.target.text = "Cambiar a USD";
-		calcualteTodayTerror.bcv_BS_to_bsd(rates);
-	}
-	console.log(e.target.text);
-});
-*/
-
+// Show rates
 const showRates = async () => {
 	const rates = document.querySelector(".rates");
 	const template = document.getElementById("card-rate").content;
@@ -74,27 +31,23 @@ const showRates = async () => {
 			.setAttribute("data-setRate", allRates[key].shortName);
 		fragment.appendChild(clone);
 	}
-	await actionAsync();
 	rates.innerHTML = "";
 	rates.appendChild(fragment);
 };
-const actionAsync = async () => {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve();
-		}, 7000);
-	});
-};
+
+// Show rates
 document.querySelector(".rates").addEventListener("click", (e) => {
 	if (e.target && e.target.tagName === "BUTTON") {
 		const setRate = e.target.getAttribute("data-setRate").toLowerCase().replace(" ", "-");
 		loadRatesTerror.setRate(setRate);
 		document.querySelector(".amountRate").textContent = loadRatesTerror.getRate();
 		document.querySelector(".resultRate").textContent = loadRatesTerror.getCurrency();
-		const amount = document.getElementById("amount");
-		const result = document.getElementById("result");
+		const amount = document.getElementById("amountCalculator");
+		const result = document.getElementById("resultCalculator");
 		amount.focus();
-		calculateEvent(amount, result);
+		if (amount.value !== "" && amount.value > 0) {
+			calculateEvent(amount, result);
+		}
 	}
 });
 // Load calculator
@@ -205,7 +158,7 @@ cardCalculator.addEventListener("click", async (e) => {
 		const message =
 			"El monto es: " +
 			result.value +
-			" y tasa  " +
+			" tasa  " +
 			loadRatesTerror.getRate().replace(" ", "%20");
 		window.open("https://wa.me/?text=" + message, "_blank");
 	}
