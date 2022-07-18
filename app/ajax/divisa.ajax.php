@@ -58,6 +58,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $promedio['change'],
                     'color' => $promedio['color'],
                     'symbol' => $promedio['symbol'],
+                    'iso' =>'usd',
                 ),
                 'bcv' => array(
                     'name' => $bcv['name'],
@@ -67,6 +68,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $bcv['change'],
                     'color' => $bcv['color'],
                     'symbol' => $bcv['symbol'],
+                    'iso' =>'usd',
                 ),
                 'enparalelovzla' => array(
                     'name' => $enparalelo['name'],
@@ -76,6 +78,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $enparalelo['change'],
                     'color' => $enparalelo['color'],
                     'symbol' => $enparalelo['symbol'],
+                    'iso' =>'usd',
                 ),
                 'airtm' => array(
                     'name' => $airtm['name'],
@@ -85,6 +88,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $airtm['change'],
                     'color' => $airtm['color'],
                     'symbol' => $airtm['symbol'],
+                    'iso' =>'usd',
                 ),
                 'localbitcoins' => array(
                     'name' => $localbitcoins['name'],
@@ -94,6 +98,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $localbitcoins['change'],
                     'color' => $localbitcoins['color'],
                     'symbol' => $localbitcoins['symbol'],
+                    'iso' =>'usd',
                 ),
                 'reserve' => array(
                     'name' => $reserve['name'],
@@ -103,6 +108,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $reserve['change'],
                     'color' => $reserve['color'],
                     'symbol' => $reserve['symbol'],
+                    'iso' =>'usd',
                 ),
                 'dolartoday' => array(
                     'name' => $dolartoday['name'],
@@ -112,6 +118,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $dolartoday['change'],
                     'color' => $dolartoday['color'],
                     'symbol' => $dolartoday['symbol'],
+                    'iso' =>'usd',
                 ),
                 'skrill' => array(
                     'name' => $skrill['name'],
@@ -121,6 +128,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $skrill['change'],
                     'color' => $skrill['color'],
                     'symbol' => $skrill['symbol'],
+                    'iso' =>'usd',
                 ),
                 'amazon' => array(
                     'name' => $amazon['name'],
@@ -130,6 +138,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $amazon['change'],
                     'color' => $amazon['color'],
                     'symbol' => $amazon['symbol'],
+                    'iso' =>'usd',
                 ),
                 'paypal' => array(
                     'name' => $paypal['name'],
@@ -139,6 +148,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $paypal['change'],
                     'color' => $paypal['color'],
                     'symbol' => $paypal['symbol'],
+                    'iso' =>'usd',                    
                 ),
                 'zoom' => array(
                     'name' => $zoom['name'],
@@ -148,6 +158,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $zoom['change'],
                     'color' => $zoom['color'],
                     'symbol' => $zoom['symbol'],
+                    'iso' =>'usd',                    
                 ),
                 'yadio' => array(
                     'name' => $yadio['name'],
@@ -157,6 +168,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $yadio['change'],
                     'color' => $yadio['color'],
                     'symbol' => $yadio['symbol'],
+                    'iso' =>'usd',                   
                 ),
                 'petro' => array(
                     'name' => $petro['name'],
@@ -166,6 +178,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $petro['change'],
                     'color' => $petro['color'],
                     'symbol' => $petro['symbol'],
+                    'iso' =>'petro',
                 ),
                 'zelle' => array(
                     'name' => 'ZELLE',
@@ -175,6 +188,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $enparalelo['change'],
                     'color' => $enparalelo['color'],
                     'symbol' => $enparalelo['symbol'],
+                    'iso' =>'usd',
                 ),
                 'euro' => array(
                     'name' => $bcvTasa['euro']['name'],
@@ -184,6 +198,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $bcv['change'],
                     'color' => $bcv['color'],
                     'symbol' => $bcv['symbol'],
+                    'iso' =>'eur',
                 ),
                 'yuan' => array(
                     'name' => $bcvTasa['yuan']['name'],
@@ -193,6 +208,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $bcv['change'],
                     'color' => $bcv['color'],
                     'symbol' => $bcv['symbol'],
+                    'iso' =>'cny',
                 ),
                 'lira' => array(
                     'name' => $bcvTasa['lira']['name'],
@@ -202,6 +218,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $bcv['change'],
                     'color' => $bcv['color'],
                     'symbol' => $bcv['symbol'],
+                    'iso' =>'try',
                 ),
                 'rublo' => array(
                     'name' => $bcvTasa['rublo']['name'],
@@ -211,6 +228,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $bcv['change'],
                     'color' => $bcv['color'],
                     'symbol' => $bcv['symbol'],
+                    'iso' =>'rub',
                 )
             );
             $respuesta = $tasatoday; #Devolvemos datos en formato json
@@ -240,6 +258,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $tasatoday['change'],
                     'color' => $tasatoday['color'],
                     'symbol' => $tasatoday['symbol'],
+                    'iso' =>'usd',
                 ),
             );
 
@@ -270,6 +289,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $bcv['change'],
                     'color' => $bcv['color'],
                     'symbol' => $bcv['symbol'],
+                    'iso' =>'usd',
                 ),
             );
 
@@ -300,6 +320,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $enparalelo['change'],
                     'color' => $enparalelo['color'],
                     'symbol' => $enparalelo['symbol'],
+                    'iso' =>'usd',
                 ),
             );
 
@@ -330,6 +351,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $airtm['change'],
                     'color' => $airtm['color'],
                     'symbol' => $airtm['symbol'],
+                    'iso' =>'usd',
                 ),
             );
 
@@ -360,6 +382,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $localbitcoins['change'],
                     'color' => $localbitcoins['color'],
                     'symbol' => $localbitcoins['symbol'],
+                    'iso' =>'usd',
                 ),
             );
 
@@ -390,6 +413,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $reserve['change'],
                     'color' => $reserve['color'],
                     'symbol' => $reserve['symbol'],
+                    'iso' =>'usd',
                 ),
             );
 
@@ -420,6 +444,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $dolartoday['change'],
                     'color' => $dolartoday['color'],
                     'symbol' => $dolartoday['symbol'],
+                    'iso' =>'usd',
                 ),
             );
 
@@ -450,6 +475,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $skrill['change'],
                     'color' => $skrill['color'],
                     'symbol' => $skrill['symbol'],
+                    'iso' =>'usd',
                 ),
             );
 
@@ -480,6 +506,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $amazon['change'],
                     'color' => $amazon['color'],
                     'symbol' => $amazon['symbol'],
+                    'iso' =>'usd',
                 ),
             );
 
@@ -510,6 +537,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $paypal['change'],
                     'color' => $paypal['color'],
                     'symbol' => $paypal['symbol'],
+                    'iso' =>'usd',
                 ),
             );
 
@@ -540,6 +568,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $zoom['change'],
                     'color' => $zoom['color'],
                     'symbol' => $zoom['symbol'],
+                    'iso' =>'usd',
                 ),
             );
 
@@ -570,6 +599,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $yadio['change'],
                     'color' => $yadio['color'],
                     'symbol' => $yadio['symbol'],
+                    'iso' =>'usd',
                 ),
             );
 
@@ -600,6 +630,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $petro['change'],
                     'color' => $petro['color'],
                     'symbol' => $petro['symbol'],
+                    'iso' =>'petro',
                 ),
             );
 
@@ -630,6 +661,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $zelle['change'],
                     'color' => $zelle['color'],
                     'symbol' => $zelle['symbol'],
+                    'iso' =>'usd',
                 ),
             );
 
@@ -660,6 +692,7 @@ if (!empty($get) && !empty($get['rates'])) {
                     'change' => $bcv['change'],
                     'color' => $bcv['color'],
                     'symbol' => $bcv['symbol'],
+                    'iso' =>'eur',
                 ),
             );
     
@@ -690,6 +723,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 'change' => $bcv['change'],
                 'color' => $bcv['color'],
                 'symbol' => $bcv['symbol'],
+                'iso' =>'cny',
               ),
           );
     
@@ -720,6 +754,7 @@ if (!empty($get) && !empty($get['rates'])) {
                 'change' => $bcv['change'],
                 'color' => $bcv['color'],
                 'symbol' => $bcv['symbol'],
+                'iso' =>'try',
               ),
           );
     
@@ -749,7 +784,8 @@ if (!empty($get) && !empty($get['rates'])) {
                 'percent' => $bcv['percent'],
                 'change' => $bcv['change'],
                 'color' => $bcv['color'],
-                'symbol' => $bcv['symbol'],
+                'symbol' => $bcv['symbol'],                
+                'iso' =>'rub',
               ),
           );
                 $respuesta = $tasaDivisa; #Devolvemos datos en formato json
