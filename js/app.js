@@ -4,13 +4,14 @@ import { loadingTerror } from "./loadingTerror.js"; // This is while the page it
 
 // Load
 document.addEventListener("DOMContentLoaded", async () => {
+	// set values
 	loadRatesTerror.loadDefault();
-	loadCalculator();
-	showRates();
-
-	// Loader and message
-	loadingTerror.message(document.getElementById("msgPreloader"));
+	// Loader message
+	await loadingTerror.message(document.getElementById("msgPreloader"));
+	// Loader
 	loadingTerror.load(document.getElementById("preloader"), 5000);
+	await showRates();
+	await loadCalculator();
 });
 // inputs
 //const amount = document.getElementById("amount"); // cantidad
@@ -97,7 +98,7 @@ document.querySelector(".rates").addEventListener("click", (e) => {
 	}
 });
 // Load calculator
-const loadCalculator = () => {
+const loadCalculator = async () => {
 	const calculator = document.querySelector(".card-calculator");
 	const template = document.getElementById("card-calculator").content;
 	const fragment = document.createDocumentFragment();
