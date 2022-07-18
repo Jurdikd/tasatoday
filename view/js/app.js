@@ -1,5 +1,6 @@
 import { calcualteTodayTerror } from "./calcualteTodayTerror.js"; // Import calcualteTodayTerror (funtions) for to calculate
 import { loadRatesTerror } from "./loadRatesTerror.js"; // This is for load or set rates
+import { TerrorMoney } from "./TerrorMoney.js"; // This is for to format currencys
 import { loadingTerror } from "./loadingTerror.js"; // This is while the page it's loading everething
 
 // Load page
@@ -35,7 +36,7 @@ const showRates = async () => {
 	rates.appendChild(fragment);
 };
 
-// Show rates
+// Click rates
 document.querySelector(".rates").addEventListener("click", (e) => {
 	if (e.target && e.target.tagName === "BUTTON") {
 		const setRate = e.target.getAttribute("data-setRate").toLowerCase().replace(" ", "-");
