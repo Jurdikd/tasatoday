@@ -96,6 +96,7 @@ document.querySelector(".rates").addEventListener("click", (e) => {
 		calculateEvent(amount, result);
 	}
 });
+// Load calculator
 const loadCalculator = () => {
 	const calculator = document.querySelector(".card-calculator");
 	const template = document.getElementById("card-calculator").content;
@@ -107,15 +108,16 @@ const loadCalculator = () => {
 	fragment.appendChild(clone);
 	calculator.appendChild(fragment);
 };
+// Get rate with calculator
 const cardCalculator = document.querySelector(".card-calculator");
-cardCalculator.addEventListener("change", (e) => {
+cardCalculator.addEventListener("change", async (e) => {
 	if (e.target && e.target.name === "amount") {
 		const amount = e.target;
 		const result =
 			e.target.parentElement.parentElement.nextElementSibling.firstElementChild
 				.lastElementChild;
 		//console.log(result.value);
-		calculateEvent(amount, result);
+		await calculateEvent(amount, result);
 		const btnShare =
 			e.target.parentElement.parentElement.nextElementSibling.nextElementSibling
 				.lastElementChild;
@@ -126,6 +128,25 @@ cardCalculator.addEventListener("change", (e) => {
 		}
 	}
 });
+cardCalculator.addEventListener("keyup", async (e) => {
+	if (e.target && e.target.name === "amount") {
+		const amount = e.target;
+		const result =
+			e.target.parentElement.parentElement.nextElementSibling.firstElementChild
+				.lastElementChild;
+		//console.log(result.value);
+		await calculateEvent(amount, result);
+		const btnShare =
+			e.target.parentElement.parentElement.nextElementSibling.nextElementSibling
+				.lastElementChild;
+		if (amount.value !== "" && amount.value > 0) {
+			btnShare.disabled = false;
+		} else {
+			btnShare.disabled = true;
+		}
+	}
+});
+//Btn inverter
 cardCalculator.addEventListener("click", async (e) => {
 	if (e.target && e.target.name === "rateInverter") {
 		if (loadRatesTerror.getCurrency() === "others") {
@@ -141,8 +162,17 @@ cardCalculator.addEventListener("click", async (e) => {
 			let oldAmount = amount.value;
 			amount.value = oldResult;
 			result.value = oldAmount;
+			// preReload
+			let textPreload = e.target.textContent;
+			e.target.disabled = true;
+			e.target.textContent = "...";
+			const btnShare = e.target.nextElementSibling;
+			btnShare.disabled = true;
 			// Reload rate
 			await calculateEvent(amount, result);
+			e.target.disabled = false;
+			e.target.textContent = textPreload;
+			btnShare.disabled = false;
 		} else if (loadRatesTerror.getCurrency() === "ves") {
 			loadRatesTerror.setCurrency("others");
 			const amount =
@@ -151,12 +181,22 @@ cardCalculator.addEventListener("click", async (e) => {
 			const result =
 				e.target.parentElement.previousElementSibling.firstElementChild.firstElementChild
 					.nextElementSibling;
+
 			let oldResult = result.value;
 			let oldAmount = amount.value;
 			amount.value = oldResult;
 			result.value = oldAmount;
+			// preReload
+			let textPreload = e.target.textContent;
+			e.target.disabled = true;
+			e.target.textContent = "...";
+			const btnShare = e.target.nextElementSibling;
+			btnShare.disabled = true;
 			// Reload rate
 			await calculateEvent(amount, result);
+			e.target.disabled = false;
+			e.target.textContent = textPreload;
+			btnShare.disabled = false;
 			{
 			}
 		}
