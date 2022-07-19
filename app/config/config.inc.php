@@ -1,8 +1,6 @@
 <?php
-//DATOS DE LA EMPRESA
-$lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore similique praesentium provident ipsum harum odio, voluptate consectetur magnam totam labore adipisci obcaecati sit ad cupiditate ratione quam. Asperiores, eligendi soluta!";
-$lorem2 = "Some quick example text to build on the card title and make up the bulk of the card's
-content.";
+//DATOS DEL SITIO
+
 define('NOMBRE_PRINCIPAL', 'TasatodayPro'); #nombre
 
 // Creacion de base de datos

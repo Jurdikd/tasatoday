@@ -14,8 +14,11 @@ if (count($partes_ruta) == 1) {
 } else if (count($partes_ruta) == 2) {
     // Buscamos los casos comunes
     if ($partes_ruta[1] == 'javascript-no-activo') {
-        # code...
+        # redirección para informar que necesita js
         $ruta_elegida = 'view/sin-js.php';
+    } else if ($partes_ruta[1] == 'custom') {
+        # muestra de tasa personalizada
+        $ruta_elegida = 'view/custom.php';
     }
 }
 include_once $ruta_elegida;
