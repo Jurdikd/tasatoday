@@ -41,7 +41,6 @@ export const calcualteTodayTerror = {
 	//Convert
 	covert: async (rates, mate, amount) => {
 		const getRate = await calcualteTodayTerror.fetchDivisa({ rates: rates });
-		console.log(getRate[rates].rate);
 		if (mate === "+") {
 			return (amount + getRate[rates].rate).toFixed(2);
 		} else if (mate === "-") {

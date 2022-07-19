@@ -3,7 +3,7 @@
     <div class="card">
         <div class="card-header">
             <div class=" card-tittle text-dark">
-                Para convertir coloca la cantidad a converitir
+                Para convertir coloca la cantidad a convertir
             </div>
             <div class="form-group">
                 <label for="amountCalculator" class="text-success labelAmount ">Cantidad: <small
