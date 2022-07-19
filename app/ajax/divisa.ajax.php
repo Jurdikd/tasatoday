@@ -14,7 +14,7 @@ $get = UrlGetTerror::Getjson();
 if (!empty($_SERVER['HTTP_ORIGIN'])) {
     # comprobanos el origin...
     $origin = $_SERVER['HTTP_ORIGIN'];
-    echo $origin . $verifyHost;
+    echo SERVIDOR . " o " . $origin . " ve " . $verifyHost;
     // verificamos si get es correcto y esta inciada y no vacia
     if (!empty($get) && !empty($get['rates']) && $verifyHost == $origin) {
         #guardamos la variable rates
