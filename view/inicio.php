@@ -122,6 +122,10 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
 <?php
 include_once "app/templates/components/cards/card-rates.comp.php";
 include_once "app/templates/components/cards/card-calculator.comp.php";
-include_once "app/templates/app-inc-page/cuerpo-body-close.inc.php";
+include_once "app/templates/app-inc-page/cuerpo-body-close.inc.php";?>
+
+<script src="<?php echo RUTA_JS ?>app.js" type="module">
+</script>
+<?php
 include_once "app/templates/app-inc-page/pie-footer.inc.php";
 ?>
