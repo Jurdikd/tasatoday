@@ -15,6 +15,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 	await dataLoad();
 	await loadCalculator();
 });
+// Data get url
+const rate = urlGetTerror.get("rate");
+const currency = urlGetTerror.get("currency");
+const to = urlGetTerror.get("to");
+const nameRate = urlGetTerror.get("name");
 
 // Load calculator
 const loadCalculator = async () => {
@@ -30,10 +35,6 @@ const loadCalculator = async () => {
 };
 
 const dataLoad = async () => {
-	const rate = urlGetTerror.get("rate");
-	const currency = urlGetTerror.get("currency");
-	const to = urlGetTerror.get("to");
-	const nameRate = urlGetTerror.get("name");
 	if (
 		rate !== undefined &&
 		currency !== undefined &&
@@ -85,8 +86,17 @@ const calculatorProcess = async (e) => {
 //Btn inverter
 cardCalculator.addEventListener("click", async (e) => {
 	if (e.target && e.target.name === "rateInverter") {
-		if (loadRatesTerror.getCurrency() === "others") {
-			loadRatesTerror.setCurrency("ves");
+		const namesLabels = e.target.parentElement.parentElement;
+		const amountLabel = namesLabels.querySelector(".amountRate");
+		const resultLabel = namesLabels.querySelector(".resultRate");
+
+		if (localStorage.getItem("currencyCustom") === currency) {
+			localStorage.setItem("currencyCustom", to);
+			// change la labels
+			let amountText = amountLabel.textContent;
+			let resultText = resultLabel.textContent;
+			amountLabel.textContent = resultText;
+			resultLabel.textContent = amountText;
 			const amount =
 				e.target.parentElement.parentElement.firstElementChild.lastElementChild
 					.lastElementChild;
@@ -109,8 +119,13 @@ cardCalculator.addEventListener("click", async (e) => {
 			e.target.disabled = false;
 			e.target.textContent = textPreload;
 			btnShare.disabled = false;
-		} else if (loadRatesTerror.getCurrency() === "ves") {
-			loadRatesTerror.setCurrency("others");
+		} else if (localStorage.getItem("currencyCustom") === to) {
+			localStorage.setItem("currencyCustom", currency);
+			// change la labels
+			let amountText = amountLabel.textContent;
+			let resultText = resultLabel.textContent;
+			amountLabel.textContent = resultText;
+			resultLabel.textContent = amountText;
 			const amount =
 				e.target.parentElement.parentElement.firstElementChild.lastElementChild
 					.lastElementChild;
@@ -144,8 +159,10 @@ cardCalculator.addEventListener("click", async (e) => {
 		const message =
 			"El monto es: " +
 			result.value +
-			" tasa  " +
-			loadRatesTerror.getRate().replace(" ", "%20");
+			" valor tasa: " +
+			localStorage.getItem("rateCustom") +
+			" de " +
+			localStorage.getItem("nameRateCustom").replace(" ", "%20");
 		window.open("https://wa.me/?text=" + message, "_blank");
 	}
 });
@@ -154,13 +171,13 @@ const calculateEvent = async (amount, result) => {
 	if (amount.value < 0) {
 		amount.value = 0;
 	} else {
-		if (loadRatesTerror.getCurrency() === "others") {
+		if (localStorage.getItem("currencyCustom") === currency) {
 			result.value = await calculateConvert(
 				localStorage.getItem("rateCustom"),
 				"/",
 				amount.value
 			);
-		} else if (loadRatesTerror.getCurrency() === "ves") {
+		} else if (localStorage.getItem("currencyCustom") === to) {
 			// Convertir bs a eur
 			result.value = await calculateConvert(
 				localStorage.getItem("rateCustom"),
@@ -172,7 +189,6 @@ const calculateEvent = async (amount, result) => {
 };
 // Calocate and converter
 const calculateConvert = async (rate, mate, amount) => {
-	console.log(rate);
 	if (mate === "+") {
 		return (amount + rate).toFixed(2);
 	} else if (mate === "-") {
