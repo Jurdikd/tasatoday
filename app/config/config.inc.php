@@ -22,9 +22,9 @@ define("DOMINIO", $_SERVER['SERVER_NAME']);
 define("PUERTO", $_SERVER['SERVER_PORT']);
 // Verificación de servidor de prueba u oficial
 if (PUERTO === "80" || PUERTO === "443") {
-    define("SERVIDOR", HTTPS . DOMINIO . "/");
+    define("SERVIDOR", HTTPS . DOMINIO);
 } else {
-    define("SERVIDOR", HTTPS . DOMINIO . ":" . PUERTO . "/");
+    define("SERVIDOR", HTTPS . DOMINIO . ":" . PUERTO);
 }
 
 #Server para admins
@@ -34,7 +34,7 @@ if (PUERTO === "80" || PUERTO === "443") {
     ** Vistas de html o php
     */
 #define("VISTA", SERVIDOR . "vistas" . "/");
-define("VISTA", SERVIDOR);
+define("VISTA", SERVIDOR . "/");
 
 //copiar esta de ejemplo sin "#" para seguir colocando rutas:
 
@@ -82,10 +82,10 @@ define("RUTA_TERMINOS_CONDICIONES", VISTA . "terminos-y-condiciones");
 #define("RUTA_MUESTRA", SERVIDOR . "muestras" . "/");
 
 //RECURSOS
-define("RUTA_CSS", SERVIDOR . "view/css" . "/");
-define("RUTA_JS", SERVIDOR . "view/js" . "/");
-define("RUTA_FAVICON", SERVIDOR . "view/favicon" . "/");
-define("RUTA_IMG", SERVIDOR . "view/img" . "/");
+define("RUTA_CSS", SERVIDOR . "/view/css" . "/");
+define("RUTA_JS", SERVIDOR . "/view/js" . "/");
+define("RUTA_FAVICON", SERVIDOR . "/view/favicon" . "/");
+define("RUTA_IMG", SERVIDOR . "/view/img" . "/");
 define("DIRECTORIO_RAIZ", realpath(dirname(__FILE__) . "/..")); //para php < 5.3
 // realpath(__DIR__."/..") para php 5.3+
 @session_start();
