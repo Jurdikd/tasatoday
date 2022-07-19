@@ -4,7 +4,6 @@ include_once "../../libs/CurlTerror.libs.php";
 include_once "../../libs/FunctionTerror.libs.php";
 include_once "../../libs/UrlGetTerror.libs.php";
 
-$verifyHost = HTTPS . DOMINIO . ":" . PUERTO;
 
 #Definir variable para url de curl
 define("URL_CURL", "https://exchangemonitor.net/ajax/widget-unique?country=ve&type=");
@@ -14,9 +13,9 @@ $get = UrlGetTerror::Getjson();
 if (!empty($_SERVER['HTTP_ORIGIN'])) {
     # comprobanos el origin...
     $origin = $_SERVER['HTTP_ORIGIN'];
-    echo SERVIDOR . " o " . $origin . " ve " . $verifyHost;
+
     // verificamos si get es correcto y esta inciada y no vacia
-    if (!empty($get) && !empty($get['rates']) && $verifyHost == $origin) {
+    if (!empty($get) && !empty($get['rates']) && SERVIDOR == $origin) {
         #guardamos la variable rates
         $rates = $get['rates'];
 
