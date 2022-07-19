@@ -11,15 +11,14 @@ define("URL_CURL", "https://exchangemonitor.net/ajax/widget-unique?country=ve&ty
 define("URL_CURL_BCV", "http://www.bcv.org.ve");
 //Recibimos los datos por json
 $get = UrlGetTerror::Getjson();
-if (!empty($_SERVER['HTTP_ORIGIN']) && !empty($_SERVER['HTTP_REFERER'])) {
-    # code...
+if (!empty($_SERVER['HTTP_ORIGIN'])) {
+    # comprobanos el origin...
     $origin = $_SERVER['HTTP_ORIGIN'];
-    $referer = $_SERVER['HTTP_REFERER'];
-
     // verificamos si get es correcto y esta inciada y no vacia
-    if (!empty($get) && !empty($get['rates']) && $verifyHost == $origin && $verifyHost . "/" == $referer) {
+    if (!empty($get) && !empty($get['rates']) && $verifyHost == $origin) {
         #guardamos la variable rates
         $rates = $get['rates'];
+
         #verificamos los datos que entran
         if ($get['rates'] === "rates") {
 
@@ -873,9 +872,9 @@ if (!empty($_SERVER['HTTP_ORIGIN']) && !empty($_SERVER['HTTP_REFERER'])) {
         'message' => array(
             'lang' => array(
                 'en' =>
-                "Error: Empty url on ORIGIN and REFERER",
+                "Error: Empty url on ORIGIN",
                 'es' =>
-                "Error: Url vacío en ORIGIN y REFERER"
+                "Error: Url vacío en ORIGIN"
             )
         ),
     ));
