@@ -86,6 +86,13 @@ const calculatorProcess = async (e) => {
 //Btn inverter
 cardCalculator.addEventListener("click", async (e) => {
 	if (e.target && e.target.name === "rateInverter") {
+		btnInverter(e);
+	} else if (e.target && e.target.name === "shareRate") {
+		btnShareWs(e);
+	}
+});
+const btnInverter = async (e) => {
+	if (e.target && e.target.name === "rateInverter") {
 		const namesLabels = e.target.parentElement.parentElement;
 		const amountLabel = namesLabels.querySelector(".amountRate");
 		const resultLabel = namesLabels.querySelector(".resultRate");
@@ -151,7 +158,10 @@ cardCalculator.addEventListener("click", async (e) => {
 			{
 			}
 		}
-	} else if (e.target && e.target.name === "shareRate") {
+	}
+};
+const btnShareWs = async (e) => {
+	if (e.target && e.target.name === "shareRate") {
 		//console.log(e.target);
 		const result =
 			e.target.parentElement.previousElementSibling.firstElementChild.firstElementChild
@@ -165,7 +175,7 @@ cardCalculator.addEventListener("click", async (e) => {
 			localStorage.getItem("nameRateCustom").replace(" ", "%20");
 		window.open("https://wa.me/?text=" + message, "_blank");
 	}
-});
+};
 // Caculates
 const calculateEvent = async (amount, result) => {
 	if (amount.value < 0) {
