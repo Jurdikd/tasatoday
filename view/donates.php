@@ -2,8 +2,8 @@
 $titulo = "Donates";
 include_once "app/templates/app-inc-page/cabecera-header-inc.php"; ?>
 <div class="container">
-    <div class="row p-5 m-4">
-        <div class="col-6 mx-auto">
+    <div class="row m-4">
+        <div class="col-md-6 mx-auto">
             <div class="card">
                 <div class="card-header text-center">
                     <h5 class="card-tittle">Donaciones</h5>
