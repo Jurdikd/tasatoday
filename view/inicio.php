@@ -7,19 +7,19 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-10  mx-auto m-4">
-            <div class="h-100 p-5 text-white bg-dark rounded-3">
+            <div class="h-100 p-5 text-white bg-success rounded-3 jumbotron">
                 <h1>En construcción... TasaToday</h1>
                 <p class="lead">Nuestra misión no es hacer una simple calculadora o ver las tasas al momento...</p>
                 <br>
                 <p class="lead">Para nosotros lo importante es que puedas analizar cuanto ganas o pierdes por tasas
                     ¡incluso hasta personalizadas por tí!
                     para ello estamos construyendo este sitio y puedas compartir tu tasa por whatsapp o agregarlo a tu
-                    negocio y saber cuanto cotizas al instante solo espera y te sorprenderemos
+                    negocio y saber cuanto cotizas al instante solo espera y te sorprenderemos!!
                 </p>
             </div>
         </div>
     </div>
-    <div class="row rates">
+    <div class="row rates  m-2">
         <div class="col-md-3">
             <div class="card m-2 skeeleton">
                 <div class="card-header text-center">
@@ -65,8 +65,12 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
             </div>
         </div>
     </div>
+    <div class="row m-2">
+        <h4 class="h4 mx-auto text-center tittle-calculator">Calculadoras de tasas</h4>
+        <div class="col-md-4 mx-auto card-calculator m-2"></div>
+    </div>
     <div class="row">
-        <h4 class="h4 mx-auto p-5 text-white">Calculadoras de tasas</h4>
+
         <div class="col-md-6">
             <div class="card m-5">
                 <div class="card-header">
@@ -110,19 +114,12 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
             </div>
         </div>
     </div>
-    <div class="row">
-
-        <div class="col-md-4 card-calculator">
-
-        </div>
-
-    </div>
 </div>
 
 <?php
 include_once "app/templates/components/cards/card-rates.comp.php";
 include_once "app/templates/components/cards/card-calculator.comp.php";
-include_once "app/templates/app-inc-page/cuerpo-body-close.inc.php";?>
+include_once "app/templates/app-inc-page/cuerpo-body-close.inc.php"; ?>
 
 <script src="<?php echo RUTA_JS ?>app.js" type="module">
 </script>

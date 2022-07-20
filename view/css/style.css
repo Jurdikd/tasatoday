@@ -1,7 +1,10 @@
 
 .body-page{
-	background-color: rgb(59, 59, 59) !important;
+	background: rgb(23,157,255);
+	background: linear-gradient(90deg, rgba(23,157,255,1) 0%, rgba(187,238,63,1) 57%, rgba(165,255,16,1) 100%);
 }
+/*=========================================================*/
+/* animation preload*/
 .load{
 	margin: -50px auto;
 	position: fixed;
@@ -15,7 +18,8 @@
 	display: flex;
 	align-items: center;
   justify-content: center;
-}
+} 
+
 .preloader {
 	width: 70px;
 	height: 70px;
@@ -44,6 +48,8 @@
   #msgPreloader{
 	margin-top: 7em;
   }
+  /*=========================================================*/
+  /* animation card skeleton*/
   .card.skeeleton .card-tittle, .card.skeeleton .card__rate-text, .card.skeeleton .btn {
 	background: #eee;
 	height: 1em;
@@ -58,4 +64,16 @@
 	to {
 		background-position-x: -200%;
    }
+}
+  /*=========================================================*/
+  /* jumbotron */
+  .jumbotron{
+	-webkit-box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 5px 5px 15px 5px rgba(0,0,0,0);
+  }
+   /*=========================================================*/
+  /* tittle calculator*/
+  .tittle-calculator{
+	text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+
 }
