@@ -15,7 +15,7 @@
 </head>
 
 <body class="body-page">
-    <div id="preloader" class="load">
+    <div id="preloader" class="load crystal-effects">
         <div class="preloader"></div>
-        <p id="msgPreloader"></p>
+        <h5 id="msgPreloader" class="tittle-dark"></h5>
     </div>
