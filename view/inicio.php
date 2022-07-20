@@ -4,10 +4,10 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
 //$get_query = UrlGetTerror::Getquery("rate");
 
 ?>
-<div class="container mt-5">
-    <div class="row">
+<div class="container">
+    <div class="row m-4">
         <div class="col-md-10  mx-auto m-4">
-            <div class="h-100 p-5 text-white bg-success rounded-3 jumbotron">
+            <div class="h-100 p-5 text-white bg-dark rounded-3 jumbotron">
                 <h1>En construcción... TasaToday</h1>
                 <p class="lead">Nuestra misión no es hacer una simple calculadora o ver las tasas al momento...</p>
                 <br>
