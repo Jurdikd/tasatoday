@@ -14,7 +14,7 @@
     if (!isset($titulo) || empty($titulo)) {
         $titulo = NOMBRE_PRINCIPAL;
     } else {
-        $titulo . " | " . NOMBRE_PRINCIPAL;
+        $titulo =  $titulo . " | " . NOMBRE_PRINCIPAL;
     }
     echo "<title>$titulo</title>";
 
