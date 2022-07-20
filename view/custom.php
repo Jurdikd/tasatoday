@@ -6,14 +6,9 @@ $rate = UrlGetTerror::Getquery("rate");
 $currency = UrlGetTerror::Getquery("currency");
 $to = UrlGetTerror::Getquery("to");
 $name = UrlGetTerror::Getquery("name");
-
+$titulo = "Custom";
 include_once "app/templates/app-inc-page/cabecera-header-inc.php";
-
-
-echo $rate . "<br>";
-echo $currency . "<br>";
-echo $to . "<br>";
-echo $name . "<br>"; ?>
+?>
 
 <div class="container mt-5">
     <div class="row">

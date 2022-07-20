@@ -1,7 +1,7 @@
 <?php
 //DATOS DEL SITIO
 
-define('NOMBRE_PRINCIPAL', 'TasatodayPro'); #nombre
+define('NOMBRE_PRINCIPAL', 'TasaToday'); #nombre
 
 // Creacion de base de datos
 

@@ -1,7 +1,7 @@
 <?php
 header($_SERVER['SERVER_PROTOCOL'] . "404 Not Found", true, 404);
 header("HTTP/1.0 404 Not Found");
-
+$titulo = "Error 404";
 include_once "app/templates/app-inc-page/cabecera-header-inc.php"; ?>
 
 <div class="container">
