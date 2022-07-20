@@ -85,6 +85,7 @@ const calculatorProcess = async (e) => {
 };
 //Btn inverter
 cardCalculator.addEventListener("click", async (e) => {
+	e.stopPropagation();
 	if (e.target && e.target.name === "rateInverter") {
 		btnInverter(e);
 	} else if (e.target && e.target.name === "shareRate") {
