@@ -9,7 +9,7 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php"; ?>
         <div class="col-6 mx-auto">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-tiitle">Error 404</h5>
+                    <h5 class="card-tittle">Error 404</h5>
                 </div>
                 <div class="card-body">
                     <p>Lo que buscas no ha sido encotrado...</p>
