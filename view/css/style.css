@@ -88,7 +88,7 @@ box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 5px 5px 15px 5px
 /*boton de Whatsapp*/
 .float {
 	position: fixed;
-	bottom: 0.7em;
+	bottom: 2.7em;
 	right: 10px;
 	cursor: pointer;
 	text-decoration: none;
