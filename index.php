@@ -19,6 +19,9 @@ if (count($partes_ruta) == 1) {
     } else if ($partes_ruta[1] == 'custom') {
         # muestra de tasa personalizada
         $ruta_elegida = 'view/custom.php';
+    } else if ($partes_ruta[1] == 'donates') {
+        # mostra la vista de donaciones
+        $ruta_elegida = 'view/donates.php';
     }
 }
 // inculuir ruta
