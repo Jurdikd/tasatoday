@@ -2,6 +2,10 @@
 include_once "app/templates/app-inc-page/cabecera-header-inc.php";
 ?>
 <div class="container">
+    <div class="row m-4">
+        <h1 class="h4 mx-auto text-center tittle-dark m-4"><a href="<?php echo RUTA_DONATE; ?>">Recuerda apoyar con tu
+                donación</a></h1>
+    </div>
     <h4 class="h4 mx-auto text-center tittle-dark m-4">Tasas disponibles</h4>
     <div class="row rates m-2">
         <div class="col-md-3">
@@ -119,7 +123,7 @@ include_once "app/templates/components/cards/card-rates.comp.php";
 include_once "app/templates/components/cards/card-calculator.comp.php";
 include_once "app/templates/app-inc-page/cuerpo-body-close.inc.php"; ?>
 
-<script src="<?php echo RUTA_JS ?>calculator.js" type="module">
+<script src=" <?php echo RUTA_JS ?>calculator.js" type="module">
 </script>
 <?php
 include_once "app/templates/app-inc-page/pie-footer.inc.php";
