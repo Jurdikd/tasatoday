@@ -84,3 +84,31 @@ box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 5px 5px 15px 5px
 	text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3) !important;
 
 }
+   /*=========================================================*/
+/*boton de Whatsapp*/
+.float {
+	position: fixed;
+	bottom: 0.7em;
+	right: 10px;
+	cursor: pointer;
+	text-decoration: none;
+	background-color: #25d366;
+	color: #fff;
+	border-style: none;
+	border-radius: 60px;
+	font-size: 2em;
+	text-align: center;
+	box-shadow: 2px 2px 3px rgb(82, 82, 82);
+	z-index: 10000;
+	outline: none !important;
+}
+.float:hover {
+	text-decoration: none;
+	color: #ffffff;
+	background-color: #20ad54;
+}
+
+.my-float {
+	padding: 0.25em;
+}  
+ /*=========================================================*/
