@@ -1,6 +1,6 @@
 <!-- templates cards -->
 <template id="card-rate">
-    <div class="col-md-3">
+    <div class="col-xs-6 col-sm-6 col-md-3">
         <div class="card m-2">
             <div class="card-header text-center">
                 <h5 class="card-tittle">Name rate</h5>
