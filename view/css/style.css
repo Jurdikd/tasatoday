@@ -38,6 +38,7 @@
 	right: 0;
 	bottom: 0;
 	margin: auto;
+	
 	animation-name: girar;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;

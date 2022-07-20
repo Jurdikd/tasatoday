@@ -2,7 +2,7 @@
 include_once "app/templates/app-inc-page/cabecera-header-inc.php";
 ?>
 <div class="container">
-    <h4 class="h4 mx-auto text-center tittle-dark">Tasas disponibles</h4>
+    <h4 class="h4 mx-auto text-center tittle-dark m-4">Tasas disponibles</h4>
     <div class="row rates m-2">
         <div class="col-md-3">
             <div class="card m-2 skeeleton">
