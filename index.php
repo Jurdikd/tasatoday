@@ -10,9 +10,9 @@ $partes_ruta = array_slice($partes_ruta, 0);
 $ruta_elegida = 'view/404.php';
 // Vistas seleccionadas
 if (count($partes_ruta) == 1) {
+    // ruta inicio
     $ruta_elegida = 'view/inicio.php';
 } else if (count($partes_ruta) == 2) {
-    // Buscamos los casos comunes
     if ($partes_ruta[1] == 'javascript-no-activo') {
         # redirección para informar que necesita js
         $ruta_elegida = 'view/sin-js.php';
@@ -21,4 +21,5 @@ if (count($partes_ruta) == 1) {
         $ruta_elegida = 'view/custom.php';
     }
 }
+// inculuir ruta
 include_once $ruta_elegida;
