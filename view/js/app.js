@@ -38,6 +38,7 @@ const showRates = async () => {
 
 // Click rates
 document.querySelector(".rates").addEventListener("click", (e) => {
+	e.stopPropagation();
 	if (e.target && e.target.tagName === "BUTTON") {
 		const setRate = e.target.getAttribute("data-setRate").toLowerCase().replace(" ", "-");
 		loadRatesTerror.setRate(setRate);
@@ -99,6 +100,14 @@ const calculatorProcess = async (e) => {
 };
 //Btn inverter
 cardCalculator.addEventListener("click", async (e) => {
+	e.stopPropagation();
+	if (e.target && e.target.name === "rateInverter") {
+		btnInverter(e);
+	} else if (e.target && e.target.name === "shareRate") {
+		btnShareWs(e);
+	}
+});
+const btnInverter = async (e) => {
 	if (e.target && e.target.name === "rateInverter") {
 		if (loadRatesTerror.getCurrency() === "others") {
 			loadRatesTerror.setCurrency("ves");
@@ -151,7 +160,10 @@ cardCalculator.addEventListener("click", async (e) => {
 			{
 			}
 		}
-	} else if (e.target && e.target.name === "shareRate") {
+	}
+};
+const btnShareWs = async (e) => {
+	if (e.target && e.target.name === "shareRate") {
 		//console.log(e.target);
 		const result =
 			e.target.parentElement.previousElementSibling.firstElementChild.firstElementChild
@@ -163,7 +175,7 @@ cardCalculator.addEventListener("click", async (e) => {
 			loadRatesTerror.getRate().replace(" ", "%20");
 		window.open("https://wa.me/?text=" + message, "_blank");
 	}
-});
+};
 // Caculates
 const calculateEvent = async (amount, result) => {
 	if (amount.value < 0) {
