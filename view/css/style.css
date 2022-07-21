@@ -84,6 +84,24 @@ box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 5px 5px 15px 5px
 	text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3) !important;
 
 }
+
+
+/* button offcanvas */
+.btn-offcanvas{
+	position: fixed;
+	left: -140px;
+	height: 2em!important;
+	visibility:visible !important;
+	background-color: #25d366;
+	top: 2.7em;
+	box-shadow: 2px 2px 3px rgb(82, 82, 82);
+	cursor: pointer;
+	z-index: 1044;
+	transition: 1s ease-in-out;
+}
+.btn-offcanvas:hover{
+	left: 0px;
+}
    /*=========================================================*/
 /*boton de Whatsapp*/
 .float {

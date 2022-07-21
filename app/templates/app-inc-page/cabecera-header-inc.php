@@ -42,3 +42,7 @@
         <div class="preloader"></div>
         <h5 id="msgPreloader" class="tittle-dark"></h5>
     </div>
+    <button class="btn-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+        aria-controls="offcanvasScrolling">
+        Haz tu propia tasa >
+    </button>

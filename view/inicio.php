@@ -3,7 +3,7 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
 ?>
 <div class="container">
     <div class="row m-4">
-        <h1 class="h4 mx-auto text-center tittle-dark m-4"><a href="<?php echo RUTA_DONATE; ?>">Recuerda apoyar con tu
+        <h1 class="mx-auto text-center tittle-dark m-4"><a href="<?php echo RUTA_DONATE; ?>">Recuerda apoyar con tu
                 donación</a></h1>
     </div>
     <h4 class="h4 mx-auto text-center tittle-dark m-4">Tasas disponibles</h4>
