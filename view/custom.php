@@ -2,10 +2,7 @@
 include_once "libs/CurlTerror.libs.php";
 include_once "libs/FunctionTerror.libs.php";
 include_once "libs/UrlGetTerror.libs.php";
-$rate = UrlGetTerror::Getquery("rate");
-$currency = UrlGetTerror::Getquery("currency");
-$to = UrlGetTerror::Getquery("to");
-$name = UrlGetTerror::Getquery("name");
+
 $titulo = "Custom";
 include_once "app/templates/app-inc-page/cabecera-header-inc.php";
 ?>

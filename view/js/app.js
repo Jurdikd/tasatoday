@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 const rateCreateContent = document.querySelector(".offcanvas-body");
-
+const CreateLinkRate = document.querySelector(".CreateLinkRate");
 rateCreateContent.addEventListener("change", async (e) => {
 	e.stopPropagation();
 	await createNameRate(e);
@@ -18,13 +18,15 @@ rateCreateContent.addEventListener("change", async (e) => {
 });
 const createNameRate = async (e) => {
 	if (e.target && e.target.name === "nameCreate") {
-		console.log(e, e.target);
 		const nameCreate = e.target;
+		console.log(window.origin);
+		let change = CreateLinkRate.textContent.replace("name=", "name=" + nameCreate.value);
+		console.log(change);
+		CreateLinkRate.textContent = change;
 	}
 };
 const createValueRate = async (e) => {
 	if (e.target && e.target.name === "rateCreate") {
-		console.log(e, e.target);
 		const rateCreate = e.target;
 	}
 };

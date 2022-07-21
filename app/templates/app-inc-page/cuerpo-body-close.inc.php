@@ -18,8 +18,9 @@
             <div class="col-auto">
                 <button type="BUTTON" class="btn btn-primary mb-3">Crear tasa</button>
             </div>
+            <span
+                class="text-info text-sm CreateLinkRate"><?php echo RUTA_CUSTOM;  ?>?rate=5.70&currency=usd&to=ves&name=MiNegocio</span>
         </div>
-        <h4><?php echo SERVIDOR;  ?>custom?rate=6&currency=usd&to=ves&name=bendiburger</h4>
     </div>
 </div>
 <?php include_once "app/templates/components/buttons/btn_donate.com.php" ?>
