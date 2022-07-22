@@ -49,13 +49,16 @@ const createNameRate = (e) => {
 const createValueRate = (e) => {
 	if (e.target && e.target.name === "rateCreate") {
 		const rateCreate = e.target;
-
-		let regex = /rate=[0-9\.,]*&/;
-		let change = CreateLinkRate.textContent.replace(
-			regex,
-			"rate=" + rateCreate.value.replace(/[\/\\&\s+]/g, "") + "&"
-		);
-		//rateCreate.value = rateCreate.value.replace(/[\/\\&a-zA-Z\s+\*\-\+]/g, "");
-		CreateLinkRate.textContent = change.replace(" ", "");
+		if (rateCreate.value <= 0) {
+			rateCreate.value = "";
+		} else {
+			let regex = /rate=[0-9\.,]*&/;
+			let change = CreateLinkRate.textContent.replace(
+				regex,
+				"rate=" + rateCreate.value.replace(/[\/\\&\s+]/g, "") + "&"
+			);
+			//rateCreate.value = rateCreate.value.replace(/[\/\\&a-zA-Z\s+\*\-\+]/g, "");
+			CreateLinkRate.textContent = change.replace(" ", "");
+		}
 	}
 };
