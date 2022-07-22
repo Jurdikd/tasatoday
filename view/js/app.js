@@ -55,7 +55,7 @@ const createValueRate = (e) => {
 			regex,
 			"rate=" + rateCreate.value.replace(/[\/\\&\s+]/g, "") + "&"
 		);
-		rateCreate.value = rateCreate.value.replace(/[\/\\&a-zA-Z\s+\*\-\+]/g, "");
+		//rateCreate.value = rateCreate.value.replace(/[\/\\&a-zA-Z\s+\*\-\+]/g, "");
 		CreateLinkRate.textContent = change.replace(" ", "");
 	}
 };
