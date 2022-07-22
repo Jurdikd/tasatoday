@@ -9,17 +9,20 @@
         <div class="row g-3">
             <div class="col-auto">
                 <label for="nameCreate" class="visually-hidden">Nombre de negocio</label>
-                <input type="text" class="form-control-plaintext" id="nameCreate" name="nameCreate" value="MiNegocio">
+                <input type="text" class="form-control-plaintext" id="nameCreate" name="nameCreate"
+                    placeholder="MiNegocio">
             </div>
             <div class="col-auto">
                 <label for="rateCreate" class="visually-hidden">Precio de tasa en VES</label>
-                <input type="number" class="form-control" id="rateCreate" name="rateCreate" placeholder="5.70" value="">
+                <input type="number" class="form-control" id="rateCreate" name="rateCreate" placeholder="0.00" value="">
             </div>
             <div class="col-auto">
                 <button type="BUTTON" class="btn btn-primary mb-3">Crear tasa</button>
             </div>
-            <span
-                class="text-info text-sm CreateLinkRate"><?php echo RUTA_CUSTOM;  ?>?rate=5.70&currency=usd&to=ves&name=MiNegocio</span>
+            <div class="col-auto">
+                <span
+                    class="text-info text-sm CreateLinkRate"><?php echo RUTA_CUSTOM;  ?>?currency=usd&to=ves&rate=0.00&name=MiNegocio</span>
+            </div>
         </div>
     </div>
 </div>
