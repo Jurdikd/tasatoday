@@ -5,6 +5,9 @@ include_once "app/templates/app-inc-page/cabecera-header-inc.php";
     <div class="row m-4">
         <h1 class="mx-auto text-center tittle-dark m-4"><a href="<?php echo RUTA_DONATE; ?>">Recuerda apoyar con tu
                 donación</a></h1>
+        <div class="col-md-4 mx-auto">
+            <?php include_once "app/templates/widgets/worldip.widget.php"; ?>
+        </div>
     </div>
     <h4 class="h4 mx-auto text-center tittle-dark m-4">Tasas disponibles</h4>
     <div class="row rates m-2">
