@@ -21,7 +21,7 @@
             </div>
             <div class="col-auto">
                 <span
-                    class="text-info text-sm CreateLinkRate"><?php echo RUTA_CUSTOM;  ?>?currency=usd&to=ves&rate=0.00&name=MiNegocio</span>
+                    class="text-info text-xs text-sm CreateLinkRate"><?php echo RUTA_CUSTOM;  ?>?currency=usd&to=ves&rate=0.00&name=MiNegocio</span>
             </div>
         </div>
     </div>

@@ -13,26 +13,15 @@ const rateCreateContent = document.querySelector(".offcanvas-body");
 const CreateLinkRate = document.querySelector(".CreateLinkRate");
 rateCreateContent.addEventListener("change", (e) => {
 	e.stopPropagation();
-	//createURLCustom(e);
 	createNameRate(e);
 	createValueRate(e);
 });
 rateCreateContent.addEventListener("keyup", (e) => {
 	e.stopPropagation();
-	//createURLCustom(e);
 	createNameRate(e);
 	createValueRate(e);
 });
-const createURLCustom = (e) => {
-	if ((e.target && e.target.name === "nameCreate") || e.target.name === "rateCreate") {
-		const nameCreate = e.target.parentElement.querySelector(".nameCreate");
-		const rateCreate = e.target.parentElement.querySelector(".rateCreate");
-		console.log(nameCreate);
-		if (nameCreate.value !== "" && rateCreate.value !== "") {
-			CreateLinkRate.textContent = `window.origin/custom?rate=${rateCreate.value}&currency=usd&to=ves&name=${nameCreate.value}`;
-		}
-	}
-};
+
 const createNameRate = (e) => {
 	if (e.target && e.target.name === "nameCreate") {
 		const nameCreate = e.target;
