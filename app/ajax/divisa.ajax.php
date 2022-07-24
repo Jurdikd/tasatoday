@@ -68,7 +68,7 @@ if (!empty($_SERVER['HTTP_ORIGIN'])) {
                         'iso' => 'usd',
                     ),
                     'bcv' => array(
-                        'name' => $bcv['name'],
+                        'name' => 'Banco centrar de venezuela',
                         'shortName' => 'bcv',
                         'rate' => FunctionTerror::cambiarComas_puntos($bcv['price']),
                         'percent' => $bcv['percent'],
