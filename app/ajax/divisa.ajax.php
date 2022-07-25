@@ -52,7 +52,7 @@ if (!empty($_SERVER['HTTP_ORIGIN'])) {
                 is_array($paypal) &&
                 is_array($zoom) &&
                 is_array($yadio) &&
-                is_array($petro) &&
+                is_array($petro) ||
                 is_array($bcvTasa)
             ) {
                 $tasatoday  = array(

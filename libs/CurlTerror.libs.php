@@ -49,58 +49,83 @@ class CurlTerror
     public static function get_bcv($url)
     {
         try {
-            $html = file_get_contents($url);
-            $doc = new DOMDocument();
-            @$doc->loadHTML($html);
-            $xpath = new DOMXpath($doc);
-            $e = $xpath->query('//*[@id="euro"]/div')->item(0)->nodeValue;
-            $y = $xpath->query('//*[@id="yuan"]/div')->item(0)->nodeValue;
-            $l = $xpath->query('//*[@id="lira"]/div')->item(0)->nodeValue;
-            $r = $xpath->query('//*[@id="rublo"]/div')->item(0)->nodeValue;
-            $d = $xpath->query('//*[@id="dolar"]/div')->item(0)->nodeValue;
-            // replace spaces
-            $e = preg_replace("/\s+/", " ", $e);
-            $y = preg_replace("/\s+/", " ", $y);
-            $l = preg_replace("/\s+/", " ", $l);
-            $r = preg_replace("/\s+/", " ", $r);
-            $d = preg_replace("/\s+/", " ", $d);
-            // Explode get
-            $euro = explode(" ", $e);
-            $euro[2] = number_format(str_replace(',', '.', $euro[2]), 2);
-            $yuan = explode(" ", $y);
-            $yuan[2] = number_format(str_replace(',', '.', $yuan[2]), 2);
-            $lira = explode(" ", $l);
-            $lira[2] = number_format(str_replace(',', '.', $lira[2]), 2);
-            $rublo = explode(" ", $r);
-            $rublo[2] = number_format(str_replace(',', '.', $rublo[2]), 2);
-            $dolar = explode(" ", $d);
-            $dolar[2] = number_format(str_replace(',', '.', $dolar[2]), 2);
+            if (($html = @file_get_contents($url)) === false) {
+                $data = array(
+                    'euro' => array(
+                        'name' => 'Euro',
+                        'rate' => "0.00"
+                    ),
+                    'yuan' => array(
+                        'name' => 'Yuan',
+                        'rate' => "0.00"
+                    ),
+                    'lira' => array(
+                        'name' => 'Lira',
+                        'rate' => "0.00"
+                    ),
+                    'rublo' => array(
+                        'name' => 'Rublo',
+                        'rate' => "0.00",
+                    ),
+                    'dolar' => array(
+                        'name' => 'Dolar',
+                        'rate' => "0.00"
+                    ),
+                );
+            } else {
+                $html = file_get_contents($url);
+                $doc = new DOMDocument();
+                @$doc->loadHTML($html);
+                $xpath = new DOMXpath($doc);
+                $e = $xpath->query('//*[@id="euro"]/div')->item(0)->nodeValue;
+                $y = $xpath->query('//*[@id="yuan"]/div')->item(0)->nodeValue;
+                $l = $xpath->query('//*[@id="lira"]/div')->item(0)->nodeValue;
+                $r = $xpath->query('//*[@id="rublo"]/div')->item(0)->nodeValue;
+                $d = $xpath->query('//*[@id="dolar"]/div')->item(0)->nodeValue;
+                // replace spaces
+                $e = preg_replace("/\s+/", " ", $e);
+                $y = preg_replace("/\s+/", " ", $y);
+                $l = preg_replace("/\s+/", " ", $l);
+                $r = preg_replace("/\s+/", " ", $r);
+                $d = preg_replace("/\s+/", " ", $d);
+                // Explode get
+                $euro = explode(" ", $e);
+                $euro[2] = number_format(str_replace(',', '.', $euro[2]), 2);
+                $yuan = explode(" ", $y);
+                $yuan[2] = number_format(str_replace(',', '.', $yuan[2]), 2);
+                $lira = explode(" ", $l);
+                $lira[2] = number_format(str_replace(',', '.', $lira[2]), 2);
+                $rublo = explode(" ", $r);
+                $rublo[2] = number_format(str_replace(',', '.', $rublo[2]), 2);
+                $dolar = explode(" ", $d);
+                $dolar[2] = number_format(str_replace(',', '.', $dolar[2]), 2);
 
-            $data = array(
-                'euro' => array(
-                    'name' => 'Euro',
-                    'rate' => $euro[2]
-                ),
-                'yuan' => array(
-                    'name' => 'Yuan',
-                    'rate' => $yuan[2]
-                ),
-                'lira' => array(
-                    'name' => 'Lira',
-                    'rate' => $lira[2]
-                ),
-                'rublo' => array(
-                    'name' => 'Rublo',
-                    'rate' => $rublo[2],
-                ),
-                'dolar' => array(
-                    'name' => 'Dolar',
-                    'rate' => $dolar[2]
-                ),
-            );
+                $data = array(
+                    'euro' => array(
+                        'name' => 'Euro',
+                        'rate' => $euro[2]
+                    ),
+                    'yuan' => array(
+                        'name' => 'Yuan',
+                        'rate' => $yuan[2]
+                    ),
+                    'lira' => array(
+                        'name' => 'Lira',
+                        'rate' => $lira[2]
+                    ),
+                    'rublo' => array(
+                        'name' => 'Rublo',
+                        'rate' => $rublo[2],
+                    ),
+                    'dolar' => array(
+                        'name' => 'Dolar',
+                        'rate' => $dolar[2]
+                    ),
+                );
+            }
             return $data;
         } catch (Exception $e) {
-            print_r($e->getTrace());
+            print_r($e->getTrace() . " errorsaso");
         }
     }
     function get_ratesGoogle($currency)
