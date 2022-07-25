@@ -22,6 +22,9 @@ if (count($partes_ruta) == 1) {
     } else if ($partes_ruta[1] == 'donates') {
         # mostra la vista de donaciones
         $ruta_elegida = 'view/donates.php';
+    } else if ($partes_ruta[1] == 'prubs') {
+        # mostra la vista de pruebas
+        $ruta_elegida = 'view/prubs.php';
     }
 }
 // inculuir ruta
