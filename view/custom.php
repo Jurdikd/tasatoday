@@ -2,13 +2,17 @@
 include_once "libs/CurlTerror.libs.php";
 include_once "libs/FunctionTerror.libs.php";
 include_once "libs/UrlGetTerror.libs.php";
-
-$titulo = "Custom";
+if (UrlGetTerror::Getquery("name")) {
+    $titulo = UrlGetTerror::Getquery("name") . " - Custom";
+} else {
+    $titulo = "Custom";
+}
 include_once "app/templates/app-inc-page/cabecera-header-inc.php";
+
 ?>
 <div class="container">
     <div class="row m-2">
-
+        <h1 class="display-4 text-center"><?php echo UrlGetTerror::Getquery("name"); ?></h1>
         <div class="col-md-4 card-calculator mx-auto">
 
         </div>
