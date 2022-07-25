@@ -55,10 +55,10 @@ if (!empty($_SERVER['HTTP_ORIGIN'])) {
                 is_array($petro) ||
                 is_array($bcvTasa)
             ) {
-                $tasatoday  = array(
-                    'tasatoday' => array(
-                        'name' => 'TasaToday',
-                        'shortName' => 'tasatoday',
+                $tasatodayPro  = array(
+                    'tasatodayPro' => array(
+                        'name' => 'TasatodayPro',
+                        'shortName' => 'tasatodayPro',
                         'rate' => FunctionTerror::cambiarComas_puntos($promedio['price']),
                         'percent' => $promedio['percent'],
                         'change' => $promedio['change'],
@@ -68,7 +68,7 @@ if (!empty($_SERVER['HTTP_ORIGIN'])) {
                         'iso' => 'usd',
                     ),
                     'bcv' => array(
-                        'name' => 'Banco central de venezuela',
+                        'name' => 'Banco Central de Venezuela',
                         'shortName' => 'bcv',
                         'rate' => FunctionTerror::cambiarComas_puntos($bcv['price']),
                         'percent' => $bcv['percent'],
@@ -266,7 +266,7 @@ if (!empty($_SERVER['HTTP_ORIGIN'])) {
                         'iso' => 'rub',
                     )
                 );
-                $respuesta = $tasatoday; #Devolvemos datos en formato json
+                $respuesta = $tasatodayPro; #Devolvemos datos en formato json
             } else {
                 $respuesta = array('error' => array(
                     'message' => array(
@@ -279,20 +279,20 @@ if (!empty($_SERVER['HTTP_ORIGIN'])) {
                     ),
                 ));
             }
-        } else if ($get['rates'] === "tasatoday") {
+        } else if ($get['rates'] === "tasatodayPro") {
             //Obtener tasa enparalelovzla
-            $tasatoday = CurlTerror::get_simple(URL_CURL . 'promedio');
+            $tasatodayPro = CurlTerror::get_simple(URL_CURL . 'promedio');
 
-            if (is_array($tasatoday)) {
+            if (is_array($tasatodayPro)) {
                 $tasaDivisa  = array(
-                    'tasatoday' => array(
-                        'name' => 'TasaToday',
-                        'shortName' => 'tasatoday',
-                        'rate' => FunctionTerror::cambiarComas_puntos($tasatoday['price']),
-                        'percent' => $tasatoday['percent'],
-                        'change' => $tasatoday['change'],
-                        'color' => $tasatoday['color'],
-                        'symbol' => $tasatoday['symbol'],
+                    'tasatodayPro' => array(
+                        'name' => 'TasatodayPro',
+                        'shortName' => 'tasatodayPro',
+                        'rate' => FunctionTerror::cambiarComas_puntos($tasatodayPro['price']),
+                        'percent' => $tasatodayPro['percent'],
+                        'change' => $tasatodayPro['change'],
+                        'color' => $tasatodayPro['color'],
+                        'symbol' => $tasatodayPro['symbol'],
                         'to' => 'ves',
                         'iso' => 'usd',
                     ),
@@ -318,7 +318,7 @@ if (!empty($_SERVER['HTTP_ORIGIN'])) {
             if (is_array($bcv)) {
                 $tasaDivisa  = array(
                     'bcv' => array(
-                        'name' => 'Banco central de venezuela',
+                        'name' => 'Banco Central de Venezuela',
                         'shortName' => 'bcv',
                         'rate' => FunctionTerror::cambiarComas_puntos($bcv['price']),
                         'percent' => $bcv['percent'],
