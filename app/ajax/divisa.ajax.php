@@ -210,6 +210,17 @@ if (!empty($_SERVER['HTTP_ORIGIN'])) {
                         'to' => 'ves',
                         'iso' => 'usd',
                     ),
+                    'zinli' => array(
+                        'name' => 'Zinli',
+                        'shortName' => 'zinli',
+                        'rate' => number_format(FunctionTerror::cambiarComas_puntos($bcv['price']) - (FunctionTerror::cambiarComas_puntos($bcv['price']) * 0.01), 2),
+                        'percent' => $bcv['percent'],
+                        'change' => $bcv['change'],
+                        'color' => $bcv['color'],
+                        'symbol' => $bcv['symbol'],
+                        'to' => 'ves',
+                        'iso' => 'usd',
+                    ),
                     'euro' => array(
                         'name' => $bcvTasa['euro']['name'],
                         'shortName' => 'euro',
@@ -698,6 +709,38 @@ if (!empty($_SERVER['HTTP_ORIGIN'])) {
                         'change' => $zelle['change'],
                         'color' => $zelle['color'],
                         'symbol' => $zelle['symbol'],
+                        'to' => 'ves',
+                        'iso' => 'usd',
+                    ),
+                );
+
+                $respuesta = $tasaDivisa; #Devolvemos datos en formato json
+            } else {
+                $respuesta = array('error' => array(
+                    'message' => array(
+                        'lang' => array(
+                            'en' =>
+                            "Error: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection with server",
+                            'es' =>
+                            "Error: : OpenSSL SSL_connect: SSL_ERROR_SYSCALL en conexión con el servidor"
+                        ),
+                    ),
+                ));
+            }
+        } else if ($get['rates'] === "zinli") {
+            //Obtener tasa zinli
+            $zinli = CurlTerror::get_simple(URL_CURL . 'bcv');
+
+            if (is_array($zinli)) {
+                $tasaDivisa  = array(
+                    'zinli' => array(
+                        'name' => 'Zinli',
+                        'shortName' => 'zinli',
+                        'rate' => number_format(FunctionTerror::cambiarComas_puntos($zinli['price']) - (FunctionTerror::cambiarComas_puntos($zinli['price']) * 0.01), 2),
+                        'percent' => $zinli['percent'],
+                        'change' => $zinli['change'],
+                        'color' => $zinli['color'],
+                        'symbol' => $zinli['symbol'],
                         'to' => 'ves',
                         'iso' => 'usd',
                     ),
