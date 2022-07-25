@@ -25,11 +25,14 @@ const showRates = async () => {
 	for (let key in allRates) {
 		//console.log(allRates[key].rate);
 		const clone = template.cloneNode(true);
+
 		clone.querySelector(".tasatoday-rate").textContent = allRates[key].rate;
 		clone.querySelector(".card-tittle").textContent = allRates[key].name;
 		clone
 			.querySelector(".btn-setRate")
 			.setAttribute("data-setRate", allRates[key].shortName);
+		const rateNull = allRates[key].rate <= 0 ? true : false;
+		clone.querySelector(".btn-setRate").disabled = rateNull;
 		fragment.appendChild(clone);
 	}
 	rates.innerHTML = "";
