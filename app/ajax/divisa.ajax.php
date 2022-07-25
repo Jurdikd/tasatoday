@@ -68,7 +68,7 @@ if (!empty($_SERVER['HTTP_ORIGIN'])) {
                         'iso' => 'usd',
                     ),
                     'bcv' => array(
-                        'name' => 'Banco centrar de venezuela',
+                        'name' => 'Banco central de venezuela',
                         'shortName' => 'bcv',
                         'rate' => FunctionTerror::cambiarComas_puntos($bcv['price']),
                         'percent' => $bcv['percent'],
@@ -307,7 +307,7 @@ if (!empty($_SERVER['HTTP_ORIGIN'])) {
             if (is_array($bcv)) {
                 $tasaDivisa  = array(
                     'bcv' => array(
-                        'name' => $bcv['name'],
+                        'name' => 'Banco central de venezuela',
                         'shortName' => 'bcv',
                         'rate' => FunctionTerror::cambiarComas_puntos($bcv['price']),
                         'percent' => $bcv['percent'],
