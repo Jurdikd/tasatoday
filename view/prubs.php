@@ -34,3 +34,21 @@ if (($data = @file_get_contents(URL_CURL_BCV)) === false) {
 } else {
     echo "Everything went better than expected";
 }
+?>
+<script>
+const p = async () => {
+    const formData = new FormData();
+    formData.append('action', 'consulta-resultado');
+    formData.append('nonce', 'db6fdbd172');
+    formData.append('params', 'tipo_precio=6/monto=1');
+
+    const r = await fetch('https://zoom.red/wp-admin/admin-ajax.php', {
+        method: 'POST',
+        body: formData
+    })
+
+    console.log(r);
+}
+
+p();
+</script>
