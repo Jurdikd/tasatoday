@@ -86,7 +86,7 @@ define("RUTA_TERMINOS_CONDICIONES", VISTA . "terminos-y-condiciones");
 //RECURSOS
 define("RUTA_CSS", SERVIDOR . "/view/css" . "/");
 define("RUTA_JS", SERVIDOR . "/view/js" . "/");
-define("RUTA_FAVICON", SERVIDOR . "/view/favicon" . "/");
+define("RUTA_FAVICON", SERVIDOR . "/view/img/favicon" . "/");
 define("RUTA_IMG", SERVIDOR . "/view/img" . "/");
 define("DIRECTORIO_RAIZ", realpath(dirname(__FILE__) . "/..")); //para php < 5.3
 // realpath(__DIR__."/..") para php 5.3+
