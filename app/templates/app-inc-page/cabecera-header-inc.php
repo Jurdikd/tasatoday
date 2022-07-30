@@ -8,6 +8,8 @@
     <meta http-equiv="expires" content="0">
     <meta http-equiv="pragma" content="no-cache">
     <meta name="author" content="TasaTodayPro" />
+    <meta name="description"
+        content="TasaTodayPro es un sito para revisar las tasas y precios de diferentes divisas y criotomonedas como objetivo pricipal enfocado a venezuela solo como información y ayuda lo que se haga con la información es meramente resposabilidad de él o los usuarios que la utilicen">
     <noscript>
         <meta HTTP-EQUIV=" REFRESH" content="0; url=javascript-no-activo">
     </noscript>
@@ -21,7 +23,7 @@
 
     ?>
     <meta name='keywords'
-        content='TasaTodayPro, tasa, today, pro, rate, rates, currencys, currency, divisas, divisa, ve, ven, venezuela, dolar, euro, bolivares, ves, usd, eur, cripto, criptmonedas, cambio, calculadora de bolivares, calculadora, bs.d' />
+        content='TasaTodayPro, tasa, today, pro, rate, rates, currencys, currency, divisas, divisa, ve, ven, venezuela, dolar, euro, bolivares, ves, usd, eur, cripto, criptmonedas, cambio, calculadora de bolivares, calculadora, bs.d, precio del dolar en venezuela, precio del euro en venezuela, precio del rublo en venezuela, precio del yuan en venezuela' />
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo RUTA_FAVICON; ?>apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo RUTA_FAVICON; ?>favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo RUTA_FAVICON; ?>favicon-16x16.png">
