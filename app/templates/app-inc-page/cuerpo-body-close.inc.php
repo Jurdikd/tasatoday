@@ -31,7 +31,6 @@
 </div>
 <?php include_once "app/templates/components/buttons/btn_donate.com.php" ?>
 
-<!-- close body -->
 <!-- javascript-->
 <script src="<?php echo RUTA_CSS ?>bootstrap.min.js"></script>
 <script src="<?php echo RUTA_JS ?>app.js" type="module">
