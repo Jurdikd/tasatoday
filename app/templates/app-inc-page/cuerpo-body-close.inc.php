@@ -9,7 +9,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 mx-auto">
+            <div class="col-md-6">
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam quae odit impedit autem fuga,
+                    voluptatibus tempore facere modi. Accusamus sit corrupti tempora odit vero vitae voluptas doloribus
+                    officiis quasi nesciunt.</p>
+            </div>
+            <div class="col-md-6">
                 <ul class="bottom_ul footer-ul">
                     <li><a href="#">Tasatodaypro</a></li>
                     <li><a
