@@ -1,5 +1,27 @@
-</div>
 <!-- End content page-->
+</div>
+<!-- Footer-->
+<footer class=" b-0 copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <p class="text-center mt-2">© 2022 - TODOS LOS DERECHOS RESERVADOS</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <ul class="bottom_ul footer-ul">
+                    <li><a href="#">Tasatodaypro</a></li>
+                    <li><a
+                            href="mailto:contact@tasatoday.pro?Subject=<?php echo SERVIDOR; ?>%20Interesado%20en%20el%20servicio."><i
+                                class="fa fa-envelope"></i>contact@tasatoday.pro</a></li>
+                    <li><a href="https://www.instagram.com/tasatodaypro" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-instagram"></i>@tasatodaypro</a></a></li>
+                </ul>
+            </div>
+        </div>
+</footer>
+<!-- End footer-->
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
     id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
     <div class="offcanvas-header">
