@@ -3,6 +3,10 @@
 	background: rgb(23,157,255);
 	background: linear-gradient(90deg, rgba(23,157,255,1) 0%, rgba(187,238,63,1) 57%, rgba(165,255,16,1) 100%);
 }
+
+.content-page {
+	min-height: calc(100vh - 3.6em - 3.6em) !important;
+}
 /*=========================================================*/
 /* effects*/
 .crystal-effects{

@@ -51,3 +51,6 @@
         aria-controls="offcanvasScrolling">
         Haz tu propia tasa >
     </button>
+    <!-- Page Content -->
+
+    <div class="content-page">
