@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es-VE">
+<html lang="es_VE" id="html5" xmlns="http://www.w3.org/1999/xhtml" lang="es_VE" xml:lang="es_VE" class="">
 
 <head>
     <meta charset="utf-8">
