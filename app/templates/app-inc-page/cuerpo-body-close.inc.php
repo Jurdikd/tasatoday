@@ -10,9 +10,9 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam quae odit impedit autem fuga,
-                    voluptatibus tempore facere modi. Accusamus sit corrupti tempora odit vero vitae voluptas doloribus
-                    officiis quasi nesciunt.</p>
+                <p>TasaTodayPro es un sito para revisar las tasas y precios de diferentes divisas y criotomonedas como
+                    objetivo pricipal enfocado a venezuela solo como información y ayuda lo que se haga con la
+                    información es meramente resposabilidad de él o los usuarios que la utilicen</p>
             </div>
             <div class="col-md-6">
                 <ul class="bottom_ul footer-ul">
