@@ -16,6 +16,10 @@
         <lastmod>2022-07-30T15:45:32+00:00</lastmod>
         <priority>0.80</priority>
     </url>
-
+    <url>
+        <loc>https://tasatoday.pro/custom</loc>
+        <lastmod>2022-07-30T15:45:32+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
 
 </urlset>';
