@@ -16,6 +16,12 @@ if (count($partes_ruta) == 1) {
     if ($partes_ruta[1] == 'javascript-no-activo') {
         # redirección para informar que necesita js
         $ruta_elegida = 'view/sin-js.php';
+    } else if ($partes_ruta[1] == 'robots.txt') {
+        # muestra de archivo robot personalizada
+        $ruta_elegida = 'view/robots.txt';
+    } else if ($partes_ruta[1] == 'sitemap.xml') {
+        # muestra de archivo sitemap personalizada
+        $ruta_elegida = 'view/sitemap.xml';
     } else if ($partes_ruta[1] == 'custom') {
         # muestra de tasa personalizada
         $ruta_elegida = 'view/custom.php';
