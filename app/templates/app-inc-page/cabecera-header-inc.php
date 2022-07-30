@@ -22,8 +22,6 @@
     echo "<title>$titulo</title>";
 
     ?>
-    <meta name='keywords'
-        content='TasaTodayPro, tasa, today, pro, rate, rates, currencys, currency, divisas, divisa, ve, ven, venezuela, dolar, euro, bolivares, ves, usd, eur, cripto, criptmonedas, cambio, calculadora de bolivares, calculadora, bs.d, precio del dolar en venezuela, precio del euro en venezuela, precio del rublo en venezuela, precio del yuan en venezuela' />
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo RUTA_FAVICON; ?>apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo RUTA_FAVICON; ?>favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo RUTA_FAVICON; ?>favicon-16x16.png">
