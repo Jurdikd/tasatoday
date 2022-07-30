@@ -7,13 +7,7 @@
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0">
     <meta http-equiv="pragma" content="no-cache">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo RUTA_FAVICON; ?>apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo RUTA_FAVICON; ?>favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo RUTA_FAVICON; ?>favicon-16x16.png">
-    <link rel="manifest" href="<?php echo RUTA_FAVICON; ?>site.webmanifest">
-    <meta name="msapplication-config" content="<?php echo RUTA_FAVICON; ?>browserconfig.xml" />
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="author" content="TasaTodayPro" />
     <noscript>
         <meta HTTP-EQUIV=" REFRESH" content="0; url=javascript-no-activo">
     </noscript>
@@ -26,6 +20,15 @@
     echo "<title>$titulo</title>";
 
     ?>
+    <meta name='keywords'
+        content='TasaTodayPro, tasa, today, pro, rate, rates, currencys, currency, divisas, divisa, ve, ven, venezuela, dolar, euro, bolivares, ves, usd, eur, cripto, criptmonedas, cambio, calculadora de bolivares, calculadora, bs.d' />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo RUTA_FAVICON; ?>apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo RUTA_FAVICON; ?>favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo RUTA_FAVICON; ?>favicon-16x16.png">
+    <link rel="manifest" href="<?php echo RUTA_FAVICON; ?>site.webmanifest">
+    <meta name="msapplication-config" content="<?php echo RUTA_FAVICON; ?>browserconfig.xml" />
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo RUTA_CSS ?>style.css">
