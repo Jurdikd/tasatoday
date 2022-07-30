@@ -18,7 +18,7 @@
                 <ul class="bottom_ul footer-ul">
                     <li><a href="#">Tasatodaypro</a></li>
                     <li><a
-                            href="mailto:contact@tasatoday.pro?Subject=<?php echo SERVIDOR; ?>%20Interesado%20en%20el%20servicio."><i
+                            href="mailto:contact@tasatoday.pro?Subject=<?php echo RUTA_GENERAL; ?>%20Interesado%20en%20el%20servicio."><i
                                 class="fa fa-envelope"></i>contact@tasatoday.pro</a></li>
                     <li><a href="https://www.instagram.com/tasatodaypro" target="_blank" rel="noopener noreferrer"><i
                                 class="fab fa-instagram"></i>@tasatodaypro</a></a></li>

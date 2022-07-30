@@ -44,7 +44,7 @@ define("VISTA", SERVIDOR . "/");
 define("RUTA_GENERAL", VISTA);
 define("RUTA_DONATE", VISTA . "donates");
 define("RUTA_CUSTOM", VISTA . "custom");
-define("RUTA_INICIO", VISTA . "inicio");
+define("RUTA_PRINCIPAL", VISTA . "principal");
 define("RUTA_LOGIN_GENERAL", VISTA . "login");
 define("RUTA_REGISTRO_GENERAL", VISTA . "registro");
 define("RUTA_LOGOUT_GENERAL", VISTA . "logout");
