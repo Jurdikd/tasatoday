@@ -1,6 +1,6 @@
 <!-- Template Calulator -->
 <template id="card-calculator">
-    <div class="card">
+    <div class="card card-shadow">
         <div class="card-header">
             <div class=" card-tittle text-dark">
                 Para convertir coloca la cantidad a convertir

@@ -55,6 +55,10 @@
   #msgPreloader{
 	margin-top: 7.77em;
   }
+  .card-shadow{
+	-webkit-box-shadow: 2px 12px 22px -2px rgba(0,0,0,0.77); 
+	box-shadow: 2px 12px 22px -2px rgba(0,0,0,0.77);
+  }
   /*=========================================================*/
   /* animation card skeleton*/
   .card.skeeleton .card-tittle, .card.skeeleton .card__rate-text, .card.skeeleton .btn {
