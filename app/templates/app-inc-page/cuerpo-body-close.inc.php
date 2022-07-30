@@ -53,7 +53,7 @@
                     class="text-info text-xs text-sm CreateLinkRate"><?php echo RUTA_CUSTOM;  ?>?currency=usd&to=ves&rate=0.00&name=MiNegocio</span>
 
             </div>
-            <input type="text" class="form-control CreateLinkRate" id="resultRateCreate" name="resultRateCreate"
+            <input type="url" class="form-control CreateLinkRate" id="resultRateCreate" name="resultRateCreate"
                 placeholder="url">
         </div>
     </div>
